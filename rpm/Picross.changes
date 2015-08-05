@@ -1,0 +1,18 @@
+# Rename this file as Picross.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.1-0
+- Auto position slideShowView to last unlocked difficulty
+- New UI for the level selection menu (Swipe can be enable in settings)
+- Auto completion by fill
+- New arrows indicating hidden numbers on headers
+
+* Fri Jul 31 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1-0
+- Initial version
