@@ -935,6 +935,11 @@ function getGrid(diffSelected, levelSelected){
     return gridTmp
 }
 
+
+function isLocked(diff){
+    return (diff!==0 && DB.getNbCompletedLevel(diff-1)<getNbLevel(diff-1))
+}
+
 function getCurrentDiff(){
     for(var i=0; i< levels.length; i++)
         if(getNbLevel(i)!==DB.getNbCompletedLevel(i))

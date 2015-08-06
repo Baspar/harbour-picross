@@ -36,6 +36,7 @@ Dialog{
                 width: decoratorTop.width/diffList.count
                 Label{
                     anchors.centerIn: parent
+                    color: (Levels.isLocked(index))?"grey":"white"
                     text:name
                     font.pixelSize: 20
                 }
@@ -92,7 +93,7 @@ Dialog{
                         text: name+" ["+DB.getNbCompletedLevel(myDiff)+"/"+levelList.count+"]"
                         color: Theme.highlightColor
                         Component.onCompleted: {
-                            if(myDiff!==0 && DB.getNbCompletedLevel(myDiff-1)!==Levels.getNbLevel(myDiff-1))
+                            if(Levels.isLocked(myDiff))
                                 text = name+" [?/?]"
                         }
                     }
