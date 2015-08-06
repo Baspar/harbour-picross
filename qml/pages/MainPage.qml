@@ -130,13 +130,13 @@ Page {
                     Rectangle{
                         x:gridPartRectangle.width-10
                         width:10
-                        height: Math.min(gridPartRectangle.height-10, bottomLineIndicUp.height+topLineIndicUp.height+indicUp.height+flick.contentHeight)
+                        height: Math.min(gridPartRectangle.height-outsideBorderSize, indicUp.height+flick.contentHeight)
                         color: Theme.highlightColor
                         opacity:0.3
                     }
                     // Decoration bottom of the grid
                     Rectangle{
-                        y: Math.min(gridPartRectangle.height-outsideBorderSize, bottomLineIndicUp.height+topLineIndicUp.height+indicUp.height+flick.contentHeight-outsideBorderSize)
+                        y: Math.min(gridPartRectangle.height-outsideBorderSize, indicUp.height+flick.contentHeight)
                         width: gridPartRectangle.width
                         height: outsideBorderSize
                         color: Theme.highlightColor
