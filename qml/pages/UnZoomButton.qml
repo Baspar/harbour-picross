@@ -5,36 +5,20 @@ Item{
     id: unzoom
     Rectangle{
         id: unzoomButton
-        NumberAnimation{
-            id: animateUnZoom
-            target: game
-            properties: "zoom"
-            to: 1
-            duration: 500
-            easing {type: Easing.OutBounce}
-        }
-        NumberAnimation{
-            id: animateZoom
-            target: game
-            properties: "zoom"
-            to: (page.height-pageHeader.height/2)/page.width
-            duration: 500
-            easing {type: Easing.OutBounce}
-        }
         MouseArea{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1)
-                    animateZoom.start()
+                    game.zoom=(page.height-pageHeader.height/2)/page.width
                 else
-                    animateUnZoom.start()
+                    game.zoom=1
             }
 
         }
 
         width: 100 - 30
         height: 100 - 30
-        x: 10
+        x: outsideBorderSize
         y: x
         color: Qt.rgba(0, 0, 0, 0)
         border.width: 5
