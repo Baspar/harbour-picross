@@ -11,6 +11,7 @@
 * Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.1.1-0
 - Application renamed
 - Arrows moved to borders
+- Adding GitHub link
 
 * Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.1-0
 - Auto position slideShowView to last unlocked difficulty
