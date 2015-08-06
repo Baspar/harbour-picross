@@ -142,7 +142,6 @@ Page {
                         color: Theme.highlightColor
                         opacity:0.3
                     }
-
                 }
 
                 // Un-zoom button
@@ -162,9 +161,9 @@ Page {
                     Item{
                         id: indicUp
                         width: gridPartRectangle.width-100-10
-                        height: 100-20
+                        height: 100
                         x:100
-                        y:10
+                        y:0
                         SilicaFlickable{
                             clip: true
                             width: parent.width
@@ -191,9 +190,10 @@ Page {
 
                                             SilicaFlickable{
                                                 id: finalIndicUp
-                                                height: parent.height
+                                                height: parent.height-2*outsideBorderSize
                                                 width: parent.width
                                                 contentHeight: myIndicUp.height
+                                                y: outsideBorderSize
                                                 clip: true
 
                                                 Rectangle{
@@ -238,7 +238,7 @@ Page {
                                                     }
 
                                                     Component.onCompleted: {
-                                                        if(myIndicUp.height<indicUpFlick.height){adjustUp.height=indicUpFlick.height-myIndicUp.height}
+                                                        if(myIndicUp.height<finalIndicUp.height){adjustUp.height=finalIndicUp.height-myIndicUp.height}
                                                     }
                                                 }
                                             }
@@ -247,10 +247,9 @@ Page {
                                                 opacity: finalIndicUp.contentY!==0
                                                 Behavior on opacity {NumberAnimation{duration: 100}}
                                                 anchors.top: parent.top
-                                                anchors.topMargin: Theme.paddingSmall
                                                 anchors.horizontalCenter: parent.horizontalCenter
                                                 width: parent.width/2
-                                                height: width
+                                                height: outsideBorderSize
                                                 onPaint:{
                                                     var ctx = getContext("2d")
                                                     ctx.fillStyle= Theme.rgba(Theme.highlightColor, 1)
@@ -268,13 +267,12 @@ Page {
                                             }
                                             Canvas{
                                                 id: bottomArrow
-                                                opacity: finalIndicUp.contentY!==finalIndicUp.contentHeight-indicRectangleUp.height
+                                                opacity: finalIndicUp.contentY!==finalIndicUp.contentHeight-finalIndicUp.height
                                                 anchors.bottom: parent.bottom
-                                                anchors.bottomMargin: Theme.paddingSmall
                                                 anchors.horizontalCenter: parent.horizontalCenter
                                                 Behavior on opacity {NumberAnimation{duration: 100}}
                                                 width: parent.width/2
-                                                height: width
+                                                height: 10
                                                 onPaint:{
                                                     var ctx = getContext("2d")
                                                     ctx.fillStyle= Theme.rgba(Theme.highlightColor, 1)
@@ -293,8 +291,9 @@ Page {
 
                                         }
                                         Rectangle{
+                                            y:outsideBorderSize
                                             width: insideBorderSize
-                                            height: indicUp.height
+                                            height: finalIndicUp.height
                                             color: Theme.highlightColor
                                             opacity: 0.1
                                         }
@@ -306,7 +305,7 @@ Page {
                     Rectangle{
                         id: bottomLineIndicUp
                         x:100
-                        y:100-10
+                        y:90
                         height:10
                         width: gridPartRectangle.width-100-10
                         color: Theme.highlightColor

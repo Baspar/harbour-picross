@@ -10,22 +10,18 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = Picross
+TARGET = harbour-Picross
 
 CONFIG += sailfishapp
 
-SOURCES += src/Picross.cpp
+SOURCES += src/harbour-Picross.cpp
 
 QT += sql
 
 
-OTHER_FILES += qml/Picross.qml \
+OTHER_FILES += \
     qml/cover/CoverPage.qml \
-    rpm/Picross.spec \
-    rpm/Picross.yaml \
     translations/*.ts \
-    Picross.desktop \
-    Picross.png \
     qml/pages/Case.qml \
     qml/pages/NewGame.qml \
     qml/pages/Grille.qml \
@@ -38,7 +34,12 @@ OTHER_FILES += qml/Picross.qml \
     qml/DB.js \
     qml/pages/Settings.qml \
     qml/pages/Rules.qml \
-    rpm/Picross.changes
+    harbour-Picross.desktop \
+    harbour-Picross.png \
+    rpm/harbour-Picross.changes \
+    rpm/harbour-Picross.spec \
+    rpm/harbour-Picross.yaml \
+    qml/harbour-Picross.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -48,5 +49,5 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/Picross-de.ts
+#TRANSLATIONS += translations/Picross-de.ts
 
