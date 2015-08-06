@@ -28,9 +28,7 @@ Dialog{
             width: parent.width
             model:ListModel{
                 id: diffList
-                Component.onCompleted: {Levels.getDifficultiesAndLevels(diffList)
-                    console.log(diffList.count)
-                }
+                Component.onCompleted: Levels.getDifficultiesAndLevels(diffList)
             }
             delegate : Rectangle{
                 color: "transparent"
