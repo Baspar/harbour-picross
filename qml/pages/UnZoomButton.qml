@@ -9,7 +9,7 @@ Item{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1)
-                    game.zoom=(page.height-pageHeader.height/2)/page.width
+                    game.zoom=(page.height-pageHeader.height-100-outsideBorderSize)/(page.width-100-outsideBorderSize)
                 else
                     game.zoom=1
             }
