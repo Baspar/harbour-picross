@@ -40,26 +40,13 @@
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="121"/>
+        <location filename="../qml/pages/NewGame.qml" line="119"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="122"/>
+        <location filename="../qml/pages/NewGame.qml" line="120"/>
         <source>Complete all previous levels to unlock this difficulty</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SecondPage</name>
-    <message>
-        <location filename="../qml/pages/SecondPage.qml" line="42"/>
-        <source>Nested Page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SecondPage.qml" line="49"/>
-        <source>Item</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
