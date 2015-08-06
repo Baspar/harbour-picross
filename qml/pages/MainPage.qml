@@ -201,7 +201,7 @@ Page {
                                                     color: "transparent"
                                                     MouseArea{
                                                         anchors.fill: parent
-                                                        onClicked: if(completed)Source.completeColX(index)
+                                                        onClicked: if(completed||toFill)Source.completeColX(index, toFill)
                                                         /*onPressAndHold: {
         if(game.selectedCol === index)
         game.selectedCol=-1
@@ -231,7 +231,7 @@ Page {
                                                                 anchors.centerIn: parent
                                                                 id: myLabelIndicUp
                                                                 text: size
-                                                                color: completed?"green":Theme.highlightColor
+                                                                color: toFill?"red":completed?"green":Theme.highlightColor
                                                                 font.pixelSize: 14
                                                             }
                                                         }
@@ -362,7 +362,7 @@ Page {
                                                     color: "transparent"
                                                     MouseArea{
                                                         anchors.fill: parent
-                                                        onClicked: if(completed)Source.completeLineX(index)
+                                                        onClicked: if(completed||toFill)Source.completeLineX(index, toFill)
                                                         /*onPressAndHold: {
                 if(game.selectedLine === index)
                 game.selectedLine=-1
@@ -394,7 +394,7 @@ Page {
                                                                 anchors.centerIn: parent
                                                                 id: myLabelIndicLeft
                                                                 text: model.size
-                                                                color: completed?"green":Theme.highlightColor
+                                                                color: toFill?"red":completed?"green":Theme.highlightColor
                                                                 font.pixelSize: 14
                                                             }
                                                         }

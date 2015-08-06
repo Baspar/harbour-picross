@@ -140,7 +140,7 @@ function genIndicLine(list, grid){
 
         smallList.clear()
         genIndicLineX(smallList, grid, i)
-        list.append({"loadedIndic":smallList, "completed":false})
+        list.append({"loadedIndic":smallList, "completed":false, "toFill":false})
     }
 }
 function genIndicCol(list, grid){
@@ -152,20 +152,12 @@ function genIndicCol(list, grid){
 
         smallList.clear()
         genIndicColX(smallList, grid, i)
-        list.append({"loadedIndic":smallList, "completed":false})
+        list.append({"loadedIndic":smallList, "completed":false, "toFill":false})
     }
 }
 
-function completeLineX(x){
-    var indics=game.indicLeft.get(x).loadedIndic
-    var progress = Qt.createQmlObject('import QtQuick 2.2; \
-                    ListModel {}', parent)
-    genIndicLineX(progress, game.mySolvingGrid, x)
-    var finished=(progress.count===indics.count)
-    for(var i=0; i<progress.count; i++)
-        finished=finished&&(progress.get(i).size===indics.get(i).size)
-
-    if(finished){
+function completeLineX(x, toFill){
+    if(!toFill){
         for(var j=x*game.dimension; j<(x+1)*game.dimension; j++)
             if(game.mySolvingGrid.get(j).myEstate === "void")
                 doubleClick(game.mySolvingGrid, j)
@@ -176,16 +168,8 @@ function completeLineX(x){
 
     }
 }
-function completeColX(x){
-    var indics=game.indicUp.get(x).loadedIndic
-    var progress = Qt.createQmlObject('import QtQuick 2.2; \
-                    ListModel {}', parent)
-    genIndicColX(progress, game.mySolvingGrid, x)
-    var finished=(progress.count===indics.count)
-    for(var i=0; i<progress.count; i++)
-        finished=finished&&(progress.get(i).size===indics.get(i).size)
-
-    if(finished){
+function completeColX(x, toFill){
+    if(!toFill){
         for(var j=x; j<game.dimension*game.dimension; j+=game.dimension)
             if(game.mySolvingGrid.get(j).myEstate === "void")
                 doubleClick(game.mySolvingGrid, j)
@@ -203,18 +187,25 @@ function checkColX(x){
     var progress = Qt.createQmlObject('import QtQuick 2.2; \
                     ListModel {}', parent)
     genIndicColX(progress, game.mySolvingGrid, x)
-    var finished=(progress.count===indics.count)
-    for(var i=0; i<progress.count; i++)
-        finished=finished&&(progress.get(i).size===indics.get(i).size)
 
-    if(!finished){
+    //Variables
+    var completed=(progress.count===indics.count)
+    var toFill=false
+
+    //Check if we can fill with crosses (i.e. ours indicators correspond)
+    for(var i=0; i<progress.count; i++)
+        completed=completed&&(progress.get(i).size===indics.get(i).size)
+
+    //If not, check if we can fill with full
+    if(!completed){
         genIndicColXFilling(progress, game.mySolvingGrid, x)
-        finished=(progress.count===indics.count)
+        toFill=(progress.count===indics.count)
         for(var i=0; i<progress.count; i++)
-            finished=finished&&(progress.get(i).size===indics.get(i).size)
+            toFill=toFill&&(progress.get(i).size===indics.get(i).size)
     }
 
-    game.indicUp.setProperty(x, "completed", finished)
+    game.indicUp.setProperty(x, "completed", completed)
+    game.indicUp.setProperty(x, "toFill", toFill)
 }
 function checkLineX(x){
     var indics=game.indicLeft.get(x).loadedIndic
@@ -222,19 +213,24 @@ function checkLineX(x){
                     ListModel {}', parent)
     genIndicLineX(progress, game.mySolvingGrid, x)
 
-    var finished=(progress.count===indics.count)
+    //Variables
+    var completed=(progress.count===indics.count)
+    var toFill=false
+
+    //Check if we can fill with crosses (i.e. ours indicators correspond)
     for(var i=0; i<progress.count; i++)
-        finished=finished&&(progress.get(i).size===indics.get(i).size)
+        completed=completed&&(progress.get(i).size===indics.get(i).size)
 
-    if(!finished){
+    //If not, check if we can fill with full
+    if(!completed){
         genIndicLineXFilling(progress, game.mySolvingGrid, x)
-
-        finished=(progress.count===indics.count)
+        toFill=(progress.count===indics.count)
         for(var i=0; i<progress.count; i++)
-            finished=finished&&(progress.get(i).size===indics.get(i).size)
+            toFill=toFill&&(progress.get(i).size===indics.get(i).size)
     }
 
-    game.indicLeft.setProperty(x, "completed", finished)
+    game.indicLeft.setProperty(x, "completed", completed)
+    game.indicLeft.setProperty(x, "toFill", toFill)
 }
 
 function launchCheckWin(){
