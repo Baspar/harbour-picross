@@ -136,9 +136,9 @@ Page {
                     }
                     // Decoration bottom of the grid
                     Rectangle{
-                        y: Math.min(gridPartRectangle.height-10, bottomLineIndicUp.height+topLineIndicUp.height+indicUp.height+flick.contentHeight)
+                        y: Math.min(gridPartRectangle.height-outsideBorderSize, bottomLineIndicUp.height+topLineIndicUp.height+indicUp.height+flick.contentHeight-outsideBorderSize)
                         width: gridPartRectangle.width
-                        height: 10
+                        height: outsideBorderSize
                         color: Theme.highlightColor
                         opacity:0.3
                     }
@@ -326,9 +326,8 @@ Page {
                     Item{
                         id: indicLeft
                         height: Math.min(game.zoom*(gridPartRectangle.width-100-10), gridPartRectangle.height-100-10)
-                        width: 100-20
+                        width: 100
                         y:100
-                        x:10
                         SilicaFlickable{
                             clip:true
                             width: parent.width
@@ -354,7 +353,8 @@ Page {
                                             SilicaFlickable{
                                                 id: finalIndicLeft
                                                 height: parent.height
-                                                width: parent.width
+                                                width: parent.width-2*outsideBorderSize
+                                                x: outsideBorderSize
                                                 contentWidth: myIndicLeft.width
                                                 clip: true
                                                 Rectangle{
@@ -401,7 +401,7 @@ Page {
                                                     }
 
                                                     Component.onCompleted: {
-                                                        if(myIndicLeft.width+insideBorderSize<indicLeftFlick.width){adjustLeft.width=indicLeftFlick.width-myIndicLeft.width-insideBorderSize}
+                                                        if(myIndicLeft.width+insideBorderSize<finalIndicLeft.width){adjustLeft.width=finalIndicLeft.width-myIndicLeft.width-insideBorderSize}
                                                     }
                                                 }
                                             }
@@ -410,10 +410,9 @@ Page {
                                                 opacity: finalIndicLeft.contentX!==0
                                                 Behavior on opacity {NumberAnimation{duration: 100}}
                                                 anchors.left: parent.left
-                                                anchors.leftMargin: Theme.paddingSmall
                                                 anchors.verticalCenter: parent.verticalCenter
                                                 height: parent.height/2
-                                                width: height
+                                                width: outsideBorderSize
                                                 onPaint:{
                                                     var ctx = getContext("2d")
                                                     ctx.fillStyle= Theme.rgba(Theme.highlightColor, 1)
@@ -421,7 +420,7 @@ Page {
                                                     ctx.lineWidth = 1
 
                                                     ctx.beginPath()
-                                                    ctx.moveTo(0, 0.5*width)
+                                                    ctx.moveTo(0, 0.5*height)
                                                     ctx.lineTo(width, 0)
                                                     ctx.lineTo(width, height)
                                                     ctx.closePath()
@@ -431,13 +430,12 @@ Page {
                                             }
                                             Canvas{
                                                 id: rightArrow
-                                                opacity: finalIndicLeft.contentX!==finalIndicLeft.contentWidth-indicRectangleLeft.width
+                                                opacity: finalIndicLeft.contentX!==finalIndicLeft.contentWidth-finalIndicLeft.width
                                                 Behavior on opacity {NumberAnimation{duration: 100}}
                                                 anchors.right: parent.right
-                                                anchors.rightMargin: Theme.paddingSmall
                                                 anchors.verticalCenter: parent.verticalCenter
                                                 height: parent.height/2
-                                                width: height
+                                                width: outsideBorderSize
                                                 onPaint:{
                                                     var ctx = getContext("2d")
                                                     ctx.fillStyle= Theme.rgba(Theme.highlightColor, 1)
@@ -445,7 +443,7 @@ Page {
                                                     ctx.lineWidth = 1
 
                                                     ctx.beginPath()
-                                                    ctx.moveTo(width, 0.5*width)
+                                                    ctx.moveTo(width, 0.5*height)
                                                     ctx.lineTo(0, 0)
                                                     ctx.lineTo(0, height)
                                                     ctx.closePath()
@@ -456,7 +454,8 @@ Page {
                                         }
                                         Rectangle{
                                             height: insideBorderSize
-                                            width: indicLeftFlick.width
+                                            width: finalIndicLeft.width
+                                            x: outsideBorderSize
                                             color: Theme.highlightColor
                                             opacity: 0.1
                                         }
