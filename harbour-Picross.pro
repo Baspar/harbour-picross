@@ -39,7 +39,8 @@ OTHER_FILES += \
     rpm/harbour-Picross.changes \
     rpm/harbour-Picross.spec \
     rpm/harbour-Picross.yaml \
-    qml/harbour-Picross.qml
+    qml/harbour-Picross.qml \
+    scripts/genPicross.sh
 
 # to disable building translations every time, comment out the
 # following CONFIG line
