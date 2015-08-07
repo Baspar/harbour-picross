@@ -103,7 +103,8 @@ Page {
         }
         onPinchFinished:{
             popupZoom.opacity = 0
-            game.zoom = zoomTmp
+            if(game.dimension!==0)
+                game.zoom = zoomTmp
             zoomTmp = -1
         }
 
