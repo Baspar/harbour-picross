@@ -36,10 +36,12 @@ out="
            grid:\n
            [\n"
 
+drawing=""
 echo "Everything is fine, please enter the map"
 for i in $(seq 1 $dim)
 do
     # Read line ( Re-read if size != dimension or if it contains other characters than 0 or 1)
+    echo -n "$i: "
     read line
     while [ $(echo $line | wc -c) -ne $((dim+1)) ]||[ $(echo $line | sed 's/[01]//g' | wc -c) -ne 1 ]
     do
@@ -49,8 +51,13 @@ do
         else
             echo "Wrong line size ($(echo $line | head -c -1| wc -c)), you must enter a line whose size is $dim"
         fi
+        echo -n "$i: "
         read line
     done
+
+    drawing+=$(echo $line | sed "s/0/./g; s/1/#/g")
+    drawing+="
+"
 
     # We add comma between every number
     line=$(echo $line | sed 's/\(.\)/\1, /g' | head -c -2)
@@ -68,6 +75,14 @@ done
 # Line closed
 out+="            ]\n        }"
 
+# Visual check
+clear
+echo "Check drawing :"
+echo "==============="
+echo ""
+echo "$drawing"
+echo ""
+echo ""
 
 # Read difficulty
 echo -n "Difficulty [0=Tutorial, 1=Easy, 2=Medium, 3=Hard, 4=Expert]: "
