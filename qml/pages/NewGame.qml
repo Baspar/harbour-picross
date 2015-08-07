@@ -116,7 +116,7 @@ Dialog{
                     ViewPlaceholder{
                         verticalOffset: -pageTitle.height
                         anchors.horizontalCenter: parent.horizontalCenter
-                        enabled : (myDiff!==0 && DB.getNbCompletedLevel(myDiff-1)<Levels.getNbLevel(myDiff-1))
+                        enabled : Levels.isLocked(myDiff)
                         text: qsTr("Locked")
                         hintText: qsTr("Complete all previous levels to unlock this difficulty")
                     }
@@ -124,7 +124,7 @@ Dialog{
                     model: ListModel{
                         id: levelList
                         Component.onCompleted: {
-                            if(myDiff===0 || DB.getNbCompletedLevel(myDiff-1)>=Levels.getNbLevel(myDiff-1))
+                            if(!Levels.isLocked(myDiff))
                                 Levels.arrayToList(index, levelList)
                             else
                                 levelList.clear()
