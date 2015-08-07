@@ -91,7 +91,7 @@ var tutorial =
                     0, 0, 0, 0, 0, 0, 0, 1, 1, 1
                 ]
         }
-    ]
+    ]//END0
 var easy =
     [
         {
@@ -257,7 +257,7 @@ var easy =
                 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1
             ]
         }
-    ]
+    ]//END1
 var medium =
     [
         {
@@ -476,7 +476,7 @@ var medium =
                 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0
             ]
         }
-    ]
+    ]//END2
 var hard =
     [
         {
@@ -761,7 +761,7 @@ var hard =
                 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0
             ]
         }
-    ]
+    ]//END3
 var expert =
     [
         {
@@ -849,7 +849,7 @@ var expert =
             ]
         },
         {
-            title: "",
+            title: "Runner",
             hintTitle: "Run Forrest, run!",
             dimension: 20,
             grid:
@@ -876,7 +876,7 @@ var expert =
                 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1
             ]
         }
-    ]
+    ]//END4
 
 
 var levels = [
