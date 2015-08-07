@@ -1,33 +1,3 @@
-/*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
-  All rights reserved.
-
-  You may use this file under the terms of BSD license as follows:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * Neither the name of the Jolla Ltd nor the
-      names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR
-  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Source.js" as Source
@@ -38,8 +8,47 @@ Page {
 
     property int insideBorderSize: 5
     property int outsideBorderSize: 10
+    property int selectedCol:-1
+    property int selectedLine:-1
 
     id: page
+
+    /*Rectangle{
+        z:1
+        visible: selectedLine!==-1
+        color: Theme.rgba("black", selectedLine!==-1?0.5:0)
+        Behavior on color{ColorAnimation{duration: 100}}
+        anchors.fill: parent
+        MouseArea{
+            enabled: selectedLine!==-1
+            anchors.fill: parent
+            onClicked:selectedLine=-1
+        }
+        Row{
+            spacing: 2
+            x: 0
+            y: pageHeader.height+100+ selectedLine*(page.width-outsideBorderSize-100+insideBorderSize)/game.dimension*game.zoom-flick.contentY
+            height: ((page.width-outsideBorderSize-100+insideBorderSize)/game.dimension-insideBorderSize)*game.zoom
+            Rectangle{
+                color: Theme.rgba(Theme.highlightColor, 0.3)
+                height: parent.height
+                width: outsideBorderSize
+            }
+            Repeater{
+                model: selectedLine!==-1?game.indicLeft.get(selectedLine).loadedIndic:0
+                Label{
+                    color: game.indicLeft.get(selectedLine).toFill?"red":game.indicLeft.get(selectedLine).completed?"green":Theme.highlightColor
+                    text: size
+                }
+            }
+            Rectangle{
+                color: Theme.rgba(Theme.highlightColor, 0.3)
+                height: parent.height
+                width: outsideBorderSize
+            }
+        }
+    }*/
+
     PinchArea {
         property real initialZoom
         anchors.fill: parent
@@ -55,18 +64,13 @@ Page {
         id: flickUp
         anchors.fill: parent
         PullDownMenu {
-            /*MenuItem {
-    text: qsTr("Rules")
-    onClicked: {
-    pageStack.push(Qt.resolvedUrl("Rules.qml"))
-    }
-    }*/
             MenuItem {
                 text: qsTr("Settings")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("Settings.qml"))
                 }
             }
+
             MenuItem {
                 visible: game.dimension!==0
                 text: qsTr("Clear grid")
@@ -184,8 +188,8 @@ Page {
                                             width: (flick.contentWidth-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedCols *(2-1))   *(game.selectedCol !==-1 && Math.abs(index-game.selectedCol)<=game.selectedRadius?2:1)
                                             height: indicUpFlick.height
                                             color:"transparent"/*(game.selectedCol !==-1 && Math.abs(index-game.selectedCol)<=game.selectedRadius)?
-          Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedCol)))
-        :"transparent"*/
+      Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedCol)))
+    :"transparent"*/
 
 
                                             SilicaFlickable{
@@ -202,12 +206,18 @@ Page {
                                                     MouseArea{
                                                         anchors.fill: parent
                                                         onClicked: if(completed||toFill)Source.completeColX(index, toFill)
+                                                        onPressAndHold:{
+                                                            if(page.selectedCol === index)
+                                                                page.selectedCol = -1
+                                                            else
+                                                                page.selectedCol = index
+                                                        }
                                                         /*onPressAndHold: {
-        if(game.selectedCol === index)
-        game.selectedCol=-1
-        else
-        game.selectedCol=index
-        }*/
+    if(game.selectedCol === index)
+    game.selectedCol=-1
+    else
+    game.selectedCol=index
+    }*/
                                                     }
                                                 }
 
@@ -348,8 +358,8 @@ Page {
                                             height: (flick.contentHeight-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedLines*(2-1))   *(game.selectedLine!==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius?2:1)
                                             width: indicLeftFlick.width
                                             color:"transparent" /*(game.selectedLine !==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius)?
-          Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedLine)))
-        :"transparent"*/
+      Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedLine)))
+    :"transparent"*/
                                             SilicaFlickable{
                                                 id: finalIndicLeft
                                                 height: parent.height
@@ -363,12 +373,13 @@ Page {
                                                     MouseArea{
                                                         anchors.fill: parent
                                                         onClicked: if(completed||toFill)Source.completeLineX(index, toFill)
+                                                        onPressAndHold: page.selectedLine=index
                                                         /*onPressAndHold: {
-                if(game.selectedLine === index)
-                game.selectedLine=-1
-                else
-                game.selectedLine=index
-                }*/
+                                if(game.selectedLine === index)
+                                game.selectedLine=-1
+                                else
+                                game.selectedLine=index
+                            }*/
                                                     }
                                                 }
 
