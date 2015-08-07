@@ -8,6 +8,7 @@ Dialog{
     property int diffSelected: -1
     property int levelSelected: -1
     property string save: ""
+    property bool cheatMode: false
 
     id: dialog
     canAccept: diffSelected!=-1
@@ -15,6 +16,10 @@ Dialog{
     DialogHeader{
         id: pageTitle
         title: "New game"
+        MouseArea{
+            anchors.fill: parent
+            onPressAndHold: cheatMode = !cheatMode
+        }
     }
 
     Column{
@@ -150,13 +155,17 @@ Dialog{
                             color: Theme.secondaryColor
                         }
                         onClicked:{
-                            if(diffSelected !== myDiff || levelSelected !== myLevel){
-                                diffSelected=myDiff
-                                levelSelected=myLevel
-                                save=DB.getParameter("autoLoadSave")===0?"":DB.getSave(myDiff, myLevel)
-                            } else {
-                                diffSelected=-1
-                                levelSelected=-1
+                            if(cheatMode)
+                                DB.setIsCompleted(myDiff, myLevel, 'true')
+                            else{
+                                if(diffSelected !== myDiff || levelSelected !== myLevel){
+                                    diffSelected=myDiff
+                                    levelSelected=myLevel
+                                    save=DB.getParameter("autoLoadSave")===0?"":DB.getSave(myDiff, myLevel)
+                                } else {
+                                    diffSelected=-1
+                                    levelSelected=-1
+                                }
                             }
                         }
 

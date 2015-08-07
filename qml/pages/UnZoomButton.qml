@@ -13,6 +13,7 @@ Item{
                 else
                     game.zoom=1
             }
+            onPressAndHold: panel.show()
 
         }
 

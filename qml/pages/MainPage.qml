@@ -13,8 +13,46 @@ Page {
 
     id: page
 
+    Rectangle{
+        id: popupZoom
+        z:2
+        opacity: 0
+        color: Theme.rgba("black", 0.5)
+        anchors.fill: page
+        Rectangle{
+            color: Theme.rgba("black", 0.2)
+            width: page.width/2
+            height: popupZoomText.height
+            anchors.centerIn: parent
+            Column{
+                id: popupZoomText
+                anchors.horizontalCenter: parent.horizontalCenter
+                Label{
+                    text: "Zoom"
+                    color: Theme.highlightColor
+                    font.pixelSize: Theme.fontSizeLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+                Label{
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: "x"+Math.floor(pinchArea.zoomTmp===-1?10*game.zoom:10*pinchArea.zoomTmp)/10
+                }
+                ProgressBar{
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: page.width/2
+                    maximumValue: 3
+                    minimumValue: 1
+                    value:Math.floor(pinchArea.zoomTmp===-1?10*game.zoom:10*pinchArea.zoomTmp)/10
+                }
+            }
+
+        }
+
+        Behavior on opacity{NumberAnimation{duration: 200}}
+    }
+
     /*Rectangle{
-        z:1
+        z:3
         visible: selectedLine!==-1
         color: Theme.rgba("black", selectedLine!==-1?0.5:0)
         Behavior on color{ColorAnimation{duration: 100}}
@@ -50,10 +88,25 @@ Page {
     }*/
 
     PinchArea {
+        id: pinchArea
         property real initialZoom
+        property real zoomTmp : -1
         anchors.fill: parent
-        onPinchStarted: initialZoom = game.zoom
-        onPinchUpdated: game.zoom = (initialZoom*pinch.scale>3)?3:(initialZoom*pinch.scale<1)?1:initialZoom*pinch.scale
+        onPinchStarted: {
+            if(game.dimension!==0)
+                popupZoom.opacity = 1
+            initialZoom = game.zoom
+            zoomTmp = game.zoom
+        }
+        onPinchUpdated: {
+            zoomTmp = (initialZoom*pinch.scale>3)?3:(initialZoom*pinch.scale<1)?1:initialZoom*pinch.scale
+        }
+        onPinchFinished:{
+            popupZoom.opacity = 0
+            game.zoom = zoomTmp
+            zoomTmp = -1
+        }
+
         Rectangle{
             color: "transparent"
             anchors.fill: parent
@@ -63,6 +116,25 @@ Page {
     SilicaFlickable {
         id: flickUp
         anchors.fill: parent
+        DockedPanel {
+            id: panel
+            clip: true
+
+            x:0
+            z:1
+
+            width: parent.width
+            height: pageHeader.height
+
+            dock: Dock.Left
+
+            Row {
+                anchors.centerIn: parent
+                Switch { icon.source: "image://theme/icon-l-shuffle" }
+                Switch { icon.source: "image://theme/icon-l-repeat" }
+                Switch { icon.source: "image://theme/icon-l-share" }
+            }
+        }
         PullDownMenu {
             MenuItem {
                 text: qsTr("Settings")
@@ -70,7 +142,6 @@ Page {
                     pageStack.push(Qt.resolvedUrl("Settings.qml"))
                 }
             }
-
             MenuItem {
                 visible: game.dimension!==0
                 text: qsTr("Clear grid")
@@ -93,6 +164,7 @@ Page {
 
                 PageHeader {
                     id: pageHeader
+                    opacity:(panel.width - panel._visibleSize())/panel.width
                     title: game.hintTitle===""?"Picross":game.hintTitle
                     description: game.dimension===0?"":game.dimension+"x"+game.dimension//+" - "+game.nbSolvingFullCell+"/"+game.nbSolvedFullCell
                 }
