@@ -13,7 +13,7 @@ Name:       harbour-Picross
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    harbour-Picross
-Version:    1.2
+Version:    1.1.1
 Release:    0
 Group:      Qt/Qt
 License:    LICENSE
@@ -69,3 +69,30 @@ desktop-file-install --delete-original       \
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 # >> files
 # << files
+%changelog
+# Rename this file as Picross.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.2-0
+- Application renamed
+- Arrows moved to borders
+- Indicators in RED when line/column filling is available
+- Coloring each indicator, instead of the whole header
+- Level added: 4 Easy, 7 Medium, 1 Hard and 4 Expert
+- Zoom popup to reduce latency
+
+* Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.1-0
+- Auto position slideShowView to last unlocked difficulty
+- New UI for the level selection menu (Swipe can be enable in settings)
+- Auto completion by fill
+- New arrows indicating hidden numbers on headers
+
+* Fri Jul 31 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1-0
+- Initial version
