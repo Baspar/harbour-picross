@@ -105,13 +105,13 @@ function genIndicLineX(list, grid, x){
                 cpt++
             } else {
                 if(cpt!=0)
-                    list.append({"size":cpt})
+                    list.append({"size":cpt, "isOk":'false'})
                 cpt=0
             }
         }
     }
     if(cpt!=0 || list.count===0)
-        list.append({"size":cpt})
+        list.append({"size":cpt, "isOk":'false'})
 }
 function genIndicColX(list, grid, x){
     list.clear()
@@ -122,13 +122,13 @@ function genIndicColX(list, grid, x){
                 cpt++
             } else {
                 if(cpt!=0)
-                    list.append({"size":cpt})
+                    list.append({"size":cpt, "isOk":'false'})
                 cpt=0
             }
         }
     }
     if(cpt!=0 || list.count===0)
-        list.append({"size":cpt})
+        list.append({"size":cpt, "isOk":'false'})
 
 }
 function genIndicLine(list, grid){
@@ -182,6 +182,105 @@ function completeColX(x, toFill){
 
 }
 
+function specialCheckColX(x){
+    var indics=game.indicUp.get(x).loadedIndic
+
+    for(var j=0; j<indics.count ; j++)
+        indics.setProperty(j, "isOk", 'false')
+
+    var cpt=0
+    var nbIndic=0
+    var i=0
+    var exit='false'
+
+    while(game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && exit!=='true'){
+        var state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
+        if(state==="hint"){
+            if(cpt!==0){
+                if(cpt===indics.get(nbIndic).size){
+                    indics.setProperty(nbIndic, "isOk", 'true')
+                    nbIndic++
+                } else {
+                    exit='true'
+                }
+                cpt=0
+            }
+        } else
+            cpt++
+        i++
+    }
+
+    cpt=0
+    nbIndic=indics.count-1
+    i=game.dimension-1
+    exit='false'
+
+    while(game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && exit!=='true'){
+        state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
+        if(state==="hint"){
+            if(cpt!==0){
+                if(cpt===indics.get(nbIndic).size){
+                    indics.setProperty(nbIndic, "isOk", 'true')
+                    nbIndic--
+                } else
+                    exit='true'
+                cpt=0
+            }
+        } else
+            cpt++
+        i--
+    }
+}
+function specialCheckLineX(x){
+    var indics=game.indicLeft.get(x).loadedIndic
+
+    for(var j=0; j<indics.count ; j++)
+        indics.setProperty(j, "isOk", 'false')
+
+    var cpt=0
+    var nbIndic=0
+    var i=0
+    var exit='false'
+
+    while(game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && exit!=='true'){
+        var state=game.mySolvingGrid.get(x*game.dimension+i).myEstate
+        if(state==="hint"){
+            if(cpt!==0){
+                if(cpt===indics.get(nbIndic).size){
+                    indics.setProperty(nbIndic, "isOk", 'true')
+                    nbIndic++
+                } else {
+                    exit='true'
+                }
+                cpt=0
+            }
+        } else
+            cpt++
+        i++
+    }
+
+    cpt=0
+    nbIndic=indics.count-1
+    i=game.dimension-1
+    exit='false'
+
+    while(game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && exit!=='true'){
+        state=game.mySolvingGrid.get(x*game.dimension+i).myEstate
+        if(state==="hint"){
+            if(cpt!==0){
+                if(cpt===indics.get(nbIndic).size){
+                    indics.setProperty(nbIndic, "isOk", 'true')
+                    nbIndic--
+                } else
+                    exit='true'
+                cpt=0
+            }
+        } else
+            cpt++
+        i--
+    }
+}
+
 function checkColX(x){
     var indics=game.indicUp.get(x).loadedIndic
     var progress = Qt.createQmlObject('import QtQuick 2.2; \
@@ -206,6 +305,9 @@ function checkColX(x){
 
     game.indicUp.setProperty(x, "completed", completed)
     game.indicUp.setProperty(x, "toFill", toFill)
+
+    if(!completed)
+        specialCheckColX(x)
 }
 function checkLineX(x){
     var indics=game.indicLeft.get(x).loadedIndic
@@ -231,6 +333,9 @@ function checkLineX(x){
 
     game.indicLeft.setProperty(x, "completed", completed)
     game.indicLeft.setProperty(x, "toFill", toFill)
+
+    if(!completed)
+        specialCheckLineX(x)
 }
 
 function launchCheckWin(){

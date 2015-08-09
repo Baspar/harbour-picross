@@ -314,7 +314,7 @@ Page {
                                                                 anchors.centerIn: parent
                                                                 id: myLabelIndicUp
                                                                 text: size
-                                                                color: toFill?"red":completed?"green":Theme.highlightColor
+                                                                color: isOk==='true'?"green":toFill?"orange":completed?"green":Theme.highlightColor
                                                                 font.pixelSize: 14
                                                             }
                                                         }
@@ -478,7 +478,7 @@ Page {
                                                                 anchors.centerIn: parent
                                                                 id: myLabelIndicLeft
                                                                 text: model.size
-                                                                color: toFill?"red":completed?"green":Theme.highlightColor
+                                                                color: isOk==='true'?"green":toFill?"orange":completed?"green":Theme.highlightColor
                                                                 font.pixelSize: 14
                                                             }
                                                         }

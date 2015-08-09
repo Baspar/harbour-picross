@@ -8,10 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.1.1-0
+* Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.2-0
 - Application renamed
 - Arrows moved to borders
 - Indicators in RED when line/column filling is available
+- Coloring each indicator, instead of the whole header
+- Level added: 4 Easy, 7 Medium, 1 Hard and 4 Expert
+- Zoom popup to reduce latency
 
 * Wed Aug 5 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.1-0
 - Auto position slideShowView to last unlocked difficulty
