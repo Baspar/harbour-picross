@@ -260,10 +260,9 @@ Page {
                                             id: indicRectangleUp
                                             width: (flick.contentWidth-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedCols *(2-1))   *(game.selectedCol !==-1 && Math.abs(index-game.selectedCol)<=game.selectedRadius?2:1)
                                             height: indicUpFlick.height
-                                            color:"transparent"/*(game.selectedCol !==-1 && Math.abs(index-game.selectedCol)<=game.selectedRadius)?
+                                            color: (game.selectedCol !==-1 && Math.abs(index-game.selectedCol)<=game.selectedRadius)?
       Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedCol)))
-    :"transparent"*/
-
+    :"transparent"
 
                                             SilicaFlickable{
                                                 id: finalIndicUp
@@ -285,12 +284,6 @@ Page {
                                                             else
                                                                 page.selectedCol = index
                                                         }
-                                                        /*onPressAndHold: {
-    if(game.selectedCol === index)
-    game.selectedCol=-1
-    else
-    game.selectedCol=index
-    }*/
                                                     }
                                                 }
 
@@ -430,9 +423,9 @@ Page {
                                             id: indicRectangleLeft
                                             height: (flick.contentHeight-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedLines*(2-1))   *(game.selectedLine!==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius?2:1)
                                             width: indicLeftFlick.width
-                                            color:"transparent" /*(game.selectedLine !==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius)?
+                                            color:(game.selectedLine !==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius)?
       Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedLine)))
-    :"transparent"*/
+    :"transparent"
                                             SilicaFlickable{
                                                 id: finalIndicLeft
                                                 height: parent.height
@@ -447,12 +440,6 @@ Page {
                                                         anchors.fill: parent
                                                         onClicked: if(completed||toFill)Source.completeLineX(index, toFill)
                                                         onPressAndHold: page.selectedLine=index
-                                                        /*onPressAndHold: {
-                                if(game.selectedLine === index)
-                                game.selectedLine=-1
-                                else
-                                game.selectedLine=index
-                            }*/
                                                     }
                                                 }
 

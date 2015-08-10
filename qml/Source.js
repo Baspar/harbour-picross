@@ -27,10 +27,10 @@ function click(grid, x){
     var str=grid.get(x).myEstate
     if(str==="full")
         game.nbSolvingFullCell--
-    else
+    else if (str==="void")
         game.nbSolvingFullCell++
 
-    grid.set(x, {"myEstate":str==="full"?"hint":"full"})
+    grid.set(x, {"myEstate":str==="full"?"hint":str==="hint"?"void":"full"})
 
     checkLineX(Math.floor(x/game.dimension))
     checkColX(x%game.dimension)
@@ -38,16 +38,14 @@ function click(grid, x){
     launchCheckWin()
 }
 function longClick(grid, x){
-    var str=grid.get(x).myEstate
-    if(str==="full")
-        game.nbSolvingFullCell--
-
-    grid.set(x, {"myEstate":"void"})
-
-    checkLineX(Math.floor(x/game.dimension))
-    checkColX(x%game.dimension)
-
-    launchCheckWin()
+    return
+    if(game.selectedCol !== myID % game.dimension && game.selectedLine !== Math.floor(myID/game.dimension)){
+        game.selectedCol = myID % game.dimension
+        game.selectedLine = Math.floor(myID/game.dimension)
+    } else {
+        game.selectedCol = -1
+        game.selectedLine = -1
+    }
 }
 function doubleClick(grid, x){
     var str=grid.get(x).myEstate
@@ -357,7 +355,13 @@ function checkWin(){
 }
 function clear(){
     for(var i=0; i<game.mySolvingGrid.count; i++)
-        longClick(game.mySolvingGrid, i)
+        game.mySolvingGrid.set(i, {"myEstate":"void"})
+
+    for(i=0; i<game.dimension; i++){
+        checkLineX(i)
+        checkColX(i)
+    }
+    game.nbSolvingFullCell=0
 }
 function nothingDone(){
     for(var i=0; i<game.mySolvingGrid.count; i++)

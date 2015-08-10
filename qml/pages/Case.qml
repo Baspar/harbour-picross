@@ -53,7 +53,9 @@ Rectangle {
     MouseArea{
         anchors.fill: parent
         onPressAndHold: {
+            return true
             Source.longClick(game.mySolvingGrid, index)
+
         }
         onClicked: {
             Source.click(game.mySolvingGrid, index)
