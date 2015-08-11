@@ -73,7 +73,7 @@ Dialog{
         interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
         id: mySlideShowView
         clip: true
-        width: parent.width
+        width: dialog.width
         anchors.top: decoratorTop.bottom
         anchors.bottom: dialog.bottom
         model: ListModel{
@@ -213,11 +213,12 @@ Dialog{
 
 
         }
+
+        Component.onCompleted:{
+            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
+        }
     }
 
-    Component.onCompleted:{
-        mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
-    }
 
     onAccepted: {
         if(game.diff !== -1 && !Source.checkWin() && !Source.nothingDone())

@@ -53,6 +53,7 @@ ApplicationWindow
     property int selectedLine: -1
     property int nbSelectedCols : (game.selectedCol===-1?0:1+Math.min(game.selectedRadius, game.selectedCol)+Math.min(game.selectedRadius, game.dimension-1-game.selectedCol))
     property int nbSelectedLines : (game.selectedLine===-1?0:1+Math.min(game.selectedRadius, game.selectedLine)+Math.min(game.selectedRadius, game.dimension-1-game.selectedLine))
+    property bool guessMode: false
 
 
     property int dimension: 0
@@ -87,7 +88,6 @@ ApplicationWindow
             Source.initVoid(game.mySolvingGrid)
         selectedCol=-1
         selectedLine=-1
-
     }
 
     onCheckWin: {

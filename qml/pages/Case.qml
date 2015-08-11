@@ -11,8 +11,9 @@ Rectangle {
     width:  (rectGrille.width-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedCols *(k-1))   *(game.selectedCol !==-1 && Math.abs(myID%game.dimension-game.selectedCol)<=game.selectedRadius?k:1)
     height: (rectGrille.width-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedLines*(k-1))   *(game.selectedLine!==-1 && Math.abs(Math.floor(myID/game.dimension)-selectedLine)<=game.selectedRadius?k:1)
 
-    color:
-        thisrect.estate==="full"?
+    opacity: game.guessMode && thisrect.estate==="full"?0.25:1
+    color: thisrect.estate==="full"||thisrect.estate=="guess_full"?Theme.rgba(Theme.highlightColor, 0.6):Theme.rgba("black", 0.1)
+        /*thisrect.estate==="full"?
                Theme.rgba(Theme.highlightColor,0.6)
           :(game.selectedCol !==-1 && Math.abs(myID%game.dimension-game.selectedCol)<=game.selectedRadius)||(game.selectedLine!==-1 && Math.abs(Math.floor(myID/game.dimension)-selectedLine)<=game.selectedRadius)?
                 (game.selectedCol === -1)?
@@ -20,11 +21,11 @@ Rectangle {
                 :(game.selectedLine === -1)?
                         Theme.rgba("black", 0.2+0.2/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(myID%game.dimension-game.selectedCol)))
                 :Theme.rgba("black", 0.2+0.2/(game.selectedRadius+1)*(game.selectedRadius+1-Math.min(Math.abs(myID%game.dimension-game.selectedCol), Math.abs(Math.floor(myID/game.dimension)-game.selectedLine))))
-        :Qt.rgba(0, 0, 0, 0.1)
+        :Qt.rgba(0, 0, 0, 0.1)*/
 
     Canvas{
         id: canvas
-        opacity: (thisrect.estate==="hint")?0.6:0
+        opacity: thisrect.estate==="hint"?game.guessMode?0.15:0.6:thisrect.estate==="guess_hint"?0.6:0
         Behavior on opacity {NumberAnimation{duration: 100}}
         width: parent.width
         height: parent.height
@@ -58,7 +59,7 @@ Rectangle {
 
         }
         onClicked: {
-            Source.click(game.mySolvingGrid, index)
+            Source.click(game.mySolvingGrid, myID)
         }
     }
 }

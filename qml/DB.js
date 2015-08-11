@@ -8,8 +8,12 @@ function save(grid, diff, level){
             str+="0"
         else if(state==="full")
             str+="1"
-        else
+        else if (state==="hint")
             str+="2"
+        else if(state==="guess_full")
+            str+="3"
+        else
+            str+="4"
     }
     setSave(diff, level, str)
 }

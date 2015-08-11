@@ -12,27 +12,32 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="68"/>
+        <location filename="../qml/pages/MainPage.qml" line="278"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="76"/>
+        <location filename="../qml/pages/MainPage.qml" line="294"/>
         <source>Clear grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="80"/>
+        <location filename="../qml/pages/MainPage.qml" line="286"/>
+        <source>Guess mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="299"/>
         <source>New game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="101"/>
+        <location filename="../qml/pages/MainPage.qml" line="314"/>
         <source>Welcome to Picross</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="102"/>
+        <location filename="../qml/pages/MainPage.qml" line="315"/>
         <source>Please choose a level from the pulley menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40,12 +45,12 @@
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="120"/>
+        <location filename="../qml/pages/NewGame.qml" line="125"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="121"/>
+        <location filename="../qml/pages/NewGame.qml" line="126"/>
         <source>Complete all previous levels to unlock this difficulty</source>
         <translation type="unfinished"></translation>
     </message>
