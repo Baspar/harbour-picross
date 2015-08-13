@@ -214,11 +214,12 @@ Dialog{
 
         }
 
-        Component.onCompleted:{
-            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
-        }
     }
 
+
+    Component.onCompleted:{
+        mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
+    }
 
     onAccepted: {
         if(game.diff !== -1 && !Source.checkWin() && !Source.nothingDone())
