@@ -45,12 +45,12 @@
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="125"/>
+        <location filename="../qml/pages/NewGame.qml" line="128"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="126"/>
+        <location filename="../qml/pages/NewGame.qml" line="129"/>
         <source>Complete all previous levels to unlock this difficulty</source>
         <translation type="unfinished"></translation>
     </message>

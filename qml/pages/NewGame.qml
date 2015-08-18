@@ -13,6 +13,7 @@ Dialog{
     id: dialog
     canAccept: diffSelected!=-1
 
+    // Title: New game
     DialogHeader{
         id: pageTitle
         title: "New game"
@@ -22,6 +23,7 @@ Dialog{
         }
     }
 
+    // Difficulty list
     Column{
         id: decoratorTop
         anchors.top: pageTitle.bottom
@@ -69,6 +71,7 @@ Dialog{
         }
     }
 
+    // Level list
     SlideshowView{
         interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
         id: mySlideShowView
@@ -144,7 +147,7 @@ Dialog{
                             text:  (myLevel+1)+". "+(DB.isCompleted(myDiff, myLevel)?title:"?????")+ " - ["+dimension+"x"+dimension+"]"
                             x: Theme.paddingMedium
                             color: (listItem.highlighted|| (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
-                                                                     : Theme.primaryColor
+                                                                     : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
                         }
                         Label{
                             anchors.top: levelTitle.bottom
@@ -217,6 +220,7 @@ Dialog{
     }
 
 
+    // Load last diff
     Component.onCompleted:{
         mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
     }
