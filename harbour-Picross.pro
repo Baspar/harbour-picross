@@ -16,7 +16,8 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-Picross.cpp
 
-QT += sql
+QT += sql \
+        core
 
 
 OTHER_FILES += \

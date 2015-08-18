@@ -24,6 +24,9 @@ Rectangle {
         :Qt.rgba(0, 0, 0, 0.1)*/
 
     Canvas{
+        property bool appActive: game.applicationActive
+        onAppActiveChanged: requestPaint()
+
         id: canvas
         opacity: thisrect.estate==="hint"?game.guessMode?0.15:0.6:thisrect.estate==="guess_hint"?0.6:0
         Behavior on opacity {NumberAnimation{duration: 100}}
@@ -60,6 +63,7 @@ Rectangle {
         }
         onClicked: {
             Source.click(game.mySolvingGrid, myID)
+            Source.save()
         }
     }
 }

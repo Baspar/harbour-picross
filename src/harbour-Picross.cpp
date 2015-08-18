@@ -31,12 +31,14 @@
 #ifdef QT_QML_DEBUG
 #include <QtSql>
 #include <QtQuick>
+#include <QScopedPointer>
+#include <QGuiApplication>
 #endif
 
 #include <sailfishapp.h>
 
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     // SailfishApp::main() will display "qml/template.qml", if you need more
     // control over initialization, you can use:

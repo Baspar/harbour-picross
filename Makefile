@@ -861,6 +861,7 @@ harbour-Picross.o: src/harbour-Picross.cpp /usr/include/qt5/QtSql/QtSql \
 		/usr/include/qt5/QtQuick/qsgtextureprovider.h \
 		/usr/include/qt5/QtQuick/qsgvertexcolormaterial.h \
 		/usr/include/qt5/QtQuick/qtquickversion.h \
+		/usr/include/qt5/QtGui/QGuiApplication \
 		/usr/include/sailfishapp/sailfishapp.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o harbour-Picross.o src/harbour-Picross.cpp
 

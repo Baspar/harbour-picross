@@ -1,3 +1,4 @@
+.import "DB.js" as DB
 function initVoid(){
     game.guessMode=false
     game.mySolvingGrid.clear()
@@ -29,6 +30,11 @@ function loadSave(save){
     }
 }
 
+
+function save(){
+    if(game.diff !== -1 && !checkWin() && !nothingDone())
+        DB.save(game.mySolvingGrid, game.diff, game.level)
+}
 function click(grid, x){
     var str=grid.get(x).myEstate
     if(game.guessMode){
@@ -378,7 +384,12 @@ function nothingDone(){
             return false
     return true
 }
-
+function noGuessDone(){
+    for(var i=0; i<game.dimension*game.dimension; i++)
+        if(game.mySolvingGrid.get(i).myEstate==="guess_full" || game.mySolvingGrid.get(i).myEstate==="guess_hint")
+            return false
+    return true
+}
 
 function rejectGuesses(){
     for(var i=0; i<game.dimension*game.dimension; i++){

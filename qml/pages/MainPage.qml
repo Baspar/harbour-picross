@@ -77,8 +77,8 @@ Page {
     Repeater{
     model: selectedLine!==-1?game.indicLeft.get(selectedLine).loadedIndic:0
     Label{
-        color: game.indicLeft.get(selectedLine).toFill?"red":game.indicLeft.get(selectedLine).completed?"green":Theme.highlightColor
-        text: size
+    color: game.indicLeft.get(selectedLine).toFill?"red":game.indicLeft.get(selectedLine).completed?"green":Theme.highlightColor
+    text: size
     }
     }
     Rectangle{
@@ -122,7 +122,7 @@ Page {
         id: flickUp
         anchors.fill: parent
 
-        // Hidden controlers for guess mode
+        // Hidden controls for guess mode
         SilicaFlickable{
             clip:true
             contentHeight: pageHeader.height
@@ -135,12 +135,15 @@ Page {
                 width: page.width/2
                 height: pageHeader.height
                 x:0
-                onClicked: {
-                    remorseMain.execute("Accepting guesses", function(){
-                        Source.acceptGuesses()
-                        goDefault.start()
-                    }, 3000)
-                }
+                onClicked: if(Source.noGuessDone()){
+                           Source.acceptGuesses()
+                           goDefault.start()
+                       }else{
+                           remorseMain.execute("Accepting guesses", function(){
+                               Source.acceptGuesses()
+                               goDefault.start()
+                           }, 3000)
+                       }
             }
             MouseArea{
                 id: rightMouseArea
@@ -148,12 +151,15 @@ Page {
                 width: page.width/2
                 height: pageHeader.height
                 x: page.width/2
-                onClicked: {
-                    remorseMain.execute("Rejecting guesses", function(){
-                        Source.rejectGuesses()
-                        goDefault.start()
-                    }, 3000)
-                }
+                onClicked: if(Source.noGuessDone()){
+                           Source.rejectGuesses()
+                           goDefault.start()
+                       }else{
+                           remorseMain.execute("Rejecting guesses", function(){
+                               Source.rejectGuesses()
+                               goDefault.start()
+                           }, 3000)
+                       }
             }
 
             // Buttons accept/reject
@@ -172,23 +178,29 @@ Page {
                         id: acceptIcon
                         icon.source: "image://theme/icon-header-accept"
                         highlighted: leftMouseArea.pressed
-                        onClicked: {
-                            remorseMain.execute("Accepting guesses", function(){
-                                Source.acceptGuesses()
-                                goDefault.start()
-                            }, 3000)
-                        }
+                        onClicked: if(Source.noGuessDone()){
+                                   Source.acceptGuesses()
+                                   goDefault.start()
+                               }else{
+                                   remorseMain.execute("Accepting guesses", function(){
+                                       Source.acceptGuesses()
+                                       goDefault.start()
+                                   }, 3000)
+                               }
                     }
                     IconButton {
                         id: rejectIcon
                         icon.source: "image://theme/icon-header-cancel"
                         highlighted: rightMouseArea.pressed
-                        onClicked: {
-                            remorseMain.execute("Rejecting guesses", function(){
-                                Source.rejectGuesses()
-                                goDefault.start()
-                            }, 3000)
-                        }
+                        onClicked: if(Source.noGuessDone()){
+                                   Source.rejectGuesses()
+                                   goDefault.start()
+                               }else{
+                                   remorseMain.execute("Rejecting guesses", function(){
+                                       Source.rejectGuesses()
+                                       goDefault.start()
+                                   }, 3000)
+                               }
                     }
                     Label{
                         text: "Reject\nguesses"
@@ -416,7 +428,12 @@ Page {
                                                     color: "transparent"
                                                     MouseArea{
                                                         anchors.fill: parent
-                                                        onClicked: if(completed||toFill)Source.completeColX(index, toFill)
+                                                        onClicked: {
+                                                            if(completed||toFill){
+                                                                Source.completeColX(index, toFill)
+                                                                Source.save()
+                                                            }
+                                                        }
                                                         onPressAndHold:{
                                                             if(page.selectedCol === index)
                                                                 page.selectedCol = -1
@@ -458,6 +475,10 @@ Page {
                                                 }
                                             }
                                             Canvas{
+
+                                                property bool appActive: game.applicationActive
+                                                onAppActiveChanged: requestPaint()
+
                                                 id: topArrow
                                                 opacity: finalIndicUp.contentY!==0
                                                 Behavior on opacity {NumberAnimation{duration: 100}}
@@ -481,6 +502,9 @@ Page {
                                                 }
                                             }
                                             Canvas{
+                                                property bool appActive: game.applicationActive
+                                                onAppActiveChanged: requestPaint()
+
                                                 id: bottomArrow
                                                 opacity: finalIndicUp.contentY!==finalIndicUp.contentHeight-finalIndicUp.height
                                                 anchors.bottom: parent.bottom
@@ -501,6 +525,10 @@ Page {
                                                     ctx.closePath()
                                                     ctx.stroke()
                                                     ctx.fill()
+                                                }
+                                                onContextChanged: {
+                                                    if (!context) return;
+                                                    requestPaint();
                                                 }
                                             }
 
@@ -577,7 +605,12 @@ Page {
                                                     color: "transparent"
                                                     MouseArea{
                                                         anchors.fill: parent
-                                                        onClicked: if(completed||toFill)Source.completeLineX(index, toFill)
+                                                        onClicked:{
+                                                            if(completed||toFill){
+                                                                Source.completeLineX(index, toFill)
+                                                                Source.save()
+                                                            }
+                                                        }
                                                         onPressAndHold: page.selectedLine=index
                                                     }
                                                 }
@@ -637,6 +670,10 @@ Page {
                                                     ctx.stroke()
                                                     ctx.fill()
                                                 }
+                                                onContextChanged: {
+                                                    if (!context) return;
+                                                    requestPaint();
+                                                }
                                             }
                                             Canvas{
                                                 id: rightArrow
@@ -659,6 +696,10 @@ Page {
                                                     ctx.closePath()
                                                     ctx.stroke()
                                                     ctx.fill()
+                                                }
+                                                onContextChanged: {
+                                                    if (!context) return;
+                                                    requestPaint();
                                                 }
                                             }
                                         }

@@ -75,8 +75,9 @@ ApplicationWindow
         space = DB.getParameter("space")
     }
     Component.onDestruction: {
-        if(game.diff !== -1 && !Source.checkWin() && !Source.nothingDone())
-            DB.save(game.mySolvingGrid, game.diff, game.level)
+        Source.save()
+    }
+    onApplicationActiveChanged:{
     }
 
     onGridUpdated: {
