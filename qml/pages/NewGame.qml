@@ -16,7 +16,7 @@ Dialog{
     // Title: New game
     DialogHeader{
         id: pageTitle
-        title: "New game"
+        title: cheatMode?"Cheat...":"New game"
         MouseArea{
             anchors.fill: parent
             onPressAndHold: cheatMode = !cheatMode
@@ -158,9 +158,10 @@ Dialog{
                             color: Theme.secondaryColor
                         }
                         onClicked:{
-                            if(cheatMode)
+                            if(cheatMode){
                                 DB.setIsCompleted(myDiff, myLevel, 'true')
-                            else{
+                                reload()
+                            }else{
                                 if(diffSelected !== myDiff || levelSelected !== myLevel){
                                     diffSelected=myDiff
                                     levelSelected=myLevel
@@ -222,7 +223,8 @@ Dialog{
 
     // Load last diff
     Component.onCompleted:{
-        mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
+        if(!cheatMode)
+            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
     }
 
     onAccepted: {
@@ -234,5 +236,9 @@ Dialog{
         Levels.initSolvedGrid(game.solvedGrid, diffSelected, levelSelected)
 
         game.gridUpdated()
+    }
+
+    function reload(){
+        Levels.getDifficultiesAndLevels(difficultyList)
     }
 }
