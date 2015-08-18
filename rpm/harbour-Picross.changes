@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Aug 19 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.4-0
+- FIX: arrows and cross visible after app minimized
+- Real-time "cheat"
+- Some design modifications
+- FIX: New Game page positionned to the last unlocked difficulty
+- Levels added: 3 Easy, 1 Medium, 3 Hard
+
 * Tue Aug 11 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.3-0
 - Guess mode (Compatible with save)
 - Controls changed: 3 clicks cycle (Full->Hint->Void)
