@@ -92,6 +92,7 @@ Dialog{
                 anchors.topMargin: Theme.paddingSmall
                 anchors.fill: parent
                 spacing: Theme.paddingSmall
+                // Diff details
                 Item{
                     height: diffHeader.height
                     width: parent.width
@@ -107,6 +108,7 @@ Dialog{
                     }
                 }
 
+                // Separator
                 Rectangle{
                     id: separatorRect
                     width: parent.width
@@ -114,6 +116,7 @@ Dialog{
                     color: Theme.rgba(Theme.highlightColor, 0.2)
                 }
 
+                // Level list
                 SilicaListView{
                     clip: true
                     VerticalScrollDecorator{}
@@ -160,7 +163,9 @@ Dialog{
                         onClicked:{
                             if(cheatMode){
                                 DB.setIsCompleted(myDiff, myLevel, 'true')
-                                reload()
+                                levelTitle.text= (myLevel+1)+". "+(DB.isCompleted(myDiff, myLevel)?title:"?????")+ " - ["+dimension+"x"+dimension+"]"
+                                levelTitle.color= (listItem.highlighted|| (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
+                                                                     : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
                             }else{
                                 if(diffSelected !== myDiff || levelSelected !== myLevel){
                                     diffSelected=myDiff
@@ -212,12 +217,8 @@ Dialog{
                     }
 
                 }
-
             }
-
-
         }
-
     }
 
 
@@ -236,9 +237,5 @@ Dialog{
         Levels.initSolvedGrid(game.solvedGrid, diffSelected, levelSelected)
 
         game.gridUpdated()
-    }
-
-    function reload(){
-        Levels.getDifficultiesAndLevels(difficultyList)
     }
 }
