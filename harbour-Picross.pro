@@ -10,11 +10,12 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = harbour-Picross
+TARGET = harbour-picross
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-Picross.cpp
+SOURCES += \
+    src/harbour-picross.cpp
 
 QT += sql \
         core
@@ -35,13 +36,13 @@ OTHER_FILES += \
     qml/DB.js \
     qml/pages/Settings.qml \
     qml/pages/Rules.qml \
-    harbour-Picross.desktop \
-    harbour-Picross.png \
-    rpm/harbour-Picross.changes \
-    rpm/harbour-Picross.spec \
-    rpm/harbour-Picross.yaml \
-    qml/harbour-Picross.qml \
-    scripts/genPicross.sh
+    scripts/genPicross.sh \
+    rpm/harbour-picross.changes \
+    rpm/harbour-picross.spec \
+    rpm/harbour-picross.yaml \
+    harbour-picross.desktop \
+    harbour-picross.png \
+    qml/harbour-picross.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

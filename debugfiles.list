@@ -1,0 +1,8 @@
+%dir /usr/lib/debug
+%dir /usr/lib/debug/usr
+%dir /usr/lib/debug/usr/bin
+%dir /usr/lib/debug/.build-id
+%dir /usr/lib/debug/.build-id/26
+/usr/lib/debug/usr/bin/harbour-picross.debug
+/usr/lib/debug/.build-id/26/efc1edee0629fc27ce9c5e89469d6483796fa2
+/usr/lib/debug/.build-id/26/efc1edee0629fc27ce9c5e89469d6483796fa2.debug

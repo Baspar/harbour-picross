@@ -1640,6 +1640,21 @@ function getGrid(diffSelected, levelSelected){
     return gridTmp
 }
 
+function getNextDiff(){
+    for(var i=0; i<levels.length; i++)
+        for(var j=0; j<getNbLevel(i); j++)
+            if(!DB.isCompleted(i, j))
+                return i
+    return -1
+}
+function getNextLevel(){
+    for(var i=0; i<levels.length; i++)
+        for(var j=0; j<getNbLevel(i); j++)
+            if(!DB.isCompleted(i, j))
+                return j
+    return -1
+}
+
 
 function isLocked(diff){
     return (diff!==0 && DB.getNbCompletedLevel(diff-1)<getNbLevel(diff-1))

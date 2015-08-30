@@ -1,14 +1,22 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../DB.js" as DB
+import "../Levels.js" as Levels
 
 
-Page{
+Dialog{
     id: winPage
+    property int nextDiff: Levels.getNextDiff()
+    property int nextLevel: Levels.getNextLevel()
+
+    canAccept: nextLevel !== -1 && nextDiff !== -1
 
     Column{
         anchors.fill: parent
-        PageHeader{
+        DialogHeader{
             title: "Level completed!"
+            acceptText: "Next level ("+nextDiff+"-"+nextLevel+")"
+            cancelText: "Back"
         }
         SectionHeader{
             text: "Solution"
@@ -47,5 +55,14 @@ Page{
                 text: game.title
             }
         }
+    }
+    onAccepted: {
+        game.diff=nextDiff
+        game.level=nextLevel
+        game.save=DB.getSave(game.diff, game.level)
+
+        Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
+
+        game.gridUpdated()
     }
 }

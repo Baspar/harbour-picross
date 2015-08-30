@@ -1,4 +1,5 @@
 .import "DB.js" as DB
+
 function initVoid(){
     game.guessMode=false
     game.mySolvingGrid.clear()
@@ -195,26 +196,26 @@ function completeColX(x, toFill){
 
 }
 
-function specialCheckColX(x){
+function checkErrorColX(x){
     var indics=game.indicUp.get(x).loadedIndic
 
     for(var j=0; j<indics.count ; j++)
-        indics.setProperty(j, "isOk", 'false')
+        indics.setProperty(j, "isOk", false)
 
     var cpt=0
     var nbIndic=0
     var i=0
-    var exit='false'
+    var exit=false
 
-    while(i<game.dimension && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && exit!=='true'){
+    while(i<game.dimension && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && !exit){
         var state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
-                    indics.setProperty(nbIndic, "isOk", 'true')
+                    indics.setProperty(nbIndic, "isOk", true)
                     nbIndic++
                 } else {
-                    exit='true'
+                    exit=true
                 }
                 cpt=0
             }
@@ -223,20 +224,73 @@ function specialCheckColX(x){
         i++
     }
 
+    var lim=game.dimension-i-cpt
+
     cpt=0
     nbIndic=indics.count-1
     i=game.dimension-1
-    exit='false'
+    exit=false
 
-    while(i>=0 && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && exit!=='true'){
+    while(i>=lim && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && !exit){
         state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
-                    indics.setProperty(nbIndic, "isOk", 'true')
+                    indics.setProperty(nbIndic, "isOk", true)
                     nbIndic--
                 } else
-                    exit='true'
+                    exit=true
+                cpt=0
+            }
+        } else
+            cpt++
+        i--
+    }
+}
+function specialCheckColX(x){
+    var indics=game.indicUp.get(x).loadedIndic
+
+    for(var j=0; j<indics.count ; j++)
+        indics.setProperty(j, "isOk", false)
+
+    var cpt=0
+    var nbIndic=0
+    var i=0
+    var exit=false
+
+    while(i<game.dimension && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && !exit){
+        var state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
+        if(state==="hint" || state==="guess_hint"){
+            if(cpt!==0){
+                if(cpt===indics.get(nbIndic).size){
+                    indics.setProperty(nbIndic, "isOk", true)
+                    nbIndic++
+                } else {
+                    exit=true
+                }
+                cpt=0
+            }
+        } else
+            cpt++
+        i++
+    }
+
+    var lim=game.dimension-i-cpt
+
+    cpt=0
+    nbIndic=indics.count-1
+    i=game.dimension-1
+    exit=false
+
+    while(i>=lim && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && !exit){
+        state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
+        if(state==="hint" || state==="guess_hint"){
+            if(cpt!==0){
+                if(cpt===indics.get(nbIndic).size){
+                    indics.setProperty(nbIndic, "isOk", true)
+                    nbIndic--
+                } else
+                    exit=true
                 cpt=0
             }
         } else
@@ -248,22 +302,22 @@ function specialCheckLineX(x){
     var indics=game.indicLeft.get(x).loadedIndic
 
     for(var j=0; j<indics.count ; j++)
-        indics.setProperty(j, "isOk", 'false')
+        indics.setProperty(j, "isOk", false)
 
     var cpt=0
     var nbIndic=0
     var i=0
-    var exit='false'
+    var exit=false
 
-    while(i<game.dimension && game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && exit!=='true'){
+    while(i<game.dimension && game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && !exit){
         var state=game.mySolvingGrid.get(x*game.dimension+i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
-                    indics.setProperty(nbIndic, "isOk", 'true')
+                    indics.setProperty(nbIndic, "isOk", true)
                     nbIndic++
                 } else {
-                    exit='true'
+                    exit=true
                 }
                 cpt=0
             }
@@ -272,20 +326,23 @@ function specialCheckLineX(x){
         i++
     }
 
+
+    var lim=game.dimension-i-cpt
+
     cpt=0
     nbIndic=indics.count-1
     i=game.dimension-1
-    exit='false'
+    exit=false
 
-    while(i>=0 && game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && exit!=='true'){
+    while(i>=lim && game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && !exit){
         state=game.mySolvingGrid.get(x*game.dimension+i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
-                    indics.setProperty(nbIndic, "isOk", 'true')
+                    indics.setProperty(nbIndic, "isOk", true)
                     nbIndic--
                 } else
-                    exit='true'
+                    exit=true
                 cpt=0
             }
         } else
@@ -319,8 +376,10 @@ function checkColX(x){
     game.indicUp.setProperty(x, "completed", completed)
     game.indicUp.setProperty(x, "toFill", toFill)
 
-    if(!completed)
+    if(!completed){
+        checkErrorColX(x)
         specialCheckColX(x)
+    }
 }
 function checkLineX(x){
     var indics=game.indicLeft.get(x).loadedIndic
