@@ -15,7 +15,7 @@ Dialog{
         anchors.fill: parent
         DialogHeader{
             title: "Level completed!"
-            acceptText: "Next level ("+nextDiff+"-"+nextLevel+")"
+            acceptText: "Next level"
             cancelText: "Back"
         }
         SectionHeader{
@@ -46,14 +46,14 @@ Dialog{
                 }
             }
         }
-        Item{
+        Label{
             anchors.horizontalCenter: parent.horizontalCenter
-            height: winTitle.height
-            width: winTitle.width
-            Label{
-                id: winTitle
-                text: game.title
-            }
+            text: game.title
+        }
+        Label{
+            visible: nextLevel === -1 && nextDiff === -1
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Congratulations, you solve every level !"
         }
     }
     onAccepted: {

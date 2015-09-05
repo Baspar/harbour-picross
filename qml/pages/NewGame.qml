@@ -30,6 +30,7 @@ Dialog{
         width: dialog.width
         anchors.horizontalCenter: dialog.horizontalCenter
         SilicaListView{
+            id: silicaDiffList
             height: 40
             orientation: ListView.Horizontal
             width: parent.width
@@ -57,7 +58,7 @@ Dialog{
             y:40
             width: parent.width
             Rectangle{
-                x: parent.width/diffList.count*mySlideShowView.currentIndex
+                x: parent.width/diffList.count*mySlideShowView.currentIndex-silicaDiffList.contentY
                 height: Theme.paddingSmall
                 color: Theme.highlightColor
                 width: parent.width/diffList.count
@@ -229,8 +230,7 @@ Dialog{
     }
 
     onAccepted: {
-        if(game.diff !== -1 && !Source.checkWin() && !Source.nothingDone())
-            DB.save(game.mySolvingGrid, game.diff, game.level)
+        Source.save()
         game.diff=diffSelected
         game.level=levelSelected
         game.save=save

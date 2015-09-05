@@ -321,6 +321,7 @@ Page {
             width: parent.width
 
 
+            // Hint
             ViewPlaceholder {
                 enabled: (game.dimension===0)
                 text: qsTr("Welcome to Picross")
@@ -429,10 +430,8 @@ Page {
                                                     MouseArea{
                                                         anchors.fill: parent
                                                         onClicked: {
-                                                            if(completed||toFill){
+                                                            if(completed||toFill)
                                                                 Source.completeColX(index, toFill)
-                                                                Source.save()
-                                                            }
                                                         }
                                                         onPressAndHold:{
                                                             if(page.selectedCol === index)
@@ -463,7 +462,7 @@ Page {
                                                                 anchors.centerIn: parent
                                                                 id: myLabelIndicUp
                                                                 text: size
-                                                                color: isOk==='true'?"green":toFill?"orange":completed?"green":Theme.highlightColor
+                                                                color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
                                                                 font.pixelSize: 14
                                                             }
                                                         }
@@ -606,10 +605,8 @@ Page {
                                                     MouseArea{
                                                         anchors.fill: parent
                                                         onClicked:{
-                                                            if(completed||toFill){
+                                                            if(completed||toFill)
                                                                 Source.completeLineX(index, toFill)
-                                                                Source.save()
-                                                            }
                                                         }
                                                         onPressAndHold: page.selectedLine=index
                                                     }
@@ -637,7 +634,7 @@ Page {
                                                                 anchors.centerIn: parent
                                                                 id: myLabelIndicLeft
                                                                 text: model.size
-                                                                color: isOk==='true'?"green":toFill?"orange":completed?"green":Theme.highlightColor
+                                                                color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
                                                                 font.pixelSize: 14
                                                             }
                                                         }

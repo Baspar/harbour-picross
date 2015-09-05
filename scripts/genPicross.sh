@@ -19,9 +19,9 @@ then
     exit 2
 fi
 
-if [ $dim -gt 20 ] || [ $dim -lt 3 ]
+if [ $dim -gt 25 ] || [ $dim -lt 3 ]
 then
-    echo "Please enter a dimension between 3 and 20 (included)"
+    echo "Please enter a dimension between 3 and 25 (included)"
     exit 1
 fi
 
@@ -85,7 +85,7 @@ echo ""
 echo ""
 
 # Read difficulty
-echo -n "Difficulty [0=Tutorial, 1=Easy, 2=Medium, 3=Hard, 4=Expert]: "
+echo -n "Difficulty [0=Tutorial, 1=Easy, 2=Medium, 3=Hard, 4=Expert, 5=Insane]: "
 read difficulty
 diff=$(echo $difficulty| sed 's/[^0-9]*//g')
 if [[ $diff == "" ]]
@@ -93,7 +93,7 @@ then
     echo "\"$difficulty\" does not contains any number"
     exit 2
 fi
-if [ $diff -gt 4 ] || [ $diff -lt 0 ]
+if [ $diff -gt 5 ] || [ $diff -lt 0 ]
 then
     echo "Please enter a number between 0 and 4 (included)"
     exit 1

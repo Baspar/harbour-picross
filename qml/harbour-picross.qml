@@ -78,6 +78,8 @@ ApplicationWindow
         Source.save()
     }
     onApplicationActiveChanged:{
+        if(!applicationActive)
+            Source.save()
     }
 
     onGridUpdated: {
@@ -97,8 +99,8 @@ ApplicationWindow
     }
 
     onWin: {
-        pageStack.push(Qt.resolvedUrl("pages/WinPage.qml"))
         DB.setIsCompleted(diff, level, 'true')
         DB.eraseSave(diff, level)
+        pageStack.push(Qt.resolvedUrl("pages/WinPage.qml"))
     }
 }
