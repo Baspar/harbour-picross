@@ -43,11 +43,11 @@ do
     # Read line ( Re-read if size != dimension or if it contains other characters than 0 or 1)
     echo -n "$i: "
     read line
-    while [ $(echo $line | wc -c) -ne $((dim+1)) ]||[ $(echo $line | sed 's/[01]//g' | wc -c) -ne 1 ]
+    while [ $(echo $line | wc -c) -ne $((dim+1)) ]||[ $(echo $line | sed 's/[01io]//g' | wc -c) -ne 1 ]
     do
-        if [ $(echo $line | sed 's/[01]//g' | wc -c) -ne 1 ]
+        if [ $(echo $line | sed 's/[01io]//g' | wc -c) -ne 1 ]
         then
-            echo 'Your line can only have 2 characters : 0(void) or 1(full)'
+            echo 'Your line can only have 4 characters : 0/o(void) or 1/i(full)'
         else
             echo "Wrong line size ($(echo $line | head -c -1| wc -c)), you must enter a line whose size is $dim"
         fi
@@ -55,12 +55,12 @@ do
         read line
     done
 
-    drawing+=$(echo $line | sed "s/0/./g; s/1/#/g")
+    drawing+=$(echo $line | sed "s/0/../g; s/1/##/g")
     drawing+="
 "
 
     # We add comma between every number
-    line=$(echo $line | sed 's/\(.\)/\1, /g' | head -c -2)
+    line=$(echo $line | sed 's/i/1/g; s/o/0/g; s/\(.\)/\1, /g' | head -c -2)
 
     # If last line, remove last comma
     if [ $i -eq $dim ]
