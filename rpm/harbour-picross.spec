@@ -12,8 +12,8 @@ Name:       harbour-picross
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    harbour-picross
-Version:    1.4
+Summary:    Picross
+Version:    1.5
 Release:    0
 Group:      Qt/Qt
 License:    LICENSE

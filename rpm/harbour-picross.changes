@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Sep 6 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.5-0
+- FEATURE: Best time
+- FEATURE: "Next level" button on WinPage
+- FEATURE: New difficulty, Insane (25x25 levels)
+- FIX: Wrong coloring for headers (Bug #2 on GitHub)
+- Levels added: 1 Easy, 1 Medium, 2 Expert, 1 Hard, 6 Insane
+
 * Mon Aug 19 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.4-0
 - FIX: arrows and cross visible after app minimized
 - Real-time "cheat"
