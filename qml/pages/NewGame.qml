@@ -19,7 +19,7 @@ Dialog{
         title: cheatMode?"Cheat...":"New game"
         MouseArea{
             anchors.fill: parent
-            onPressAndHold: cheatMode = !cheatMode
+//            onPressAndHold: cheatMode = !cheatMode
         }
     }
 
