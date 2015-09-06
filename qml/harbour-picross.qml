@@ -37,6 +37,15 @@ import "DB.js" as DB
 
 ApplicationWindow
 {
+
+    Timer{
+        id: myTimer
+        repeat: true
+        onTriggered: if(!won && !pause)game.time++
+
+        Component.onCompleted: myTimer.start()
+    }
+
     id: game
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
@@ -48,12 +57,17 @@ ApplicationWindow
     property int level: -1
     property int diff: -1
 
+    property int time: 0
+
     property int selectedRadius: 2
     property int selectedCol: -1
     property int selectedLine: -1
     property int nbSelectedCols : (game.selectedCol===-1?0:1+Math.min(game.selectedRadius, game.selectedCol)+Math.min(game.selectedRadius, game.dimension-1-game.selectedCol))
     property int nbSelectedLines : (game.selectedLine===-1?0:1+Math.min(game.selectedRadius, game.selectedLine)+Math.min(game.selectedRadius, game.dimension-1-game.selectedLine))
+
     property bool guessMode: false
+    property bool won: false
+    property bool pause: false
 
 
     property int dimension: 0
@@ -78,29 +92,42 @@ ApplicationWindow
         Source.save()
     }
     onApplicationActiveChanged:{
-        if(!applicationActive)
+        if(!applicationActive){
             Source.save()
+            game.pause=true
+        } else {
+            if(pageStack.depth === 1)
+                game.pause=false
+        }
     }
 
     onGridUpdated: {
+        won=false
         Source.genIndicCol(game.indicUp, game.solvedGrid)
         Source.genIndicLine(game.indicLeft, game.solvedGrid)
-        if(save!=="")
+        if(save!==""){
             Source.loadSave(save)
-        else
+            game.time=DB.getSavedTime(diff, level)
+        } else {
             Source.initVoid(game.mySolvingGrid)
+            game.time=0
+        }
+        pause=false
         selectedCol=-1
         selectedLine=-1
     }
 
     onCheckWin: {
-        if(Source.checkWin())
+        if(!won && Source.checkWin())
             win()
     }
 
     onWin: {
+        game.won=true
         DB.setIsCompleted(diff, level, 'true')
         DB.eraseSave(diff, level)
+        if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > game.time)
+            DB.setTime(diff, level, game.time)
         pageStack.push(Qt.resolvedUrl("pages/WinPage.qml"))
     }
 }

@@ -289,6 +289,7 @@ Page {
                 id: menuSettings
                 text: qsTr("Settings")
                 onClicked: {
+                    game.pause=true
                     pageStack.push(Qt.resolvedUrl("Settings.qml"))
                 }
             }
@@ -310,6 +311,7 @@ Page {
                 id: menuNewGame
                 text: qsTr("New game")
                 onClicked: {
+                    game.pause=true
                     pageStack.push(Qt.resolvedUrl("NewGame.qml"))
                 }
             }

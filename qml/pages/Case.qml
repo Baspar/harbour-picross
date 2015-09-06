@@ -62,8 +62,8 @@ Rectangle {
 
         }
         onClicked: {
-            Source.click(game.mySolvingGrid, myID)
-            Source.save()
+            if(!game.won)
+                Source.click(game.mySolvingGrid, myID)
         }
     }
 }

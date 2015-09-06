@@ -33,8 +33,10 @@ function loadSave(save){
 
 
 function save(){
-    if(game.diff !== -1 && !checkWin() && !nothingDone())
+    if(game.diff !== -1 && !game.won && !nothingDone()){
         DB.save(game.mySolvingGrid, game.diff, game.level)
+        DB.setSavedTime(game.diff, game.level, game.time)
+    }
 }
 function click(grid, x){
     var str=grid.get(x).myEstate

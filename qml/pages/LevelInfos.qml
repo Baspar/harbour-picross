@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Levels.js" as Levels
+import "../DB.js" as DB
 
 
 
@@ -81,6 +82,17 @@ Page{
                 id: infoHintTitle
                 text: hintTitle
             }
+        }
+        Label{
+            anchors.topMargin: Theme.paddingLarge
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: Theme.highlightColor
+            text: "Best time:"
+        }
+        Label{
+            property int time : DB.getTime(diffSelected, levelSelected)
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: time===0?"xx:xx:xx":Math.floor(time/3600)%216000+":"+Math.floor(time/60)%3600+":"+time%60
         }
     }
 }

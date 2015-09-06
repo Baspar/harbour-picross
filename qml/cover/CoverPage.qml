@@ -33,6 +33,11 @@ import Sailfish.Silica 1.0
 import "../pages"
 
 CoverBackground {
+    Label{
+        visible: game.dimension !== 0
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: Math.floor(game.time/3600)%216000+":"+Math.floor(game.time/60)%3600+":"+game.time%60
+    }
     Rectangle {
 
         transform: [Rotation {angle: 33}, Scale { xScale: 2; yScale: 2}, Translate {x: width/3; y: width/5}]
@@ -101,6 +106,7 @@ CoverBackground {
                     game.activate()
                 }
                 pageStack.push(Qt.resolvedUrl("../pages/NewGame.qml"))
+                game.pause=true
             }
         }
     }

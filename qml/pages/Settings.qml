@@ -76,4 +76,7 @@ Page{
             }
         }
     }
+    Component.onDestruction:{
+        game.pause=false
+    }
 }

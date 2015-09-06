@@ -238,4 +238,7 @@ Dialog{
 
         game.gridUpdated()
     }
+    onRejected: {
+        game.pause=false
+    }
 }

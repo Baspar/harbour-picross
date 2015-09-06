@@ -51,8 +51,21 @@ Dialog{
             text: game.title
         }
         Label{
-            visible: nextLevel === -1 && nextDiff === -1
+            anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
+            color: Theme.highlightColor
+            text: "Best time:"
+        }
+        Label{
+            property int time : DB.getTime(game.diff, game.level)
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: time===0?"xx:xx:xx":Math.floor(time/3600)%216000+":"+Math.floor(time/60)%3600+":"+time%60
+        }
+        Label{
+            visible: nextLevel === -1 && nextDiff === -1
+            anchors.topMargin: Theme.paddingLarge
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: Theme.highlightColor
             text: "Congratulations, you solve every level !"
         }
     }
