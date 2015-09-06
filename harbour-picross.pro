@@ -42,7 +42,8 @@ OTHER_FILES += \
     rpm/harbour-picross.yaml \
     harbour-picross.desktop \
     harbour-picross.png \
-    qml/harbour-picross.qml
+    qml/harbour-picross.qml \
+    qml/pages/WholeGrid.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
