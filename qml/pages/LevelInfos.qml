@@ -92,7 +92,7 @@ Page{
         Label{
             property int time : DB.getTime(diffSelected, levelSelected)
             anchors.horizontalCenter: parent.horizontalCenter
-            text: time===0?"xx:xx:xx":Math.floor(time/3600)%216000+":"+Math.floor(time/60)%3600+":"+time%60
+            text: time===0?"xx:xx:xx":new Date(null, null, null, null, null, time).toTimeString().match(/\d{2}:\d{2}:\d{2}/)[0]
         }
     }
 }
