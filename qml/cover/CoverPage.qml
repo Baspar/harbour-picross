@@ -36,7 +36,7 @@ CoverBackground {
     Label{
         visible: game.dimension !== 0
         anchors.horizontalCenter: parent.horizontalCenter
-        text: Math.floor(game.time/3600)%216000+":"+Math.floor(game.time/60)%3600+":"+game.time%60
+        text: new Date(null, null, null, null, null, game.time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
     }
     Rectangle {
 
