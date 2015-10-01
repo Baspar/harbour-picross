@@ -279,7 +279,7 @@ Page {
             PageHeader {
                 id: pageHeader
                 title: game.hintTitle===""?"Picross":game.hintTitle
-                description: game.dimension===0?"":game.dimension+"x"+game.dimension//+" - "+game.nbSolvingFullCell+"/"+game.nbSolvedFullCell
+                //description: game.dimension===0?"":game.dimension+"x"+game.dimension//+" - "+game.nbSolvingFullCell+"/"+game.nbSolvedFullCell
             }
         }
 
@@ -314,6 +314,11 @@ Page {
                     game.pause=true
                     pageStack.push(Qt.resolvedUrl("NewGame.qml"))
                 }
+            }
+            MenuLabel {
+                visible: game.dimension !== 0
+                id: dimension
+                text: game.dimension
             }
         }
 
