@@ -66,6 +66,7 @@ Item{
             height: 100
             x:100
             y:0
+            //Horizontal part
             SilicaFlickable{
                 clip: true
                 width: parent.width
@@ -81,6 +82,7 @@ Item{
                     Repeater{
                         model: game.indicUp
                         Row{
+                            //Vertical part
                             Rectangle{
                                 id: indicRectangleUp
                                 width: (flick.contentWidth-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedCols *(2-1))   *(game.selectedCol !==-1 && Math.abs(index-game.selectedCol)<=game.selectedRadius?2:1)
@@ -89,29 +91,39 @@ Item{
                                            Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedCol)))
                                          :"transparent"
 
+
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: {
+                                    if(completed||toFill)
+                                        Source.completeColX(index, toFill)
+                                    }
+                                    onPressAndHold:{
+                                    if(page.selectedCol === index)
+                                        page.selectedCol = -1
+                                    else
+                                        page.selectedCol = index
+                                    }
+                                }
                                 SilicaFlickable{
                                     id: finalIndicUp
-                                    height: parent.height-2*outsideBorderSize
+                                    y: outsideBorderSize+Math.max(0, parent.height-2*outsideBorderSize-myIndicUp.height)
+                                    height: Math.min(parent.height-2*outsideBorderSize, myIndicUp.height)
                                     width: parent.width
                                     contentHeight: myIndicUp.height
-                                    y: outsideBorderSize
                                     clip: true
 
-                                    Rectangle{
-                                        anchors.fill:parent
-                                        color: "transparent"
-                                        MouseArea{
-                                            anchors.fill: parent
-                                            onClicked: {
-                                                if(completed||toFill)
-                                                    Source.completeColX(index, toFill)
-                                            }
-                                            onPressAndHold:{
-                                                if(page.selectedCol === index)
-                                                    page.selectedCol = -1
-                                                else
-                                                    page.selectedCol = index
-                                            }
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        onClicked: {
+                                        if(completed||toFill)
+                                        Source.completeColX(index, toFill)
+                                        }
+                                        onPressAndHold:{
+                                        if(page.selectedCol === index)
+                                        page.selectedCol = -1
+                                        else
+                                        page.selectedCol = index
                                         }
                                     }
 
@@ -119,12 +131,6 @@ Item{
                                     Column{
                                         id: myIndicUp
 
-                                        Rectangle{
-                                            id: adjustUp
-                                            color: "transparent"
-                                            height: 0
-                                            width: indicRectangleUp.width
-                                        }
                                         // Indicator
                                         Repeater{
                                             model: loadedIndic
@@ -136,13 +142,9 @@ Item{
                                                     id: myLabelIndicUp
                                                     text: size
                                                     color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
-                                                    font.pixelSize: 14
+                                                    font.pixelSize: 14*game.zoom
                                                 }
                                             }
-                                        }
-
-                                        Component.onCompleted: {
-                                            if(myIndicUp.height<finalIndicUp.height){adjustUp.height=finalIndicUp.height-myIndicUp.height}
                                         }
                                     }
                                 }
@@ -152,7 +154,7 @@ Item{
                                     onAppActiveChanged: requestPaint()
 
                                     id: topArrow
-                                    opacity: finalIndicUp.contentY!==0
+                                    opacity: finalIndicUp.atYBeginning?0:1
                                     Behavior on opacity {NumberAnimation{duration: 100}}
                                     anchors.top: parent.top
                                     anchors.horizontalCenter: parent.horizontalCenter
@@ -178,7 +180,7 @@ Item{
                                     onAppActiveChanged: requestPaint()
 
                                     id: bottomArrow
-                                    opacity: finalIndicUp.contentY!==finalIndicUp.contentHeight-finalIndicUp.height
+                                    opacity: finalIndicUp.atYEnd?0:1
                                     anchors.bottom: parent.bottom
                                     anchors.horizontalCenter: parent.horizontalCenter
                                     Behavior on opacity {NumberAnimation{duration: 100}}
@@ -203,12 +205,11 @@ Item{
                                         requestPaint();
                                     }
                                 }
-
                             }
                             Rectangle{
                                 y:outsideBorderSize
                                 width: insideBorderSize
-                                height: finalIndicUp.height
+                                height: indicUpFlick.height-2*outsideBorderSize
                                 color: Theme.highlightColor
                                 opacity: 0.1
                             }
@@ -243,6 +244,7 @@ Item{
             height: Math.min(game.zoom*(gridPartRectangle.width-100-10), gridPartRectangle.height-100-10)
             width: 100
             y:100
+            //Vertical part
             SilicaFlickable{
                 clip:true
                 width: parent.width
@@ -258,6 +260,7 @@ Item{
                     Repeater{
                         model: game.indicLeft
                         Column{
+                            //Vertical part
                             Rectangle{
                                 id: indicRectangleLeft
                                 height: (flick.contentHeight-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedLines*(2-1))   *(game.selectedLine!==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius?2:1)
@@ -265,37 +268,33 @@ Item{
                                 color:(game.selectedLine !==-1 && Math.abs(index-game.selectedLine)<=game.selectedRadius)?
                                           Theme.rgba("black", 0.3/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(index-game.selectedLine)))
                                         :"transparent"
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked:{
+                                    if(completed||toFill)
+                                        Source.completeLineX(index, toFill)
+                                    }
+                                    onPressAndHold: page.selectedLine=index
+                                }
                                 SilicaFlickable{
                                     id: finalIndicLeft
                                     height: parent.height
-                                    width: parent.width-2*outsideBorderSize
-                                    x: outsideBorderSize
+                                    width: Math.min(parent.width-2*outsideBorderSize, myIndicLeft.width)
+                                    x: outsideBorderSize+Math.max(0, parent.width-2*outsideBorderSize-myIndicLeft.width)
                                     contentWidth: myIndicLeft.width
                                     clip: true
-                                    Rectangle{
-                                        anchors.fill:parent
-                                        color: "transparent"
-                                        MouseArea{
-                                            anchors.fill: parent
-                                            onClicked:{
-                                                if(completed||toFill)
-                                                    Source.completeLineX(index, toFill)
-                                            }
-                                            onPressAndHold: page.selectedLine=index
-                                        }
-                                    }
 
+                                    MouseArea{
+                                        anchors.fill: parent
+                                        onClicked:{
+                                    if(completed||toFill)
+                                    Source.completeLineX(index, toFill)
+                                    }
+                                        onPressAndHold: page.selectedLine=index
+                                    }
                                     Row{
                                         id: myIndicLeft
                                         spacing: insideBorderSize
-
-
-                                        Rectangle{
-                                            id: adjustLeft
-                                            color: "transparent"
-                                            width: 0
-                                            height: indicRectangleLeft.height
-                                        }
 
                                         // Indicators
                                         Repeater{
@@ -308,19 +307,18 @@ Item{
                                                     id: myLabelIndicLeft
                                                     text: model.size
                                                     color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
-                                                    font.pixelSize: 14
+                                                    font.pixelSize: 14*game.zoom
                                                 }
                                             }
-                                        }
-
-                                        Component.onCompleted: {
-                                            if(myIndicLeft.width+insideBorderSize<finalIndicLeft.width){adjustLeft.width=finalIndicLeft.width-myIndicLeft.width-insideBorderSize}
                                         }
                                     }
                                 }
                                 Canvas{
+                                    property bool appActive: game.applicationActive
+                                    onAppActiveChanged: requestPaint()
+
                                     id: leftArrow
-                                    opacity: finalIndicLeft.contentX!==0
+                                    opacity: finalIndicLeft.atXBeginning?0:1
                                     Behavior on opacity {NumberAnimation{duration: 100}}
                                     anchors.left: parent.left
                                     anchors.verticalCenter: parent.verticalCenter
@@ -340,14 +338,13 @@ Item{
                                         ctx.stroke()
                                         ctx.fill()
                                     }
-                                    onContextChanged: {
-                                        if (!context) return;
-                                        requestPaint();
-                                    }
                                 }
                                 Canvas{
+                                    property bool appActive: game.applicationActive
+                                    onAppActiveChanged: requestPaint()
+
                                     id: rightArrow
-                                    opacity: finalIndicLeft.contentX!==Math.floor(finalIndicLeft.contentWidth)-finalIndicLeft.width
+                                    opacity: finalIndicLeft.atXEnd?0:1
                                     Behavior on opacity {NumberAnimation{duration: 100}}
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -367,15 +364,11 @@ Item{
                                         ctx.stroke()
                                         ctx.fill()
                                     }
-                                    onContextChanged: {
-                                        if (!context) return;
-                                        requestPaint();
-                                    }
                                 }
                             }
                             Rectangle{
                                 height: insideBorderSize
-                                width: finalIndicLeft.width
+                                width: indicLeftFlick.width-2*outsideBorderSize
                                 x: outsideBorderSize
                                 color: Theme.highlightColor
                                 opacity: 0.1
