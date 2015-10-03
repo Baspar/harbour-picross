@@ -287,8 +287,12 @@ Page {
                         }
 
                         PageHeader {
+                                property string titleCpy: game.title
                                 id: pageHeader
-                                title: game.hintTitle===""?"Picross":"Dimension: "+game.dimension+"x"+game.dimension
+                                title: "Picross"
+                                onTitleCpyChanged:{
+                                    pageHeader.title="Dimension: "+game.dimension+"x"+game.dimension
+                                }
                                 onTitleChanged:{
                                     var myreg=/Dimension: .*/
                                     if(myreg.test(pageHeader.title))

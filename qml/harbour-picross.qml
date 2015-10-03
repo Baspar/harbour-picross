@@ -74,6 +74,7 @@ ApplicationWindow
     property real zoom: 1
     property string hintTitle: ""
     property string title: ""
+
     property ListModel mySolvingGrid:ListModel{}
     property ListModel solvedGrid: ListModel{}
     property ListModel indicUp: ListModel{}
