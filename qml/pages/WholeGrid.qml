@@ -7,6 +7,7 @@ import "../DB.js" as DB
 Item{
     visible: (game.dimension!==0)
     id: gridPartRectangle
+    property int sizeIndic: page.width/4
 
     //Decorations
     Item{
@@ -14,15 +15,15 @@ Item{
         // Decorations top-left corner of the grid
         Item{
             Rectangle{
-                x:90
+                x:sizeIndic-10
                 width:10
-                height:100
+                height:sizeIndic
                 color: Theme.highlightColor
                 opacity:0.3
             }
             Rectangle{
-                y:90
-                width:90
+                y:sizeIndic-10
+                width:sizeIndic-10
                 height:10
                 color: Theme.highlightColor
                 opacity:0.3
@@ -53,18 +54,18 @@ Item{
     Item{
         Rectangle{
             id: topLineIndicUp
-            x:100
+            x:sizeIndic
             y:0
             height:10
-            width: gridPartRectangle.width-100-10
+            width: gridPartRectangle.width-sizeIndic-10
             color: Theme.highlightColor
             opacity:0.3
         }
         Item{
             id: indicUp
-            width: gridPartRectangle.width-100-10
-            height: 100
-            x:100
+            width: gridPartRectangle.width-sizeIndic-10
+            height: sizeIndic
+            x:sizeIndic
             y:0
             //Horizontal part
             SilicaFlickable{
@@ -142,7 +143,7 @@ Item{
                                                     id: myLabelIndicUp
                                                     text: size
                                                     color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
-                                                    font.pixelSize: 14*game.zoom
+                                                    font.pixelSize: 0.9*finalIndicUp.width*game.zoom
                                                 }
                                             }
                                         }
@@ -220,10 +221,10 @@ Item{
         }
         Rectangle{
             id: bottomLineIndicUp
-            x:100
-            y:90
+            x:sizeIndic
+            y:sizeIndic-10
             height:10
-            width: gridPartRectangle.width-100-10
+            width: gridPartRectangle.width-sizeIndic-10
             color: Theme.highlightColor
             opacity:0.3
         }
@@ -233,17 +234,17 @@ Item{
         Rectangle{
             id: leftLineIndicLeft
             x:0
-            y:100
-            height: Math.min(game.zoom*(gridPartRectangle.width-100-10), gridPartRectangle.height-100-10)
+            y:sizeIndic
+            height: Math.min(game.zoom*(gridPartRectangle.width-sizeIndic-10), gridPartRectangle.height-sizeIndic-10)
             width: 10
             color: Theme.highlightColor
             opacity:0.3
         }
         Item{
             id: indicLeft
-            height: Math.min(game.zoom*(gridPartRectangle.width-100-10), gridPartRectangle.height-100-10)
-            width: 100
-            y:100
+            height: Math.min(game.zoom*(gridPartRectangle.width-sizeIndic-10), gridPartRectangle.height-sizeIndic-10)
+            width: sizeIndic
+            y:sizeIndic
             //Vertical part
             SilicaFlickable{
                 clip:true
@@ -307,7 +308,7 @@ Item{
                                                     id: myLabelIndicLeft
                                                     text: model.size
                                                     color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
-                                                    font.pixelSize: 14*game.zoom
+                                                    font.pixelSize: 0.9*finalIndicLeft.height*game.zoom
                                                 }
                                             }
                                         }
@@ -319,7 +320,7 @@ Item{
 
                                     id: leftArrow
                                     opacity: finalIndicLeft.atXBeginning?0:1
-                                    Behavior on opacity {NumberAnimation{duration: 100}}
+                                    Behavior on opacity {NumberAnimation{duration: sizeIndic}}
                                     anchors.left: parent.left
                                     anchors.verticalCenter: parent.verticalCenter
                                     height: parent.height/2
@@ -345,7 +346,7 @@ Item{
 
                                     id: rightArrow
                                     opacity: finalIndicLeft.atXEnd?0:1
-                                    Behavior on opacity {NumberAnimation{duration: 100}}
+                                    Behavior on opacity {NumberAnimation{duration: sizeIndic}}
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
                                     height: parent.height/2
@@ -380,9 +381,9 @@ Item{
         }
         Rectangle{
             id: rightLineIndicLeft
-            x:100-10
-            y:100
-            height: Math.min(game.zoom*(gridPartRectangle.width-100-10), gridPartRectangle.height-100-10)
+            x:sizeIndic-10
+            y:sizeIndic
+            height: Math.min(game.zoom*(gridPartRectangle.width-sizeIndic-10), gridPartRectangle.height-sizeIndic-10)
             width: 10
             color: Theme.highlightColor
             opacity:0.3
@@ -391,10 +392,10 @@ Item{
     // Grid
     Item{
         id: grid
-        y:100
-        x:100
-        width: gridPartRectangle.width-100-10
-        height: Math.min(game.zoom*(gridPartRectangle.width-100-10), gridPartRectangle.height-100-10)
+        y:sizeIndic
+        x:sizeIndic
+        width: gridPartRectangle.width-sizeIndic-10
+        height: Math.min(game.zoom*(gridPartRectangle.width-sizeIndic-10), gridPartRectangle.height-sizeIndic-10)
         SilicaFlickable {
             clip:true
             anchors.fill:parent

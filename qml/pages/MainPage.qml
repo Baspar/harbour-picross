@@ -67,8 +67,8 @@ Page {
     Row{
     spacing: 2
     x: 0
-    y: pageHeader.height+100+ selectedLine*(page.width-outsideBorderSize-100+insideBorderSize)/game.dimension*game.zoom-flick.contentY
-    height: ((page.width-outsideBorderSize-100+insideBorderSize)/game.dimension-insideBorderSize)*game.zoom
+    y: pageHeader.height+sizeIndic+ selectedLine*(page.width-outsideBorderSize-sizeIndic+insideBorderSize)/game.dimension*game.zoom-flick.contentY
+    height: ((page.width-outsideBorderSize-sizeIndic+insideBorderSize)/game.dimension-insideBorderSize)*game.zoom
     Rectangle{
     color: Theme.rgba(Theme.highlightColor, 0.3)
     height: parent.height

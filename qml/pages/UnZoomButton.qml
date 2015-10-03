@@ -9,14 +9,14 @@ Item{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1)
-                    game.zoom=(page.height-pageHeader.height-100-outsideBorderSize)/(page.width-100-outsideBorderSize)
+                    game.zoom=(page.height-pageHeader.height-sizeIndic-outsideBorderSize)/(page.width-sizeIndic-outsideBorderSize)
                 else
                     game.zoom=1
             }
         }
 
-        width: 100 - 30
-        height: 100 - 30
+        width: sizeIndic - 30
+        height: sizeIndic - 30
         x: outsideBorderSize
         y: x
         color: Qt.rgba(0, 0, 0, 0)
