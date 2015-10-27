@@ -149,7 +149,7 @@ function genIndicLine(list, grid){
 
         smallList.clear()
         genIndicLineX(smallList, grid, i)
-        list.append({"loadedIndic":smallList, "completed":false, "toFill":false})
+        list.append({"loadedIndic":smallList, "completed":false, "toFill":false, "hasError":false})
     }
 }
 function genIndicCol(list, grid){
@@ -161,7 +161,7 @@ function genIndicCol(list, grid){
 
         smallList.clear()
         genIndicColX(smallList, grid, i)
-        list.append({"loadedIndic":smallList, "completed":false, "toFill":false})
+        list.append({"loadedIndic":smallList, "completed":false, "toFill":false, "hasError":false})
     }
 }
 
@@ -308,6 +308,7 @@ function checkColX(x){
     //Variables
     var completed=(progress.count===indics.count)
     var toFill=false
+    var hasError=false
 
     //Check if we can fill with crosses (i.e. ours indicators correspond)
     for(var i=0; i<progress.count; i++)
@@ -321,11 +322,21 @@ function checkColX(x){
             toFill=toFill&&(progress.get(i).size===indics.get(i).size)
     }
 
+    //Check if Col is full => error
+    if(!completed && !toFill){
+        hasError=true
+        for(i=0; i<game.dimension; i++)
+            if(game.mySolvingGrid.get(x+game.dimension*i).myEstate === "void")
+                hasError=false
+    }
+
+    //Last case, special check
+    if(!completed && !toFill && !hasError)
+        specialCheckColX(x)
+
     game.indicUp.setProperty(x, "completed", completed)
     game.indicUp.setProperty(x, "toFill", toFill)
-
-    if(!completed)
-        specialCheckColX(x)
+    game.indicUp.setProperty(x, "hasError", hasError)
 }
 function checkLineX(x){
     var indics=game.indicLeft.get(x).loadedIndic
@@ -336,6 +347,7 @@ function checkLineX(x){
     //Variables
     var completed=(progress.count===indics.count)
     var toFill=false
+    var hasError=false
 
     //Check if we can fill with crosses (i.e. ours indicators correspond)
     for(var i=0; i<progress.count; i++)
@@ -349,11 +361,21 @@ function checkLineX(x){
             toFill=toFill&&(progress.get(i).size===indics.get(i).size)
     }
 
+    //Check if Line is full => error
+    if(!completed && !toFill){
+        hasError=true
+        for(i=0; i<game.dimension; i++)
+            if(game.mySolvingGrid.get(x*game.dimension+i).myEstate === "void")
+                hasError=false
+    }
+
+    //Last case, special check
+    if(!completed && !toFill && !hasError)
+        specialCheckLineX(x)
+
     game.indicLeft.setProperty(x, "completed", completed)
     game.indicLeft.setProperty(x, "toFill", toFill)
-
-    if(!completed)
-        specialCheckLineX(x)
+    game.indicLeft.setProperty(x, "hasError", hasError)
 }
 
 function launchCheckWin(){

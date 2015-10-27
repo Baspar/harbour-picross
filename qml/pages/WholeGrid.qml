@@ -144,7 +144,7 @@ Item{
                                                                                                         anchors.centerIn: parent
                                                                                                         id: myLabelIndicUp
                                                                                                         text: size
-                                                                                                        color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
+                                                                                                        color: hasError?"red":isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
                                                                                                         font.pixelSize: Math.min(0.9*finalIndicUp.width, maxSizeIndicTop/5)
                                                                                                 }
                                                                                         }
@@ -308,7 +308,7 @@ Item{
                                                                                                         anchors.centerIn: parent
                                                                                                         id: myLabelIndicLeft
                                                                                                         text: model.size
-                                                                                                        color: isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
+                                                                                                        color: hasError?"red":isOk?"green":toFill?"orange":completed?"green":Theme.highlightColor
                                                                                                         font.pixelSize: Math.min(0.9*finalIndicLeft.height, sizeIndicLeft/5)
                                                                                                 }
                                                                                         }
