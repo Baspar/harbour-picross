@@ -59,13 +59,6 @@ function click(grid, x){
 }
 function longClick(grid, x){
     return
-    if(game.selectedCol !== myID % game.dimension && game.selectedLine !== Math.floor(myID/game.dimension)){
-        game.selectedCol = myID % game.dimension
-        game.selectedLine = Math.floor(myID/game.dimension)
-    } else {
-        game.selectedCol = -1
-        game.selectedLine = -1
-    }
 }
 function doubleClick(grid, x){
     if(!game.guessMode)

@@ -9,6 +9,19 @@ Dialog{
     property int nextDiff: Levels.getNextDiff()
     property int nextLevel: Levels.getNextLevel()
 
+    property ListModel modelcpy : ListModel{}
+    property int dimensioncpy
+    property string titlecpy
+    property int time
+
+    Component.onCompleted:{
+        dimensioncpy=game.dimension
+        titlecpy=game.title
+        time=DB.getTime(game.diff, game.level)
+        for(var i=0; i<game.solvedGrid.count; i++)
+                modelcpy.append(game.solvedGrid.get(i))
+    }
+
     canAccept: nextLevel !== -1 && nextDiff !== -1
 
     Column{
@@ -33,12 +46,12 @@ Dialog{
                 anchors.centerIn: parent
                 width: parent.width*0.9
                 height: width
-                columns: game.dimension
+                columns: dimensioncpy
                 spacing: 5
                 Repeater{
-                    model: game.solvedGrid
+                    model: modelcpy
                     Rectangle{
-                        width: (myFinalGrid.width-(game.dimension-1)*5)/game.dimension
+                        width: (myFinalGrid.width-(dimensioncpy-1)*5)/dimensioncpy
                         height: width
                         opacity: 0.2
                         color: myEstate==="full"?Theme.highlightColor:"transparent"
@@ -48,7 +61,7 @@ Dialog{
         }
         Label{
             anchors.horizontalCenter: parent.horizontalCenter
-            text: game.title
+            text: titlecpy
         }
         Label{
             anchors.topMargin: Theme.paddingLarge
@@ -57,9 +70,8 @@ Dialog{
             text: "Best time:"
         }
         Label{
-            property int time : DB.getTime(game.diff, game.level)
             anchors.horizontalCenter: parent.horizontalCenter
-            text: time===0?"xx:xx:xx":new Date(null, null, null, null, null, time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
+            text: time===0?"xx:xx:xx":time>=60*60*23?"24:00:00+":new Date(null, null, null, null, null, time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
         }
         Label{
             visible: nextLevel === -1 && nextDiff === -1

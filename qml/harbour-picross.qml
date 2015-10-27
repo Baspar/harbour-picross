@@ -35,8 +35,7 @@ import "Source.js" as Source
 import "DB.js" as DB
 
 
-ApplicationWindow
-{
+ApplicationWindow{
 
     Timer{
         id: myTimer
@@ -59,16 +58,12 @@ ApplicationWindow
 
     property int time: 0
 
-    property int selectedRadius: 2
-    property int selectedCol: -1
-    property int selectedLine: -1
-    property int nbSelectedCols : (game.selectedCol===-1?0:1+Math.min(game.selectedRadius, game.selectedCol)+Math.min(game.selectedRadius, game.dimension-1-game.selectedCol))
-    property int nbSelectedLines : (game.selectedLine===-1?0:1+Math.min(game.selectedRadius, game.selectedLine)+Math.min(game.selectedRadius, game.dimension-1-game.selectedLine))
-
     property bool guessMode: false
+    property string slideMode: ""
     property bool won: false
     property bool pause: false
 
+    property bool foldTopMode: true
 
     property int dimension: 0
     property real zoom: 1
@@ -84,6 +79,10 @@ ApplicationWindow
     property string save: ""
     property int nbSolvingFullCell
     property int nbSolvedFullCell
+
+
+    property int maxHeight:0
+    property int maxWidth:0
 
     Component.onCompleted: {
         DB.initialize()
@@ -103,6 +102,9 @@ ApplicationWindow
     }
 
     onGridUpdated: {
+        maxWidth=0
+        maxHeight=0
+        foldTopMode=true
         won=false
         Source.genIndicCol(game.indicUp, game.solvedGrid)
         Source.genIndicLine(game.indicLeft, game.solvedGrid)
@@ -114,8 +116,6 @@ ApplicationWindow
             game.time=0
         }
         pause=false
-        selectedCol=-1
-        selectedLine=-1
     }
 
     onCheckWin: {

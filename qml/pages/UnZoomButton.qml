@@ -9,81 +9,85 @@ Item{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1)
-                    game.zoom=(page.height-pageHeader.height-sizeIndic-outsideBorderSize)/(page.width-sizeIndic-outsideBorderSize)
-                else
+                    game.zoom=(page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)/(page.width-sizeIndicLeft-outsideBorderSize)
+                else{
                     game.zoom=1
+                    foldTopMode=true
+                }
             }
         }
 
-        width: sizeIndic - 30
-        height: sizeIndic - 30
-        x: outsideBorderSize
-        y: x
+        width: 0.9*(sizeIndicLeft-outsideBorderSize)
+        height: 0.9*(sizeIndicTop-outsideBorderSize)
+        x: width/18
+        y: height/18
         color: Qt.rgba(0, 0, 0, 0)
         border.width: 5
         border.color: Theme.rgba(Theme.highlightColor, 0.3)
-        property int unit : width/12
+
+        property int unitW : width/12
+        property int unitH : height/12
         Rectangle{
-            x: 5+2*unzoomButton.unit
-            y: 5+2*unzoomButton.unit
-            width: 3*unzoomButton.unit
-            height: unzoomButton.unit
+            x: 5+2*unzoomButton.unitW
+            y: 5+2*unzoomButton.unitH
+            width: 3*unzoomButton.unitW
+            height: unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+2*unzoomButton.unit
-            y: 5+3*unzoomButton.unit
-            width: unzoomButton.unit
-            height: 2*unzoomButton.unit
+            x: 5+2*unzoomButton.unitW
+            y: 5+3*unzoomButton.unitH
+            width: unzoomButton.unitW
+            height: 2*unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+2*unzoomButton.unit
-            y: 5+7*unzoomButton.unit
-            width: unzoomButton.unit
-            height: 2*unzoomButton.unit
+            x: 5+2*unzoomButton.unitW
+            y: 5+7*unzoomButton.unitH
+            width: unzoomButton.unitW
+            height: 2*unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+2*unzoomButton.unit
-            y: 5+9*unzoomButton.unit
-            width: 3*unzoomButton.unit
-            height: unzoomButton.unit
+            x: 5+2*unzoomButton.unitW
+            y: 5+9*unzoomButton.unitH
+            width: 3*unzoomButton.unitW
+            height: unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+7*unzoomButton.unit
-            y: 5+2*unzoomButton.unit
-            width: 3*unzoomButton.unit
-            height: 1*unzoomButton.unit
+            x: 5+7*unzoomButton.unitW
+            y: 5+2*unzoomButton.unitH
+            width: 3*unzoomButton.unitW
+            height: 1*unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+9*unzoomButton.unit
-            y: 5+3*unzoomButton.unit
-            width: unzoomButton.unit
-            height: 2*unzoomButton.unit
+            x: 5+9*unzoomButton.unitW
+            y: 5+3*unzoomButton.unitH
+            width: unzoomButton.unitW
+            height: 2*unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+9*unzoomButton.unit
-            y: 5+7*unzoomButton.unit
-            width: unzoomButton.unit
-            height: 2*unzoomButton.unit
+            x: 5+9*unzoomButton.unitW
+            y: 5+7*unzoomButton.unitH
+            width: unzoomButton.unitW
+            height: 2*unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }
         Rectangle{
-            x: 5+7*unzoomButton.unit
-            y: 5+9*unzoomButton.unit
-            width: 3*unzoomButton.unit
-            height: unzoomButton.unit
+            x: 5+7*unzoomButton.unitW
+            y: 5+9*unzoomButton.unitH
+            width: 3*unzoomButton.unitW
+            height: unzoomButton.unitH
             color: Theme.highlightColor
             opacity:0.3
         }

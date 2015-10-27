@@ -8,8 +8,6 @@ Page {
 
         property int insideBorderSize: 5
         property int outsideBorderSize: 10
-        property int selectedCol:-1
-        property int selectedLine:-1
 
 
         id: page
@@ -52,42 +50,6 @@ Page {
 
                 Behavior on opacity{NumberAnimation{duration: 200}}
         }
-
-        /*Rectangle{
-    z:3
-    visible: selectedLine!==-1
-    color: Theme.rgba("black", selectedLine!==-1?0.5:0)
-    Behavior on color{ColorAnimation{duration: 100}}
-    anchors.fill: parent
-    MouseArea{
-    enabled: selectedLine!==-1
-    anchors.fill: parent
-    onClicked:selectedLine=-1
-    }
-    Row{
-    spacing: 2
-    x: 0
-    y: pageHeader.height+sizeIndic+ selectedLine*(page.width-outsideBorderSize-sizeIndic+insideBorderSize)/game.dimension*game.zoom-flick.contentY
-    height: ((page.width-outsideBorderSize-sizeIndic+insideBorderSize)/game.dimension-insideBorderSize)*game.zoom
-    Rectangle{
-    color: Theme.rgba(Theme.highlightColor, 0.3)
-    height: parent.height
-    width: outsideBorderSize
-    }
-    Repeater{
-    model: selectedLine!==-1?game.indicLeft.get(selectedLine).loadedIndic:0
-    Label{
-    color: game.indicLeft.get(selectedLine).toFill?"red":game.indicLeft.get(selectedLine).completed?"green":Theme.highlightColor
-    text: size
-    }
-    }
-    Rectangle{
-    color: Theme.rgba(Theme.highlightColor, 0.3)
-    height: parent.height
-    width: outsideBorderSize
-    }
-    }
-    }*/
 
         // Set pinch area
         PinchArea {
@@ -310,6 +272,7 @@ Page {
 
                 // PullDown
                 PullDownMenu {
+                    enabled: game.slideMode===""
                         MenuItem {
                                 id: menuSettings
                                 text: qsTr("Settings")

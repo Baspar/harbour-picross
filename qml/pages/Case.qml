@@ -8,20 +8,11 @@ Rectangle {
     property int k: 2
 
     id: thisrect
-    width:  (rectGrille.width-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedCols *(k-1))   *(game.selectedCol !==-1 && Math.abs(myID%game.dimension-game.selectedCol)<=game.selectedRadius?k:1)
-    height: (rectGrille.width-(game.dimension-1)*insideBorderSize) / (game.dimension+game.nbSelectedLines*(k-1))   *(game.selectedLine!==-1 && Math.abs(Math.floor(myID/game.dimension)-selectedLine)<=game.selectedRadius?k:1)
+    width:  (rectGrille.width-(game.dimension-1)*insideBorderSize) / game.dimension
+    height: (rectGrille.width-(game.dimension-1)*insideBorderSize) / game.dimension
 
     opacity: game.guessMode && thisrect.estate==="full"?0.25:1
     color: thisrect.estate==="full"||thisrect.estate=="guess_full"?Theme.rgba(Theme.highlightColor, 0.6):Theme.rgba("black", 0.1)
-        /*thisrect.estate==="full"?
-               Theme.rgba(Theme.highlightColor,0.6)
-          :(game.selectedCol !==-1 && Math.abs(myID%game.dimension-game.selectedCol)<=game.selectedRadius)||(game.selectedLine!==-1 && Math.abs(Math.floor(myID/game.dimension)-selectedLine)<=game.selectedRadius)?
-                (game.selectedCol === -1)?
-                    Theme.rgba("black", 0.2+0.2/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(Math.floor(myID/game.dimension)-game.selectedLine)))
-                :(game.selectedLine === -1)?
-                        Theme.rgba("black", 0.2+0.2/(game.selectedRadius+1)*(game.selectedRadius+1-Math.abs(myID%game.dimension-game.selectedCol)))
-                :Theme.rgba("black", 0.2+0.2/(game.selectedRadius+1)*(game.selectedRadius+1-Math.min(Math.abs(myID%game.dimension-game.selectedCol), Math.abs(Math.floor(myID/game.dimension)-game.selectedLine))))
-        :Qt.rgba(0, 0, 0, 0.1)*/
 
     Canvas{
         property bool appActive: game.applicationActive
@@ -55,12 +46,22 @@ Rectangle {
     Behavior on opacity {NumberAnimation{duration: 100}}
 
     MouseArea{
-        anchors.fill: parent
-        onPressAndHold: {
-            return true
-            Source.longClick(game.mySolvingGrid, index)
+//        hoverEnabled: true
 
-        }
+        anchors.fill: parent
+//        onPressAndHold: {
+//            game.slideMode=thisrect.estate
+//            console.log("Debut slid")
+//        }
+//        onReleased: {
+//            game.slideMode=""
+//            console.log("Fin slid")
+//        }
+
+//        onEntered:{
+//            console.log(myID+" survolé!")
+//        }
+
         onClicked: {
             if(!game.won)
                 Source.click(game.mySolvingGrid, myID)
