@@ -138,7 +138,7 @@ Page {
                                         }
                                         IconButton{
                                                 id: acceptIcon
-                                                icon.source: "image://theme/icon-header-accept"
+                                                icon.source: "image://theme/icon-m-add"
                                                 highlighted: leftMouseArea.pressed
                                                 onClicked: if(Source.noGuessDone()){
                                                                    Source.acceptGuesses()
@@ -152,7 +152,7 @@ Page {
                                         }
                                         IconButton {
                                                 id: rejectIcon
-                                                icon.source: "image://theme/icon-header-cancel"
+                                                icon.source: "image://theme/icon-m-clear"
                                                 highlighted: rightMouseArea.pressed
                                                 onClicked: if(Source.noGuessDone()){
                                                                    Source.rejectGuesses()
