@@ -9,7 +9,7 @@ Item{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1)
-                    game.zoom=(page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)/(page.width-sizeIndicLeft-outsideBorderSize)
+                    game.zoom=(page.height-pageHeader.height-maxSizeIndicTop)/(page.width-maxSizeIndicLeft)
                 else{
                     game.zoom=1
                     foldTopMode=true

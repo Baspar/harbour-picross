@@ -8,8 +8,9 @@ Rectangle {
     property int k: 2
 
     id: thisrect
-    width:  (rectGrille.width-(game.dimension-1)*insideBorderSize) / game.dimension
-    height: (rectGrille.width-(game.dimension-1)*insideBorderSize) / game.dimension
+//    width:  (rectGrille.width-(game.dimension-1)*insideBorderSize) / game.dimension
+    width: unitSize
+    height: width
 
     opacity: game.guessMode && thisrect.estate==="full"?0.25:1
     color: thisrect.estate==="full"||thisrect.estate=="guess_full"?Theme.rgba(Theme.highlightColor, 0.6):Theme.rgba("black", 0.1)

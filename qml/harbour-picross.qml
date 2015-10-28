@@ -64,6 +64,7 @@ ApplicationWindow{
     property bool pause: false
 
     property bool foldTopMode: true
+    property bool foldLeftMode: true
 
     property int dimension: 0
     property real zoom: 1
@@ -116,6 +117,7 @@ ApplicationWindow{
             game.time=0
         }
         pause=false
+        game.zoom=1
     }
 
     onCheckWin: {
