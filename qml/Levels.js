@@ -259,7 +259,7 @@ var easy =
         },
         {
             title: "Dancer",
-            hintTitle: "It swing!",
+            hintTitle: "It swings!",
             dimension: 10,
             grid:
             [
@@ -494,7 +494,7 @@ var medium =
         },
         {
             title:"Duck",
-            hintTitle:"Hugly, according to Andersen",
+            hintTitle:"Ugly, according to Andersen",
             dimension: 15,
             grid:
             [
@@ -1041,7 +1041,7 @@ var hard =
         },
         {
             title:"Cow",
-            hintTitle:"Mow",
+            hintTitle:"Moo",
             dimension:19,
             grid:
             [
@@ -1526,7 +1526,7 @@ var expert =
             ]
         },
         {
-            title: "Octupus",
+            title: "Octopus",
             hintTitle: "Hey there",
             dimension: 20,
             grid:
@@ -1583,7 +1583,7 @@ var expert =
         },
         {
             title: "Motorcycle",
-            hintTitle: "Vroum vroum",
+            hintTitle: "Vroom vroom",
             dimension: 20,
             grid:
             [
