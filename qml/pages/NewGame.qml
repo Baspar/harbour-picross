@@ -16,10 +16,10 @@ Dialog{
     // Title: New game
     DialogHeader{
         id: pageTitle
-        title: cheatMode?"Cheat...":"New game"
+        title: cheatMode?qstr("Cheat..."):qstr("New game")
         MouseArea{
             anchors.fill: parent
-            onPressAndHold: cheatMode = !cheatMode
+//            onPressAndHold: cheatMode = !cheatMode
         }
     }
 
@@ -183,7 +183,7 @@ Dialog{
                             id: contextMenu
                             ContextMenu {
                                 MenuItem {
-                                    text: "Play from scratch"
+                                    text: qstr("Play from scratch")
                                     onClicked: {
                                         diffSelected=myDiff
                                         levelSelected=myLevel
@@ -192,7 +192,7 @@ Dialog{
                                 }
                                 MenuItem {
                                     visible: DB.getSave(myDiff, myLevel)!==""
-                                    text: "Restore save"
+                                    text: qstr("Restore save")
                                     onClicked: {
                                         diffSelected=myDiff
                                         levelSelected=myLevel
@@ -201,14 +201,14 @@ Dialog{
                                 }
                                 MenuItem {
                                     visible: DB.getSave(myDiff, myLevel)!==""
-                                    text: "Erase save"
+                                    text: qstr("Erase save")
                                     onClicked: {
                                         DB.eraseSave(myDiff, myLevel)
                                     }
                                 }
                                 MenuItem {
                                     visible: DB.isCompleted(myDiff, myLevel)
-                                    text: "Details"
+                                    text: qstr("Details")
                                     onClicked: {
                                         pageStack.push(Qt.resolvedUrl("LevelInfos.qml"), {"diffSelected":myDiff, "levelSelected":myLevel})
                                     }

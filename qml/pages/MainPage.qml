@@ -28,7 +28,7 @@ Page {
                                 id: popupZoomText
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 Label{
-                                        text: "Zoom"
+                                        text: qstr("Zoom")
                                         color: Theme.highlightColor
                                         font.pixelSize: Theme.fontSizeLarge
                                         anchors.horizontalCenter: parent.horizontalCenter
@@ -83,6 +83,7 @@ Page {
         SilicaFlickable {
                 id: flickUp
                 anchors.fill: parent
+                interactive: game.slideMode===""
 
                 // Hidden controls for guess mode
                 SilicaFlickable{
@@ -101,7 +102,7 @@ Page {
                                                    Source.acceptGuesses()
                                                    goDefault.start()
                                            }else{
-                                                   remorseMain.execute("Accepting guesses", function(){
+                                                   remorseMain.execute(qstr("Accepting guesses"), function(){
                                                            Source.acceptGuesses()
                                                            goDefault.start()
                                                    }, 3000)
@@ -117,7 +118,7 @@ Page {
                                                    Source.rejectGuesses()
                                                    goDefault.start()
                                            }else{
-                                                   remorseMain.execute("Rejecting guesses", function(){
+                                                   remorseMain.execute(qstr("Rejecting guesses"), function(){
                                                            Source.rejectGuesses()
                                                            goDefault.start()
                                                    }, 3000)
@@ -133,7 +134,7 @@ Page {
                                         anchors.centerIn: parent
                                         spacing: Theme.paddingSmall
                                         Label{
-                                                text: "Accept\nguesses"
+                                                text: qstr("Accept\nguesses")
                                                 color: leftMouseArea.pressed||acceptIcon.pressed?Theme.highlightColor:Theme.primaryColor
                                         }
                                         IconButton{
@@ -144,7 +145,7 @@ Page {
                                                                    Source.acceptGuesses()
                                                                    goDefault.start()
                                                            }else{
-                                                                   remorseMain.execute("Accepting guesses", function(){
+                                                                   remorseMain.execute(qstr("Accepting guesses"), function(){
                                                                            Source.acceptGuesses()
                                                                            goDefault.start()
                                                                    }, 3000)
@@ -158,14 +159,14 @@ Page {
                                                                    Source.rejectGuesses()
                                                                    goDefault.start()
                                                            }else{
-                                                                   remorseMain.execute("Rejecting guesses", function(){
+                                                                   remorseMain.execute(qstr("Rejecting guesses"), function(){
                                                                            Source.rejectGuesses()
                                                                            goDefault.start()
                                                                    }, 3000)
                                                            }
                                         }
                                         Label{
-                                                text: "Reject\nguesses"
+                                                text: qstr("Reject\nguesses")
                                                 color: rightMouseArea.pressed||rejectIcon.pressed?Theme.highlightColor:Theme.primaryColor
                                                 horizontalAlignment: Text.AlignLeft
                                         }
@@ -238,7 +239,7 @@ Page {
                                 }
                                 onClicked:{
                                     if(!resetPageHeader.running)
-                                            pageHeader.title="Dimension: "+game.dimension+"x"+game.dimension
+                                            pageHeader.title=qstr("Dimension: ")+game.dimension+"x"+game.dimension
                                 }
 
                                 Timer{
@@ -251,7 +252,7 @@ Page {
                         PageHeader {
                                 property string titleCpy: game.title
                                 id: pageHeader
-                                title: "Picross"
+                                title: qstr("Picross")
                                 onTitleCpyChanged:{
                                     pageHeader.title="Dimension: "+game.dimension+"x"+game.dimension
                                 }
@@ -272,7 +273,7 @@ Page {
 
                 // PullDown
                 PullDownMenu {
-                    enabled: game.slideMode===""
+                        enabled: game.slideMode===""
                         MenuItem {
                                 id: menuSettings
                                 text: qsTr("Settings")
@@ -293,7 +294,7 @@ Page {
                                 id: menuClear
                                 visible: game.dimension!==0 && !game.guessMode
                                 text: qsTr("Clear grid")
-                                onClicked: remorseMain.execute("Clearing the grid", function(){Source.clear()}, 3000)
+                                onClicked: remorseMain.execute(qstr("Clearing the grid"), function(){Source.clear()}, 3000)
                         }
                         MenuItem {
                                 id: menuNewGame

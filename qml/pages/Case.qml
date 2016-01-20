@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtFeedback 5.0
 import "../Source.js" as Source
 
 Rectangle {
@@ -7,8 +8,17 @@ Rectangle {
     property int myID
     property int k: 2
 
+    property HapticsEffect customBuzz: HapticsEffect {
+            attackTime: 50
+            fadeTime: 50
+            attackIntensity: 0.2
+            fadeIntensity: 0.01
+            intensity: 0.8
+            duration: 100
+
+    }
+
     id: thisrect
-//    width:  (rectGrille.width-(game.dimension-1)*insideBorderSize) / game.dimension
     width: unitSize
     height: width
 
@@ -47,21 +57,33 @@ Rectangle {
     Behavior on opacity {NumberAnimation{duration: 100}}
 
     MouseArea{
-//        hoverEnabled: true
-
+        hoverEnabled: true
+        property bool hovered: false
         anchors.fill: parent
-//        onPressAndHold: {
-//            game.slideMode=thisrect.estate
-//            console.log("Debut slid")
-//        }
-//        onReleased: {
-//            game.slideMode=""
-//            console.log("Fin slid")
-//        }
+        onPressAndHold: {
+            game.slideMode=thisrect.estate
+            customBuzz.start()
+            console.log("Debut slid")
+        }
+        onReleased:{
+            game.slideMode=""
+        }
 
-//        onEntered:{
-//            console.log(myID+" survolé!")
-//        }
+        onEntered:{
+                hovered=true
+                console.log("")
+        }
+        onExited:{
+                hovered=false
+                console.log("")
+        }
+
+        onHoveredChanged: {
+            if(hovered)
+                    console.log(myID+" survolé!")
+            else
+                    console.log(myID+" quitté!")
+        }
 
         onClicked: {
             if(!game.won)

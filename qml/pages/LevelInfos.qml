@@ -25,7 +25,7 @@ Page{
     Column{
         anchors.fill: parent
         PageHeader{
-            title: "Level details"
+            title: qstr("Level details")
         }
         Item{
             anchors.horizontalCenter: parent.horizontalCenter
@@ -87,7 +87,7 @@ Page{
             anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.highlightColor
-            text: "Best time:"
+            text: qstr("Best time:")
         }
         Label{
             property int time : DB.getTime(diffSelected, levelSelected)

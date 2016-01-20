@@ -27,12 +27,12 @@ Dialog{
     Column{
         anchors.fill: parent
         DialogHeader{
-            title: "Level completed!"
-            acceptText: "Next level"
-            cancelText: "Back"
+            title: qstr("Level completed!")
+            acceptText: qstr("Next level")
+            cancelText: qstr("Back")
         }
         SectionHeader{
-            text: "Solution"
+            text: qstr("Solution")
         }
         Rectangle{
             border.width: 5
@@ -67,7 +67,7 @@ Dialog{
             anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.highlightColor
-            text: "Best time:"
+            text: qstr("Best time:")
         }
         Label{
             anchors.horizontalCenter: parent.horizontalCenter
@@ -78,7 +78,7 @@ Dialog{
             anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.highlightColor
-            text: "Congratulations, you solve every level !"
+            text: qstr("Congratulations, you solve every level !")
         }
     }
     onAccepted: {

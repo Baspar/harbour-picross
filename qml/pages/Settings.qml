@@ -8,12 +8,12 @@ Page{
     Column{
         width: parent.width
         PageHeader{
-            title: "Settings"
+            title: qstr("Settings")
         }
         TextSwitch{
             checked: DB.getParameter("autoLoadSave")===1
-            text: "Load saves by default"
-            description: checked?"Saves will be loaded by default":"Load them by a long press"
+            text: qstr("Load saves by default")
+            description: checked?qstr("Saves will be loaded by default"):qstr("Load them by a long press")
             onClicked:{
                 if(checked)
                     DB.setParameter("autoLoadSave", 1)
@@ -23,8 +23,8 @@ Page{
         }
         TextSwitch{
             checked: DB.getParameter("slideInteractive")===1
-            text: "Swipe throught difficulty"
-            description: checked?"Swipe is enabled":"Swipe disable. Click on a difficulty name to load it"
+            text: qstr("Swipe throught difficulty")
+            description: checked?qstr("Swipe is enabled"):qstr("Swipe disable. Click on a difficulty name to load it")
             onClicked:{
                 if(checked)
                     DB.setParameter("slideInteractive", 1)
@@ -35,7 +35,7 @@ Page{
         Slider {
             id: slider
             width: parent.width
-            label: "Space between separators"
+            label: qstr("Space between separators")
             minimumValue: 0
             maximumValue: 10
             stepSize: 1
@@ -48,28 +48,28 @@ Page{
         }
         Button{
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Clear ALL databases (saves & progress)"
+            text: qstr("Clear ALL databases (saves & progress)")
 
             onClicked:{
-                remorseSettings.execute("Clearing ALL Databases", function(){
+                remorseSettings.execute(qstr("Clearing ALL Databases"), function(){
                     DB.destroyData()
                     DB.initialize()})
             }
         }
         Button{
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Clear only saves database"
+            text: qstr("Clear only saves database")
             onClicked:{
-                remorseSettings.execute("Clearing only saves database", function(){
+                remorseSettings.execute(qstr("Clearing only saves database"), function(){
                     DB.destroySaves()
                     DB.initializeSaves()})
             }
         }
         Button{
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Reset settings"
+            text: qstr("Reset settings")
             onClicked:{
-                remorseSettings.execute("Resetting settings", function(){
+                remorseSettings.execute(qstr("Resetting settings"), function(){
                     DB.destroySettings()
                     pageStack.pop()
                 })
