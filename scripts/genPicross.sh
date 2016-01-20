@@ -30,8 +30,8 @@ fi
 #####################
 out="
     {\n
-           title: \"$title\",\n
-           hintTitle: \"$hintTitle\",\n
+           title: qstr(\"$title\"),\n
+           hintTitle: qstr(\"$hintTitle\"),\n
            dimension: $dim,\n
            grid:\n
            [\n"
