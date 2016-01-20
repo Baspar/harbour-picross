@@ -3,8 +3,8 @@
 var tutorial =
     [
         {
-            title:"Square",
-            hintTitle:"Numbers = size of the groups",
+            title:qstr("Square"),
+            hintTitle:qstr("Numbers = size of the groups"),
             dimension:3,
             grid:
             [
@@ -14,8 +14,8 @@ var tutorial =
             ]
         },
         {
-            title:"Hole",
-            hintTitle:"Groups are separated. But how far?",
+            title:qstr("Hole"),
+            hintTitle:qstr("Groups are separated. But how far?"),
             dimension:3,
             grid:[
                 1, 1, 1,
@@ -24,8 +24,8 @@ var tutorial =
             ]
         },
         {
-            title:"Little grid",
-            hintTitle:"Sometimes, there is no choice...",
+            title:qstr("Little grid"),
+            hintTitle:qstr("Sometimes, there is no choice..."),
             dimension:5,
             grid:
             [
@@ -37,8 +37,8 @@ var tutorial =
             ]
         },
         {
-            title:"Cross",
-            hintTitle:"Green = corresponds. Click on it",
+            title:qstr("Cross"),
+            hintTitle:qstr("Green = corresponds. Click on it"),
             dimension:5,
             grid:[
                 0, 0, 0, 0, 0,
@@ -49,8 +49,8 @@ var tutorial =
             ]
         },
         {
-            title:"Pyramid",
-            hintTitle:"You're on your own now",
+            title:qstr("Pyramid"),
+            hintTitle:qstr("You're on your own now"),
             dimension:5,
             grid:[
                 0, 0, 0, 0, 0,
@@ -61,8 +61,8 @@ var tutorial =
             ]
         },
         {
-            title:"Heart",
-            hintTitle: "Your first real level",
+            title:qstr("Heart"),
+            hintTitle: qstr("Your first real level"),
             dimension: 5,
             grid:
                 [
@@ -74,8 +74,8 @@ var tutorial =
                 ]
         },
         {
-            title: "Bubble",
-            hintTitle: "What !!?",
+            title: qstr("Bubble"),
+            hintTitle: qstr("What !!?"),
             dimension: 10,
             grid:
                 [
@@ -95,8 +95,8 @@ var tutorial =
 var easy =
     [
         {
-            title: "Chick",
-            hintTitle: "Yellow animal",
+            title: qstr("Chick"),
+            hintTitle: qstr("Yellow animal"),
             dimension: 10,
             grid:
             [
@@ -113,8 +113,8 @@ var easy =
             ]
         },
         {
-            title:"Heart",
-            hintTitle: "Attraction",
+            title:qstr("Heart"),
+            hintTitle: qstr("Attraction"),
             dimension: 10,
             grid:
             [
@@ -131,8 +131,8 @@ var easy =
             ]
         },
         {
-            title: "Creeper",
-            hintTitle: "Ka-Boom!",
+            title: qstr("Creeper"),
+            hintTitle: qstr("Ka-Boom!"),
             dimension: 8,
             grid:
                 [
@@ -147,8 +147,8 @@ var easy =
                 ]
         },
         {
-            title:"Rabbit",
-            hintTitle: "I'm late, I'm late...",
+            title:qstr("Rabbit"),
+            hintTitle: qstr("I'm late, I'm late..."),
             dimension: 8,
             grid:
             [
@@ -163,8 +163,8 @@ var easy =
             ]
         },
         {
-            title:"Cup",
-            hintTitle: "Tea time!",
+            title:qstr("Cup"),
+            hintTitle: qstr("Tea time!"),
             dimension: 10,
             grid:
             [
@@ -181,8 +181,8 @@ var easy =
             ]
         },
         {
-            title:"Small boat",
-            hintTitle: "Let's sail",
+            title:qstr("Small boat"),
+            hintTitle: qstr("Let's sail"),
             dimension: 10,
             grid:
             [
@@ -199,8 +199,8 @@ var easy =
             ]
         },
         {
-            title: "Apple",
-            hintTitle: "It's meant to fall",
+            title: qstr("Apple"),
+            hintTitle: qstr("It's meant to fall"),
             dimension: 10,
             grid:
             [
@@ -217,8 +217,8 @@ var easy =
             ]
         },
         {
-            title: "Cherry",
-            hintTitle: "Small fruit",
+            title: qstr("Cherry"),
+            hintTitle: qstr("Small fruit"),
             dimension: 10,
             grid:
             [
@@ -235,8 +235,8 @@ var easy =
             ]
         },
         {
-            title: "Flat",
-            hintTitle: "It's high!",
+            title: qstr("Flat"),
+            hintTitle: qstr("It's high!"),
             dimension: 15,
             grid:
             [
@@ -258,8 +258,8 @@ var easy =
             ]
         },
         {
-            title: "Dancer",
-            hintTitle: "It swings!",
+            title: qstr("Dancer"),
+            hintTitle: qstr("It swings!"),
             dimension: 10,
             grid:
             [
@@ -276,8 +276,8 @@ var easy =
             ]
         },
         {
-            title: "Crab",
-            hintTitle: "He pinches",
+            title: qstr("Crab"),
+            hintTitle: qstr("He pinches"),
             dimension: 10,
             grid:
             [
@@ -294,8 +294,8 @@ var easy =
             ]
         },
         {
-            title: "Humming-Bird",
-            hintTitle: "Flower eater",
+            title: qstr("Humming-Bird"),
+            hintTitle: qstr("Flower eater"),
             dimension: 10,
             grid:
             [
@@ -312,8 +312,8 @@ var easy =
             ]
         },
         {
-            title: "Monkey",
-            hintTitle: "Our ancestor",
+            title: qstr("Monkey"),
+            hintTitle: qstr("Our ancestor"),
             dimension: 10,
             grid:
             [
@@ -330,8 +330,8 @@ var easy =
             ]
         },
         {
-            title: "Snail",
-            hintTitle: "Small helix",
+            title: qstr("Snail"),
+            hintTitle: qstr("Small helix"),
             dimension: 10,
             grid:
             [
@@ -348,8 +348,8 @@ var easy =
             ]
         },
         {
-            title: "Goldfish",
-            hintTitle: "A very bad memory...",
+            title: qstr("Goldfish"),
+            hintTitle: qstr("A very bad memory..."),
             dimension: 10,
             grid:
             [
@@ -366,8 +366,8 @@ var easy =
             ]
         },
         {
-            title: "Kitten",
-            hintTitle: "Little predator",
+            title: qstr("Kitten"),
+            hintTitle: qstr("Little predator"),
             dimension: 14,
             grid:
             [
@@ -388,8 +388,8 @@ var easy =
             ]
         },
         {
-            title: "Owl",
-            hintTitle: "Night animal",
+            title: qstr("Owl"),
+            hintTitle: qstr("Night animal"),
             dimension: 15,
             grid:
             [
@@ -414,8 +414,8 @@ var easy =
 var medium =
     [
         {
-            title: "Helicopter",
-            hintTitle: "Not so \"U\" for a UFO",
+            title: qstr("Helicopter"),
+            hintTitle: qstr("Not so \"U\" for a UFO"),
             dimension: 10,
             grid:
             [
@@ -432,8 +432,8 @@ var medium =
             ]
         },
         {
-            title:"Flask",
-            hintTitle:"Witch's util",
+            title:qstr("Flask"),
+            hintTitle:qstr("Witch's util"),
             dimension: 8,
             grid:
             [
@@ -448,8 +448,8 @@ var medium =
             ]
         },
         {
-            title: "Moose",
-            hintTitle: "He loves the cold",
+            title: qstr("Moose"),
+            hintTitle: qstr("He loves the cold"),
             dimension: 15,
             grid: [
                 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1,
@@ -470,8 +470,8 @@ var medium =
             ]
         },
         {
-            title:"Sailboat",
-            hintTitle:"You are a pirate~",
+            title:qstr("Sailboat"),
+            hintTitle:qstr("You are a pirate~"),
             dimension:15,
             grid:
             [
@@ -493,8 +493,8 @@ var medium =
             ]
         },
         {
-            title:"Duck",
-            hintTitle:"Ugly, according to Andersen",
+            title:qstr("Duck"),
+            hintTitle:qstr("Ugly, according to Andersen"),
             dimension: 15,
             grid:
             [
@@ -516,8 +516,8 @@ var medium =
             ]
         },
         {
-            title:"Seal",
-            hintTitle:"Often hunted for its fur",
+            title:qstr("Seal"),
+            hintTitle:qstr("Often hunted for its fur"),
             dimension:15,
             grid:
             [
@@ -539,8 +539,8 @@ var medium =
             ]
         },
         {
-            title: "Squirrel",
-            hintTitle: "Hiding his nuts",
+            title: qstr("Squirrel"),
+            hintTitle: qstr("Hiding his nuts"),
             dimension: 15,
             grid:
             [
@@ -562,8 +562,8 @@ var medium =
             ]
         },
         {
-            title: "Panda",
-            hintTitle: "Stained",
+            title: qstr("Panda"),
+            hintTitle: qstr("Stained"),
             dimension: 15,
             grid:
             [
@@ -585,8 +585,8 @@ var medium =
             ]
         },
         {
-            title: "Tap",
-            hintTitle: "In the middle of the night",
+            title: qstr("Tap"),
+            hintTitle: qstr("In the middle of the night"),
             dimension: 12,
             grid:
                 [
@@ -605,8 +605,8 @@ var medium =
                 ]
         },
         {
-            title: "Mushroom",
-            hintTitle: "Makes you stronger",
+            title: qstr("Mushroom"),
+            hintTitle: qstr("Makes you stronger"),
             dimension: 17,
             grid:
             [
@@ -630,8 +630,8 @@ var medium =
             ]
         },
         {
-            title: "Meowth",
-            hintTitle: "Gotta catch them all~",
+            title: qstr("Meowth"),
+            hintTitle: qstr("Gotta catch them all~"),
             dimension: 15,
             grid:
             [
@@ -653,8 +653,8 @@ var medium =
             ]
         },
         {
-            title: "Elephants",
-            hintTitle: "Cute couple",
+            title: qstr("Elephants"),
+            hintTitle: qstr("Cute couple"),
             dimension: 15,
             grid:
             [
@@ -676,8 +676,8 @@ var medium =
             ]
         },
         {
-            title: "Mario",
-            hintTitle: "World most famous plumber",
+            title: qstr("Mario"),
+            hintTitle: qstr("World most famous plumber"),
             dimension: 14,
             grid:
             [
@@ -698,8 +698,8 @@ var medium =
             ]
         },
         {
-            title: "Father and son",
-            hintTitle: "Flesh of his flesh",
+            title: qstr("Father and son"),
+            hintTitle: qstr("Flesh of his flesh"),
             dimension: 15,
             grid:
             [
@@ -721,8 +721,8 @@ var medium =
             ]
         },
         {
-            title: "Snake",
-            hintTitle: "Devil's animal",
+            title: qstr("Snake"),
+            hintTitle: qstr("Devil's animal"),
             dimension: 15,
             grid:
             [
@@ -744,8 +744,8 @@ var medium =
             ]
         },
         {
-            title: "Dog",
-            hintTitle: "Woof!",
+            title: qstr("Dog"),
+            hintTitle: qstr("Woof!"),
             dimension: 15,
             grid:
             [
@@ -767,8 +767,8 @@ var medium =
             ]
         },
         {
-            title: "Umbrella",
-            hintTitle: "The best shelter when needed",
+            title: qstr("Umbrella"),
+            hintTitle: qstr("The best shelter when needed"),
             dimension: 15,
             grid:
             [
@@ -790,8 +790,8 @@ var medium =
             ]
         },
         {
-            title: "Penguin",
-            hintTitle: "Classy BlackAndWhite",
+            title: qstr("Penguin"),
+            hintTitle: qstr("Classy BlackAndWhite"),
             dimension: 20,
             grid:
             [
@@ -818,8 +818,8 @@ var medium =
             ]
         },
         {
-            title: "UFO",
-            hintTitle: "Space Invaders",
+            title: qstr("UFO"),
+            hintTitle: qstr("Space Invaders"),
             dimension: 20,
             grid:
             [
@@ -849,8 +849,8 @@ var medium =
 var hard =
     [
         {
-            title:"Spiny",
-            hintTitle:"You're first? Fear him...",
+            title:qstr("Spiny"),
+            hintTitle:qstr("You're first? Fear him..."),
             dimension:15,
             grid:
                 [
@@ -872,8 +872,8 @@ var hard =
                 ]
         },
         {
-            title: "Puppy",
-            hintTitle: "Smallest men's best friend",
+            title: qstr("Puppy"),
+            hintTitle: qstr("Smallest men's best friend"),
             dimension: 15,
             grid:
                 [
@@ -895,8 +895,8 @@ var hard =
                 ]
         },
         {
-            title: "Bunny",
-            hintTitle: "Return of the latecomer",
+            title: qstr("Bunny"),
+            hintTitle: qstr("Return of the latecomer"),
             dimension: 12,
             grid:
                 [
@@ -915,8 +915,8 @@ var hard =
                 ]
         },
         {
-            title: "Stroller",
-            hintTitle: "Legs of the youngest",
+            title: qstr("Stroller"),
+            hintTitle: qstr("Legs of the youngest"),
             dimension: 20,
             grid:
             [
@@ -943,8 +943,8 @@ var hard =
             ]
         },
         {
-            title: "The thinker",
-            hintTitle: "What to do...?",
+            title: qstr("The thinker"),
+            hintTitle: qstr("What to do...?"),
             dimension: 15,
             grid:
             [
@@ -966,8 +966,8 @@ var hard =
             ]
         },
         {
-            title:"Nuclear mushroom",
-            hintTitle: "It's very radioactive!",
+            title:qstr("Nuclear mushroom"),
+            hintTitle: qstr("It's very radioactive!"),
             dimension: 15,
             grid:
             [
@@ -989,8 +989,8 @@ var hard =
             ]
         },
         {
-            title: "Flower",
-            hintTitle: "Smells good",
+            title: qstr("Flower"),
+            hintTitle: qstr("Smells good"),
             dimension: 15,
             grid:
             [
@@ -1012,8 +1012,8 @@ var hard =
             ]
         },
         {
-            title: "Deer",
-            hintTitle: "Majestic",
+            title: qstr("Deer"),
+            hintTitle: qstr("Majestic"),
             dimension: 20,
             grid:
             [
@@ -1040,8 +1040,8 @@ var hard =
             ]
         },
         {
-            title:"Cow",
-            hintTitle:"Moo",
+            title:qstr("Cow"),
+            hintTitle:qstr("Moo"),
             dimension:19,
             grid:
             [
@@ -1067,8 +1067,8 @@ var hard =
             ]
         },
         {
-            title: "Yoshi",
-            hintTitle:"Well-known little dragon",
+            title: qstr("Yoshi"),
+            hintTitle:qstr("Well-known little dragon"),
             dimension: 10,
             grid:
             [
@@ -1085,8 +1085,8 @@ var hard =
             ]
         },
         {
-            title: "Sheep",
-            hintTitle: "One falls, others follow",
+            title: qstr("Sheep"),
+            hintTitle: qstr("One falls, others follow"),
             dimension:15,
             grid:
             [
@@ -1108,8 +1108,8 @@ var hard =
             ]
         },
         {
-            title: "Bird",
-            hintTitle: "Flying animal",
+            title: qstr("Bird"),
+            hintTitle: qstr("Flying animal"),
             dimension: 15,
             grid:
             [
@@ -1131,8 +1131,8 @@ var hard =
             ]
         },
         {
-            title: "Cow",
-            hintTitle: "Farm animal",
+            title: qstr("Cow"),
+            hintTitle: qstr("Farm animal"),
             dimension: 20,
             grid:
             [
@@ -1159,8 +1159,8 @@ var hard =
             ]
         },
         {
-            title: "Crane and truck",
-            hintTitle: "Construction site",
+            title: qstr("Crane and truck"),
+            hintTitle: qstr("Construction site"),
             dimension: 20,
             grid:
             [
@@ -1187,8 +1187,8 @@ var hard =
             ]
         },
         {
-            title: "Boy",
-            hintTitle: "Sup' bro",
+            title: qstr("Boy"),
+            hintTitle: qstr("Sup' bro"),
             dimension: 20,
             grid:
             [
@@ -1215,8 +1215,8 @@ var hard =
             ]
         },
         {
-            title: "Camera",
-            hintTitle: "Cheese!",
+            title: qstr("Camera"),
+            hintTitle: qstr("Cheese!"),
             dimension: 20,
             grid:
             [
@@ -1243,8 +1243,8 @@ var hard =
             ]
         },
         {
-            title: "Koala",
-            hintTitle: "Not so fast...",
+            title: qstr("Koala"),
+            hintTitle: qstr("Not so fast..."),
             dimension: 20,
             grid:
             [
@@ -1271,8 +1271,8 @@ var hard =
             ]
         },
         {
-            title: "Peanuts",
-            hintTitle: "Classy dog",
+            title: qstr("Peanuts"),
+            hintTitle: qstr("Classy dog"),
             dimension: 20,
             grid:
             [
@@ -1299,8 +1299,8 @@ var hard =
             ]
         },
         {
-            title: "Parrot",
-            hintTitle: "A true singer",
+            title: qstr("Parrot"),
+            hintTitle: qstr("A true singer"),
             dimension: 20,
             grid:
             [
@@ -1327,8 +1327,8 @@ var hard =
             ]
         },
         {
-            title: "Barrow",
-            hintTitle: "Easy carry",
+            title: qstr("Barrow"),
+            hintTitle: qstr("Easy carry"),
             dimension: 20,
             grid:
             [
@@ -1355,8 +1355,8 @@ var hard =
             ]
         },
         {
-            title: "Ninja",
-            hintTitle: "You can't see him",
+            title: qstr("Ninja"),
+            hintTitle: qstr("You can't see him"),
             dimension: 20,
             grid:
             [
@@ -1383,8 +1383,8 @@ var hard =
             ]
         },
         {
-            title: "Rain",
-            hintTitle: "Not a day to be out",
+            title: qstr("Rain"),
+            hintTitle: qstr("Not a day to be out"),
             dimension: 20,
             grid:
             [
@@ -1411,8 +1411,8 @@ var hard =
             ]
         },
         {
-            title: "Monster Truck",
-            hintTitle: "Don't be on its way!",
+            title: qstr("Monster Truck"),
+            hintTitle: qstr("Don't be on its way!"),
             dimension: 20,
             grid:
             [
@@ -1442,8 +1442,8 @@ var hard =
 var expert =
     [
         {
-            title:"Kitty",
-            hintTitle: "King of the Net",
+            title:qstr("Kitty"),
+            hintTitle: qstr("King of the Net"),
             dimension: 20,
             grid:
                 [
@@ -1470,8 +1470,8 @@ var expert =
                 ]
         },
         {
-            title: "Scorpion",
-            hintTitle: "Beware, he can sting!",
+            title: qstr("Scorpion"),
+            hintTitle: qstr("Beware, he can sting!"),
             dimension: 20,
             grid:
             [
@@ -1498,8 +1498,8 @@ var expert =
             ]
         },
         {
-            title: "Thumbs up",
-            hintTitle: "Good game!",
+            title: qstr("Thumbs up"),
+            hintTitle: qstr("Good game!"),
             dimension: 20,
             grid:
             [
@@ -1526,8 +1526,8 @@ var expert =
             ]
         },
         {
-            title: "Runner",
-            hintTitle: "Run Forrest, run!",
+            title: qstr("Runner"),
+            hintTitle: qstr("Run Forrest, run!"),
             dimension: 20,
             grid:
             [
@@ -1554,8 +1554,8 @@ var expert =
             ]
         },
         {
-            title: "Dinning table",
-            hintTitle: "Bon appetit!",
+            title: qstr("Dinning table"),
+            hintTitle: qstr("Bon appetit!"),
             dimension: 20,
             grid:
             [
@@ -1582,8 +1582,8 @@ var expert =
             ]
         },
         {
-            title: "Shocked rabbit",
-            hintTitle: "He has seen things...",
+            title: qstr("Shocked rabbit"),
+            hintTitle: qstr("He has seen things..."),
             dimension: 20,
             grid:
             [
@@ -1610,8 +1610,8 @@ var expert =
             ]
         },
         {
-            title: "Octopus",
-            hintTitle: "Hey there",
+            title: qstr("Octopus"),
+            hintTitle: qstr("Hey there"),
             dimension: 20,
             grid:
             [
@@ -1638,8 +1638,8 @@ var expert =
             ]
         },
         {
-            title: "Racoon",
-            hintTitle: "I've got a zombie city",
+            title: qstr("Racoon"),
+            hintTitle: qstr("I've got a zombie city"),
             dimension: 20,
             grid:
             [
@@ -1666,8 +1666,8 @@ var expert =
             ]
         },
         {
-            title: "Motorcycle",
-            hintTitle: "Vroom vroom",
+            title: qstr("Motorcycle"),
+            hintTitle: qstr("Vroom vroom"),
             dimension: 20,
             grid:
             [
@@ -1694,8 +1694,8 @@ var expert =
             ]
         },
         {
-            title: "Deer",
-            hintTitle: "Rudolph",
+            title: qstr("Deer"),
+            hintTitle: qstr("Rudolph"),
             dimension: 20,
             grid:
             [
@@ -1722,8 +1722,8 @@ var expert =
             ]
         },
         {
-            title: "Sheep",
-            hintTitle: "Do not follow him...",
+            title: qstr("Sheep"),
+            hintTitle: qstr("Do not follow him..."),
             dimension: 20,
             grid:
             [
@@ -1750,8 +1750,8 @@ var expert =
             ]
         },
         {
-            title: "Mask-arade",
-            hintTitle: "Incognito",
+            title: qstr("Mask-arade"),
+            hintTitle: qstr("Incognito"),
             dimension: 20,
             grid:
             [
@@ -1778,8 +1778,8 @@ var expert =
             ]
         },
         {
-            title: "Chickadee",
-            hintTitle: "Flying American",
+            title: qstr("Chickadee"),
+            hintTitle: qstr("Flying American"),
             dimension: 20,
             grid:
             [
@@ -1809,8 +1809,8 @@ var expert =
 var insane =
     [
         {
-            title: "Wolf",
-            hintTitle: "Shouting to the moon",
+            title: qstr("Wolf"),
+            hintTitle: qstr("Shouting to the moon"),
             dimension: 25,
             grid:
             [
@@ -1842,8 +1842,8 @@ var insane =
             ]
         },
         {
-            title: "Rose",
-            hintTitle: "Prickly beauty",
+            title: qstr("Rose"),
+            hintTitle: qstr("Prickly beauty"),
             dimension: 25,
             grid:
             [
@@ -1875,8 +1875,8 @@ var insane =
             ]
         },
         {
-            title: "Peach",
-            hintTitle: "... On another castle",
+            title: qstr("Peach"),
+            hintTitle: qstr("... On another castle"),
             dimension: 25,
             grid:
             [
@@ -1908,8 +1908,8 @@ var insane =
             ]
         },
         {
-            title: "Rasputine",
-            hintTitle: "Lover of the russian queen~",
+            title: qstr("Rasputine"),
+            hintTitle: qstr("Lover of the russian queen~"),
             dimension: 25,
             grid:
             [
@@ -1941,8 +1941,8 @@ var insane =
             ]
         },
         {
-            title: "Kiss",
-            hintTitle: "Fake in every movie",
+            title: qstr("Kiss"),
+            hintTitle: qstr("Fake in every movie"),
             dimension: 25,
             grid:
             [
@@ -1974,8 +1974,8 @@ var insane =
             ]
         },
         {
-            title: "Horseman",
-            hintTitle: "Go Jolly Jumper!",
+            title: qstr("Horseman"),
+            hintTitle: qstr("Go Jolly Jumper!"),
             dimension: 25,
             grid:
             [
@@ -2007,8 +2007,8 @@ var insane =
             ]
         },
         {
-            title: "Archimedes",
-            hintTitle: "Splash!",
+            title: qstr("Archimedes"),
+            hintTitle: qstr("Splash!"),
             dimension: 25,
             grid:
             [
@@ -2040,8 +2040,8 @@ var insane =
             ]
         },
         {
-            title: "Peanuts",
-            hintTitle: "A dark and stormy night",
+            title: qstr("Peanuts"),
+            hintTitle: qstr("A dark and stormy night"),
             dimension: 25,
             grid:
             [
@@ -2073,8 +2073,8 @@ var insane =
             ]
         },
         {
-            title: "Lucy",
-            hintTitle: ".. In the sky with diamonds",
+            title: qstr("Lucy"),
+            hintTitle: qstr(".. In the sky with diamonds"),
             dimension: 25,
             grid:
             [
@@ -2106,8 +2106,8 @@ var insane =
             ]
         },
         {
-            title: "Partridge",
-            hintTitle: "Looking for shine",
+            title: qstr("Partridge"),
+            hintTitle: qstr("Looking for shine"),
             dimension: 25,
             grid:
             [
@@ -2139,8 +2139,8 @@ var insane =
             ]
         },
         {
-            title: "Windy day",
-            hintTitle: "Poupoupidou~",
+            title: qstr("Windy day"),
+            hintTitle: qstr("Poupoupidou~"),
             dimension: 25,
             grid:
             [
@@ -2172,8 +2172,8 @@ var insane =
             ]
         },
         {
-            title: "Bee",
-            hintTitle: "Honey plant",
+            title: qstr("Bee"),
+            hintTitle: qstr("Honey plant"),
             dimension: 25,
             grid:
             [
