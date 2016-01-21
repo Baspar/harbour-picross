@@ -9,6 +9,11 @@ Page {
         property int insideBorderSize: 5
         property int outsideBorderSize: 10
 
+        property string hintTitleCp: game.hintTitle
+        onHintTitleCpChanged: {
+                pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+                resetPageHeader.start()
+        }
 
         id: page
 
@@ -238,29 +243,23 @@ Page {
                                         }
                                 }
                                 onClicked:{
-                                    if(!resetPageHeader.running)
-                                            pageHeader.title=qsTr("Dimension: ")+game.dimension+"x"+game.dimension
+                                    if(!resetPageHeader.running){
+                                        pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+                                        resetPageHeader.start()
+                                    }else
+                                        resetPageHeader.restart()
                                 }
 
                                 Timer{
                                         id: resetPageHeader
                                         interval: 2000
-                                        onTriggered: pageHeader.title=game.hintTitle===""?"Picross":game.hintTitle
+                                        onTriggered: pageHeader.title=game.hintTitle===""?qsTr("Picross"):game.hintTitle
                                 }
                         }
 
                         PageHeader {
-                                property string titleCpy: game.title
                                 id: pageHeader
                                 title: qsTr("Picross")
-                                onTitleCpyChanged:{
-                                    pageHeader.title="Dimension: "+game.dimension+"x"+game.dimension
-                                }
-                                onTitleChanged:{
-                                    var myreg=/Dimension: .*/
-                                    if(myreg.test(pageHeader.title))
-                                        resetPageHeader.start()
-                                }
                                 Behavior on title{
                                             SequentialAnimation {
                                                 NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }

@@ -15,7 +15,6 @@ Rectangle {
             fadeIntensity: 0.01
             intensity: 0.8
             duration: 100
-
     }
 
     id: thisrect
@@ -57,32 +56,11 @@ Rectangle {
     Behavior on opacity {NumberAnimation{duration: 100}}
 
     MouseArea{
-        hoverEnabled: true
-        property bool hovered: false
         anchors.fill: parent
+
         onPressAndHold: {
             game.slideMode=thisrect.estate
             customBuzz.start()
-            console.log("Debut slid")
-        }
-        onReleased:{
-            game.slideMode=""
-        }
-
-        onEntered:{
-                hovered=true
-                console.log("")
-        }
-        onExited:{
-                hovered=false
-                console.log("")
-        }
-
-        onHoveredChanged: {
-            if(hovered)
-                    console.log(myID+" survolé!")
-            else
-                    console.log(myID+" quitté!")
         }
 
         onClicked: {

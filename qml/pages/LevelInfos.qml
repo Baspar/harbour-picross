@@ -87,7 +87,7 @@ Page{
             anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.highlightColor
-            text: qsTr("Best time:")
+            text: qsTr("Best time")+":"
         }
         Label{
             property int time : DB.getTime(diffSelected, levelSelected)

@@ -2209,27 +2209,27 @@ var insane =
 
 var levels = [
         {
-            name: "Tutorial",
+            name: qsTr("Tutorial"),
             list: tutorial
         },
         {
-            name: "Easy",
+            name: qsTr("Easy"),
             list: easy
         },
         {
-            name: "Medium",
+            name: qsTr("Medium"),
             list: medium
         },
         {
-            name: "Hard",
+            name: qsTr("Hard"),
             list: hard
         },
         {
-            name: "Expert",
+            name: qsTr("Expert"),
             list: expert
         },
         {
-            name: "Insane",
+            name: qsTr("Insane"),
             list: insane
         }
     ]
