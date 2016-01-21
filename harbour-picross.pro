@@ -15,15 +15,10 @@ TARGET = harbour-picross
 CONFIG += sailfishapp
 
 SOURCES += \
-    src/harbour-picross.cpp
-
-QT += sql \
-        core
-
-
-OTHER_FILES += \
+    src/harbour-picross.cpp 
+lupdate_only{
+SOURCES += \
     qml/cover/CoverPage.qml \
-    translations/*.ts \
     qml/pages/Case.qml \
     qml/pages/NewGame.qml \
     qml/pages/Grille.qml \
@@ -36,22 +31,28 @@ OTHER_FILES += \
     qml/DB.js \
     qml/pages/Settings.qml \
     qml/pages/Rules.qml \
-    scripts/genPicross.sh \
+    qml/harbour-picross.qml \
+    qml/pages/WholeGrid.qml 
+}
+
+
+
+QT += sql \
+        core
+
+
+OTHER_FILES += \
     rpm/harbour-picross.changes \
     rpm/harbour-picross.spec \
     rpm/harbour-picross.yaml \
     harbour-picross.desktop \
+    scripts/genPicross.sh \
     harbour-picross.png \
-    qml/harbour-picross.qml \
-    qml/pages/WholeGrid.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
-CONFIG += sailfishapp_i18n
+CONFIG += \
+    sailfishapp_i18n
 
-# German translation is enabled as an example. If you aren't
-# planning to localize your app, remember to comment out the
-# following TRANSLATIONS line. And also do not forget to
-# modify the localized app name in the the .desktop file.
-#TRANSLATIONS += translations/Picross-de.ts
-
+TRANSLATIONS += \
+    translations/harbour-picross.ts
