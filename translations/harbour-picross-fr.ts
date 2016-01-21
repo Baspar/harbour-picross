@@ -1,939 +1,941 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="fr">
 <context>
     <name>CoverPage</name>
     <message>
         <source>Picross</source>
-        <translation type="unfinished"></translation>
+        <translation>Picross</translation>
     </message>
 </context>
 <context>
     <name>LevelInfos</name>
     <message>
         <source>Level details</source>
-        <translation type="unfinished"></translation>
+        <translation>Détails du niveau</translation>
     </message>
     <message>
         <source>Best time</source>
-        <translation type="unfinished"></translation>
+        <translation>Meilleur temps</translation>
     </message>
 </context>
 <context>
     <name>Levels</name>
     <message>
         <source>Square</source>
-        <translation type="unfinished"></translation>
+        <translation>Carré</translation>
     </message>
     <message>
         <source>Numbers = size of the groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombres = taille des groupes</translation>
     </message>
     <message>
         <source>Hole</source>
-        <translation type="unfinished"></translation>
+        <translation>Trou</translation>
     </message>
     <message>
         <source>Groups are separated. But how far?</source>
-        <translation type="unfinished"></translation>
+        <translation>Les groupes sont séparés. Mais de combien?</translation>
     </message>
     <message>
         <source>Little grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Petit quadrillage</translation>
     </message>
     <message>
         <source>Sometimes, there is no choice...</source>
-        <translation type="unfinished"></translation>
+        <translation>Parfois, il n&apos;y a pas le choix...</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Croix</translation>
     </message>
     <message>
         <source>Green = corresponds. Click on it</source>
-        <translation type="unfinished"></translation>
+        <translation>Vert = Correspondance. Cliquez dessus</translation>
     </message>
     <message>
         <source>Pyramid</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyramide</translation>
     </message>
     <message>
         <source>You&apos;re on your own now</source>
-        <translation type="unfinished"></translation>
+        <translation>A vous de jouer maintenant</translation>
     </message>
     <message>
         <source>Heart</source>
-        <translation type="unfinished"></translation>
+        <translation>Coeur</translation>
     </message>
     <message>
         <source>Your first real level</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre premier vrai nivea</translation>
     </message>
     <message>
         <source>Bubble</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulle</translation>
     </message>
     <message>
         <source>What !!?</source>
-        <translation type="unfinished"></translation>
+        <translation>Quoi !!?</translation>
     </message>
     <message>
         <source>Chick</source>
-        <translation type="unfinished"></translation>
+        <translation>Poussin</translation>
     </message>
     <message>
         <source>Yellow animal</source>
-        <translation type="unfinished"></translation>
+        <translation>Animal jaune</translation>
     </message>
     <message>
         <source>Attraction</source>
-        <translation type="unfinished"></translation>
+        <translation>Attractio</translation>
     </message>
     <message>
         <source>Creeper</source>
-        <translation type="unfinished"></translation>
+        <translation>Creeper</translation>
     </message>
     <message>
         <source>Ka-Boom!</source>
-        <translation type="unfinished"></translation>
+        <translation>Boom!</translation>
     </message>
     <message>
         <source>Rabbit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lapin</translation>
     </message>
     <message>
         <source>I&apos;m late, I&apos;m late...</source>
-        <translation type="unfinished"></translation>
+        <translation>Je suis en retard, en retard...</translation>
     </message>
     <message>
         <source>Cup</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasse</translation>
     </message>
     <message>
         <source>Tea time!</source>
-        <translation type="unfinished"></translation>
+        <translation>C&apos;est l&apos;heure du thé</translation>
     </message>
     <message>
         <source>Small boat</source>
-        <translation type="unfinished"></translation>
+        <translation>Petit bateau</translation>
     </message>
     <message>
         <source>Let&apos;s sail</source>
-        <translation type="unfinished"></translation>
+        <translation>Larguez les amarres</translation>
     </message>
     <message>
         <source>Apple</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomme</translation>
     </message>
     <message>
         <source>It&apos;s meant to fall</source>
-        <translation type="unfinished"></translation>
+        <translation>Naturellement, ça tombe</translation>
     </message>
     <message>
         <source>Cherry</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerise</translation>
     </message>
     <message>
         <source>Small fruit</source>
-        <translation type="unfinished"></translation>
+        <translation>Petit fruit</translation>
     </message>
     <message>
         <source>Flat</source>
-        <translation type="unfinished"></translation>
+        <translation>Plat</translation>
     </message>
     <message>
         <source>It&apos;s high!</source>
-        <translation type="unfinished"></translation>
+        <translation>Il ne faut pas avoir le vertige!</translation>
     </message>
     <message>
         <source>Dancer</source>
-        <translation type="unfinished"></translation>
+        <translation>Danseur</translation>
     </message>
     <message>
         <source>It swings!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ça swingue</translation>
     </message>
     <message>
         <source>Crab</source>
-        <translation type="unfinished"></translation>
+        <translation>Crabe</translation>
     </message>
     <message>
         <source>He pinches</source>
-        <translation type="unfinished"></translation>
+        <translation>Gare aux doigts</translation>
     </message>
     <message>
         <source>Humming-Bird</source>
-        <translation type="unfinished"></translation>
+        <translation>Colibris</translation>
     </message>
     <message>
         <source>Flower eater</source>
-        <translation type="unfinished"></translation>
+        <translation>Dévoreur floral </translation>
     </message>
     <message>
         <source>Monkey</source>
-        <translation type="unfinished"></translation>
+        <translation>Singe</translation>
     </message>
     <message>
         <source>Our ancestor</source>
-        <translation type="unfinished"></translation>
+        <translation>Notre ancetre à tous</translation>
     </message>
     <message>
         <source>Snail</source>
-        <translation type="unfinished"></translation>
+        <translation>Escargot</translation>
     </message>
     <message>
         <source>Small helix</source>
-        <translation type="unfinished"></translation>
+        <translation>Petite hélice</translation>
     </message>
     <message>
         <source>Goldfish</source>
-        <translation type="unfinished"></translation>
+        <translation>Poisson rouge</translation>
     </message>
     <message>
         <source>A very bad memory...</source>
-        <translation type="unfinished"></translation>
+        <translation>Retenez mieux que lui...</translation>
     </message>
     <message>
         <source>Kitten</source>
-        <translation type="unfinished"></translation>
+        <translation>Chato</translation>
     </message>
     <message>
         <source>Little predator</source>
-        <translation type="unfinished"></translation>
+        <translation>Mignon prédateur </translation>
     </message>
     <message>
         <source>Owl</source>
-        <translation type="unfinished"></translation>
+        <translation>Chouette</translation>
     </message>
     <message>
         <source>Night animal</source>
-        <translation type="unfinished"></translation>
+        <translation>Animal nocturne</translation>
     </message>
     <message>
         <source>Helicopter</source>
-        <translation type="unfinished"></translation>
+        <translation>Helicoptere </translation>
     </message>
     <message>
         <source>Not so &quot;U&quot; for a UFO</source>
-        <translation type="unfinished"></translation>
+        <translation>Ils sont parmi nous...</translation>
     </message>
     <message>
         <source>Flask</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiole</translation>
     </message>
     <message>
         <source>Witch&apos;s util</source>
-        <translation type="unfinished"></translation>
+        <translation>Verre de sorcière</translation>
     </message>
     <message>
         <source>Moose</source>
-        <translation type="unfinished"></translation>
+        <translation>Élan</translation>
     </message>
     <message>
         <source>He loves the cold</source>
-        <translation type="unfinished"></translation>
+        <translation>Il aime le froid</translation>
     </message>
     <message>
         <source>Sailboat</source>
-        <translation type="unfinished"></translation>
+        <translation>Voilier</translation>
     </message>
     <message>
         <source>You are a pirate~</source>
-        <translation type="unfinished"></translation>
+        <translation>À l&apos;abordage!</translation>
     </message>
     <message>
         <source>Duck</source>
-        <translation type="unfinished"></translation>
+        <translation>Canard</translation>
     </message>
     <message>
         <source>Ugly, according to Andersen</source>
-        <translation type="unfinished"></translation>
+        <translation>Vilain selon Andersen</translation>
     </message>
     <message>
         <source>Seal</source>
-        <translation type="unfinished"></translation>
+        <translation>Phoque</translation>
     </message>
     <message>
         <source>Often hunted for its fur</source>
-        <translation type="unfinished"></translation>
+        <translation>Tué pour sa fourrure</translation>
     </message>
     <message>
         <source>Squirrel</source>
-        <translation type="unfinished"></translation>
+        <translation>Écureuil</translation>
     </message>
     <message>
         <source>Hiding his nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Cache-noisette</translation>
     </message>
     <message>
         <source>Panda</source>
-        <translation type="unfinished"></translation>
+        <translation>Panda</translation>
     </message>
     <message>
         <source>Stained</source>
-        <translation type="unfinished"></translation>
+        <translation>Tâché</translation>
     </message>
     <message>
         <source>Tap</source>
-        <translation type="unfinished"></translation>
+        <translation>Robinet</translation>
     </message>
     <message>
         <source>In the middle of the night</source>
-        <translation type="unfinished"></translation>
+        <translation>*tip* tip* *tip*</translation>
     </message>
     <message>
         <source>Mushroom</source>
-        <translation type="unfinished"></translation>
+        <translation>Champignon</translation>
     </message>
     <message>
         <source>Makes you stronger</source>
-        <translation type="unfinished"></translation>
+        <translation>De quoi grandir</translation>
     </message>
     <message>
         <source>Meowth</source>
-        <translation type="unfinished"></translation>
+        <translation>Miaouss</translation>
     </message>
     <message>
         <source>Gotta catch them all~</source>
-        <translation type="unfinished"></translation>
+        <translation>Attrapez les tous~</translation>
     </message>
     <message>
         <source>Elephants</source>
-        <translation type="unfinished"></translation>
+        <translation>Élephants</translation>
     </message>
     <message>
         <source>Cute couple</source>
-        <translation type="unfinished"></translation>
+        <translation>Ça trompe énormément</translation>
     </message>
     <message>
         <source>Mario</source>
-        <translation type="unfinished"></translation>
+        <translation>Mario</translation>
     </message>
     <message>
         <source>World most famous plumber</source>
-        <translation type="unfinished"></translation>
+        <translation>Célèbre plombier</translation>
     </message>
     <message>
         <source>Father and son</source>
-        <translation type="unfinished"></translation>
+        <translation>Père et fils</translation>
     </message>
     <message>
         <source>Flesh of his flesh</source>
-        <translation type="unfinished"></translation>
+        <translation>La chair de sa chair</translation>
     </message>
     <message>
         <source>Snake</source>
-        <translation type="unfinished"></translation>
+        <translation>Serpent</translation>
     </message>
     <message>
         <source>Devil&apos;s animal</source>
-        <translation type="unfinished"></translation>
+        <translation>Animal maudit</translation>
     </message>
     <message>
         <source>Dog</source>
-        <translation type="unfinished"></translation>
+        <translation>Chien</translation>
     </message>
     <message>
         <source>Woof!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouaf!</translation>
     </message>
     <message>
         <source>Umbrella</source>
-        <translation type="unfinished"></translation>
+        <translation>Parapluie </translation>
     </message>
     <message>
         <source>The best shelter when needed</source>
-        <translation type="unfinished"></translation>
+        <translation>Parfois, le meilleur abri</translation>
     </message>
     <message>
         <source>Penguin</source>
-        <translation type="unfinished"></translation>
+        <translation>Pingouin</translation>
     </message>
     <message>
         <source>Classy BlackAndWhite</source>
-        <translation type="unfinished"></translation>
+        <translation>Noir et blanc</translation>
     </message>
     <message>
         <source>UFO</source>
-        <translation type="unfinished"></translation>
+        <translation>OVNI</translation>
     </message>
     <message>
         <source>Space Invaders</source>
-        <translation type="unfinished"></translation>
+        <translation>Space Invaders</translation>
     </message>
     <message>
         <source>Spiny</source>
-        <translation type="unfinished"></translation>
+        <translation>Carapace bleue</translation>
     </message>
     <message>
         <source>You&apos;re first? Fear him...</source>
-        <translation type="unfinished"></translation>
+        <translation>Que les premiers la craignent</translation>
     </message>
     <message>
         <source>Puppy</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiot</translation>
     </message>
     <message>
         <source>Smallest men&apos;s best friend</source>
-        <translation type="unfinished"></translation>
+        <translation>Petit meilleur ami de l&apos;homme</translation>
     </message>
     <message>
         <source>Bunny</source>
-        <translation type="unfinished"></translation>
+        <translation>Lapin</translation>
     </message>
     <message>
         <source>Return of the latecomer</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour du retardataire </translation>
     </message>
     <message>
         <source>Stroller</source>
-        <translation type="unfinished"></translation>
+        <translation>Poussette</translation>
     </message>
     <message>
         <source>Legs of the youngest</source>
-        <translation type="unfinished"></translation>
+        <translation>Les jambes du bambin</translation>
     </message>
     <message>
         <source>The thinker</source>
-        <translation type="unfinished"></translation>
+        <translation>Le penseur</translation>
     </message>
     <message>
         <source>What to do...?</source>
-        <translation type="unfinished"></translation>
+        <translation>Être ou ne pas être...</translation>
     </message>
     <message>
         <source>Nuclear mushroom</source>
-        <translation type="unfinished"></translation>
+        <translation>Champignon nucléaire</translation>
     </message>
     <message>
         <source>It&apos;s very radioactive!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiroshima</translation>
     </message>
     <message>
         <source>Flower</source>
-        <translation type="unfinished"></translation>
+        <translation>Fleur</translation>
     </message>
     <message>
         <source>Smells good</source>
-        <translation type="unfinished"></translation>
+        <translation>Dame du Printemps</translation>
     </message>
     <message>
         <source>Deer</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerf</translation>
     </message>
     <message>
         <source>Majestic</source>
-        <translation type="unfinished"></translation>
+        <translation>Majestueux</translation>
     </message>
     <message>
         <source>Cow</source>
-        <translation type="unfinished"></translation>
+        <translation>Vache</translation>
     </message>
     <message>
         <source>Moo</source>
-        <translation type="unfinished"></translation>
+        <translation>Meuh</translation>
     </message>
     <message>
         <source>Yoshi</source>
-        <translation type="unfinished"></translation>
+        <translation>Yosh</translation>
     </message>
     <message>
         <source>Well-known little dragon</source>
-        <translation type="unfinished"></translation>
+        <translation>Dragon acolyte </translation>
     </message>
     <message>
         <source>Sheep</source>
-        <translation type="unfinished"></translation>
+        <translation>Mouton</translation>
     </message>
     <message>
         <source>One falls, others follow</source>
-        <translation type="unfinished"></translation>
+        <translation>Une chaîne sans fin</translation>
     </message>
     <message>
         <source>Bird</source>
-        <translation type="unfinished"></translation>
+        <translation>Oiseau</translation>
     </message>
     <message>
         <source>Flying animal</source>
-        <translation type="unfinished"></translation>
+        <translation>Animal du ciel</translation>
     </message>
     <message>
         <source>Farm animal</source>
-        <translation type="unfinished"></translation>
+        <translation>Animal de la ferme</translation>
     </message>
     <message>
         <source>Crane and truck</source>
-        <translation type="unfinished"></translation>
+        <translation>Engins de chantier</translation>
     </message>
     <message>
         <source>Construction site</source>
-        <translation type="unfinished"></translation>
+        <translation>Site de construction</translation>
     </message>
     <message>
         <source>Boy</source>
-        <translation type="unfinished"></translation>
+        <translation>Garçon</translation>
     </message>
     <message>
         <source>Sup&apos; bro</source>
-        <translation type="unfinished"></translation>
+        <translation>Quoi de neuf?</translation>
     </message>
     <message>
         <source>Camera</source>
-        <translation type="unfinished"></translation>
+        <translation>Appareil photo</translation>
     </message>
     <message>
         <source>Cheese!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouistiti!</translation>
     </message>
     <message>
         <source>Koala</source>
-        <translation type="unfinished"></translation>
+        <translation>Koala</translation>
     </message>
     <message>
         <source>Not so fast...</source>
-        <translation type="unfinished"></translation>
+        <translation>Doucement, doucement...</translation>
     </message>
     <message>
         <source>Peanuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Snoopy</translation>
     </message>
     <message>
         <source>Classy dog</source>
-        <translation type="unfinished"></translation>
+        <translation>Chien pensif </translation>
     </message>
     <message>
         <source>Parrot</source>
-        <translation type="unfinished"></translation>
+        <translation>Perroquet </translation>
     </message>
     <message>
         <source>A true singer</source>
-        <translation type="unfinished"></translation>
+        <translation>Chanteur de renom</translation>
     </message>
     <message>
         <source>Barrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Brouette</translation>
     </message>
     <message>
         <source>Easy carry</source>
-        <translation type="unfinished"></translation>
+        <translation>Soulage le dos</translation>
     </message>
     <message>
         <source>Ninja</source>
-        <translation type="unfinished"></translation>
+        <translation>Ninja</translation>
     </message>
     <message>
         <source>You can&apos;t see him</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu me vois plus</translation>
     </message>
     <message>
         <source>Rain</source>
-        <translation type="unfinished"></translation>
+        <translation>Pluie</translation>
     </message>
     <message>
         <source>Not a day to be out</source>
-        <translation type="unfinished"></translation>
+        <translation>Un temps de chien</translation>
     </message>
     <message>
         <source>Monster Truck</source>
-        <translation type="unfinished"></translation>
+        <translation>Monster Truck</translation>
     </message>
     <message>
         <source>Don&apos;t be on its way!</source>
-        <translation type="unfinished"></translation>
+        <translation>Faites place!</translation>
     </message>
     <message>
         <source>Kitty</source>
-        <translation type="unfinished"></translation>
+        <translation>Chaton</translation>
     </message>
     <message>
         <source>King of the Net</source>
-        <translation type="unfinished"></translation>
+        <translation>Roi du web</translation>
     </message>
     <message>
         <source>Scorpion</source>
-        <translation type="unfinished"></translation>
+        <translation>Scorpion</translation>
     </message>
     <message>
         <source>Beware, he can sting!</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention a la piqure </translation>
     </message>
     <message>
         <source>Thumbs up</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouce!</translation>
     </message>
     <message>
         <source>Good game!</source>
-        <translation type="unfinished"></translation>
+        <translation>On fait une pause?</translation>
     </message>
     <message>
         <source>Runner</source>
-        <translation type="unfinished"></translation>
+        <translation>Coureur</translation>
     </message>
     <message>
         <source>Run Forrest, run!</source>
-        <translation type="unfinished"></translation>
+        <translation>Cours Forrest, cours!</translation>
     </message>
     <message>
         <source>Dinning table</source>
-        <translation type="unfinished"></translation>
+        <translation>Repas</translation>
     </message>
     <message>
         <source>Bon appetit!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bon appetit!</translation>
     </message>
     <message>
         <source>Shocked rabbit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lapin apeuré</translation>
     </message>
     <message>
         <source>He has seen things...</source>
-        <translation type="unfinished"></translation>
+        <translation>Il a vu des choses...</translation>
     </message>
     <message>
         <source>Octopus</source>
-        <translation type="unfinished"></translation>
+        <translation>Pieuvre</translation>
     </message>
     <message>
         <source>Hey there</source>
-        <translation type="unfinished"></translation>
+        <translation>Bonjour tout le monde</translation>
     </message>
     <message>
         <source>Racoon</source>
-        <translation type="unfinished"></translation>
+        <translation>Raton laveur</translation>
     </message>
     <message>
         <source>I&apos;ve got a zombie city</source>
-        <translation type="unfinished"></translation>
+        <translation>Animal propre</translation>
     </message>
     <message>
         <source>Motorcycle</source>
-        <translation type="unfinished"></translation>
+        <translation>Moto</translation>
     </message>
     <message>
         <source>Vroom vroom</source>
-        <translation type="unfinished"></translation>
+        <translation>Vroum, vroum</translation>
     </message>
     <message>
         <source>Rudolph</source>
-        <translation type="unfinished"></translation>
+        <translation>Rudolphe</translation>
     </message>
     <message>
         <source>Do not follow him...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exemple à ne pas suivre</translation>
     </message>
     <message>
         <source>Mask-arade</source>
-        <translation type="unfinished"></translation>
+        <translation>Masqu-arade</translation>
     </message>
     <message>
         <source>Incognito</source>
-        <translation type="unfinished"></translation>
+        <translation>Incognito</translation>
     </message>
     <message>
         <source>Chickadee</source>
-        <translation type="unfinished"></translation>
+        <translation>Chickadee</translation>
     </message>
     <message>
         <source>Flying American</source>
-        <translation type="unfinished"></translation>
+        <translation>Oiseau Américain</translation>
     </message>
     <message>
         <source>Wolf</source>
-        <translation type="unfinished"></translation>
+        <translation>Loup</translation>
     </message>
     <message>
         <source>Shouting to the moon</source>
-        <translation type="unfinished"></translation>
+        <translation>Il cri à la lun</translation>
     </message>
     <message>
         <source>Rose</source>
-        <translation type="unfinished"></translation>
+        <translation>Rose</translation>
     </message>
     <message>
         <source>Prickly beauty</source>
-        <translation type="unfinished"></translation>
+        <translation>Beauté épineuse </translation>
     </message>
     <message>
         <source>Peach</source>
-        <translation type="unfinished"></translation>
+        <translation>Pêche</translation>
     </message>
     <message>
         <source>... On another castle</source>
-        <translation type="unfinished"></translation>
+        <translation>... Est dans un autre chateau</translation>
     </message>
     <message>
         <source>Rasputine</source>
-        <translation type="unfinished"></translation>
+        <translation>Raspoutine</translation>
     </message>
     <message>
         <source>Lover of the russian queen~</source>
-        <translation type="unfinished"></translation>
+        <translation>Lover of the russian queen~</translation>
     </message>
     <message>
         <source>Kiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Baiser</translation>
     </message>
     <message>
         <source>Fake in every movie</source>
-        <translation type="unfinished"></translation>
+        <translation>Faux au cinéma</translation>
     </message>
     <message>
         <source>Horseman</source>
-        <translation type="unfinished"></translation>
+        <translation>Jockey</translation>
     </message>
     <message>
         <source>Go Jolly Jumper!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hue Jolly Jumper!</translation>
     </message>
     <message>
         <source>Archimedes</source>
-        <translation type="unfinished"></translation>
+        <translation>Archimede</translation>
     </message>
     <message>
         <source>Splash!</source>
-        <translation type="unfinished"></translation>
+        <translation>Plouf</translation>
     </message>
     <message>
         <source>A dark and stormy night</source>
-        <translation type="unfinished"></translation>
+        <translation>Quelle vie de chien</translation>
     </message>
     <message>
         <source>Lucy</source>
-        <translation type="unfinished"></translation>
+        <translation>Lucy</translation>
     </message>
     <message>
         <source>.. In the sky with diamonds</source>
-        <translation type="unfinished"></translation>
+        <translation>.. In the sky with diamonds</translation>
     </message>
     <message>
         <source>Partridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Perdrix</translation>
     </message>
     <message>
         <source>Looking for shine</source>
-        <translation type="unfinished"></translation>
+        <translation>À la recherche du brillant</translation>
     </message>
     <message>
         <source>Windy day</source>
-        <translation type="unfinished"></translation>
+        <translation>Jour venteux</translation>
     </message>
     <message>
         <source>Poupoupidou~</source>
-        <translation type="unfinished"></translation>
+        <translation>Poupoupidou~</translation>
     </message>
     <message>
         <source>Bee</source>
-        <translation type="unfinished"></translation>
+        <translation>Abeille</translation>
     </message>
     <message>
         <source>Honey plant</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrière du miel</translation>
     </message>
     <message>
         <source>Tutorial</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutoriels</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation type="unfinished"></translation>
+        <translation>Faciles</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Moyens</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation type="unfinished"></translation>
+        <translation>Difficiles</translation>
     </message>
     <message>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Experts</translation>
     </message>
     <message>
         <source>Insane</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibles</translation>
     </message>
 </context>
 <context>
     <name>MainPage</name>
     <message>
         <source>Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom</translation>
     </message>
     <message>
         <source>Accepting guesses</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajout temporaires</translation>
     </message>
     <message>
         <source>Rejecting guesses</source>
-        <translation type="unfinished"></translation>
+        <translation>Retrait temporaires</translation>
     </message>
     <message>
         <source>Accept
 guesses</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajout
+temporaires</translation>
     </message>
     <message>
         <source>Reject
 guesses</source>
-        <translation type="unfinished"></translation>
+        <translation>Retrait
+temporaires</translation>
     </message>
     <message>
         <source>Picross</source>
-        <translation type="unfinished"></translation>
+        <translation>Picross</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Guess mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode temporaires</translation>
     </message>
     <message>
         <source>Clear grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer grille</translation>
     </message>
     <message>
         <source>Clearing the grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Effaçage de la grille en cours </translation>
     </message>
     <message>
         <source>New game</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouvelle partie</translation>
     </message>
     <message>
         <source>Welcome to Picross</source>
-        <translation type="unfinished"></translation>
+        <translation>Bienvenue dans Picross</translation>
     </message>
     <message>
         <source>Please choose a level from the pulley menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez choisir un niveau dans menu déroulant</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensions</translation>
     </message>
 </context>
 <context>
     <name>NewGame</name>
     <message>
         <source>Cheat...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tricheur...</translation>
     </message>
     <message>
         <source>New game</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouvelle partie</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation type="unfinished"></translation>
+        <translation>Verrouillé</translation>
     </message>
     <message>
         <source>Complete all previous levels to unlock this difficulty</source>
-        <translation type="unfinished"></translation>
+        <translation>Complétez tout les niveaux précédents pour débloquer cette difficulté  </translation>
     </message>
     <message>
         <source>Play from scratch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouvelle partie</translation>
     </message>
     <message>
         <source>Restore save</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger sauvegarde</translation>
     </message>
     <message>
         <source>Erase save</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer sauvegarde </translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Détails</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Load saves by default</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger les sauvegardes par défaut</translation>
     </message>
     <message>
         <source>Saves will be loaded by default</source>
-        <translation type="unfinished"></translation>
+        <translation>Les sauvegardes seront chargées par un simple clic</translation>
     </message>
     <message>
         <source>Load them by a long press</source>
-        <translation type="unfinished"></translation>
+        <translation>Les sauvegardes doivent être chargées par un appui long</translation>
     </message>
     <message>
         <source>Swipe throught difficulty</source>
-        <translation type="unfinished"></translation>
+        <translation>Glisser parmi les difficultés</translation>
     </message>
     <message>
         <source>Swipe is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Le glissement est activé</translation>
     </message>
     <message>
         <source>Swipe disable. Click on a difficulty name to load it</source>
-        <translation type="unfinished"></translation>
+        <translation>Le glissement est désactivé</translation>
     </message>
     <message>
         <source>Space between separators</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de cases entre les séparateurs</translation>
     </message>
     <message>
         <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer TOUTES les données (Sauvegardes et progrès)</translation>
     </message>
     <message>
         <source>Clearing ALL Databases</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacement de TOUTES les données</translation>
     </message>
     <message>
         <source>Clear only saves database</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer les sauvegardes</translation>
     </message>
     <message>
         <source>Clearing only saves database</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacement des sauvegardes</translation>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Remise à zéro des paramètres</translation>
     </message>
     <message>
         <source>Resetting settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Remise à zéro des paramètres</translation>
     </message>
 </context>
 <context>
     <name>WinPage</name>
     <message>
         <source>Level completed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Niveau résolu!</translation>
     </message>
     <message>
         <source>Next level</source>
-        <translation type="unfinished"></translation>
+        <translation>Prochain niveau</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour</translation>
     </message>
     <message>
         <source>Solution</source>
-        <translation type="unfinished"></translation>
+        <translation>Solution</translation>
     </message>
     <message>
         <source>Congratulations, you solve every level !</source>
-        <translation type="unfinished"></translation>
+        <translation>Félicitations, vous avez complété tous les niveaux du jeu!</translation>
     </message>
     <message>
         <source>Best time</source>
-        <translation type="unfinished"></translation>
+        <translation>Meilleur temps</translation>
     </message>
 </context>
 </TS>
