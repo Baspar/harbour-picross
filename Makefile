@@ -382,7 +382,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/harbour-picross1.0.0 || mkdir -p .tmp/harbour-picross1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/harbour-picross1.0.0/ && $(COPY_FILE) --parents src/harbour-picross.cpp .tmp/harbour-picross1.0.0/ && (cd `dirname .tmp/harbour-picross1.0.0` && $(TAR) harbour-picross1.0.0.tar harbour-picross1.0.0 && $(COMPRESS) harbour-picross1.0.0.tar) && $(MOVE) `dirname .tmp/harbour-picross1.0.0`/harbour-picross1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/harbour-picross1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/harbour-picross1.0.0/ && $(COPY_FILE) --parents src/harbour-picross.cpp .tmp/harbour-picross1.0.0/ && $(COPY_FILE) --parents translations/harbour-picross-fr.ts .tmp/harbour-picross1.0.0/ && (cd `dirname .tmp/harbour-picross1.0.0` && $(TAR) harbour-picross1.0.0.tar harbour-picross1.0.0 && $(COMPRESS) harbour-picross1.0.0.tar) && $(MOVE) `dirname .tmp/harbour-picross1.0.0`/harbour-picross1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/harbour-picross1.0.0
 
 
 clean:compiler_clean 
@@ -869,7 +869,12 @@ harbour-picross.o: src/harbour-picross.cpp /usr/include/qt5/QtSql/QtSql \
 
 install_qm: first FORCE
 	@test -d $(INSTALL_ROOT)/usr/share/harbour-picross/translations || mkdir -p $(INSTALL_ROOT)/usr/share/harbour-picross/translations
-	lupdate -noobsolete "/home/mersdk/share/Projets/harbour-picross/src" "/home/mersdk/share/Projets/harbour-picross/qml" -ts "/home/mersdk/share/Projets/harbour-picross/translations/harbour-picross.ts" && mkdir -p translations && [ "/home/mersdk/share/Projets/harbour-picross" != "/home/mersdk/share/Projets/harbour-picross" -a 0 -eq 1 ] && cp -af "/home/mersdk/share/Projets/harbour-picross/translations" || : ; [ 0 -eq 1 ] && lrelease -nounfinished || :
+	lupdate -noobsolete "/home/mersdk/share/Projets/harbour-picross/src" "/home/mersdk/share/Projets/harbour-picross/qml" -ts "/home/mersdk/share/Projets/harbour-picross/translations/harbour-picross.ts" "/home/mersdk/share/Projets/harbour-picross/translations/harbour-picross-fr.ts" && mkdir -p translations && [ "/home/mersdk/share/Projets/harbour-picross" != "/home/mersdk/share/Projets/harbour-picross" -a 1 -eq 1 ] && cp -af "/home/mersdk/share/Projets/harbour-picross/translations/harbour-picross-fr.ts" "/home/mersdk/share/Projets/harbour-picross/translations" || : ; [ 1 -eq 1 ] && lrelease -nounfinished "/home/mersdk/share/Projets/harbour-picross/translations/harbour-picross-fr.ts" || :
+	-$(INSTALL_FILE) /home/mersdk/share/Projets/harbour-picross/translations/harbour-picross-fr.qm $(INSTALL_ROOT)/usr/share/harbour-picross/translations/
+
+uninstall_qm: FORCE
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/harbour-picross/translations/harbour-picross-fr.qm
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/harbour-picross/translations/ 
 
 
 install_qml: first FORCE
@@ -911,7 +916,7 @@ uninstall_icon: FORCE
 
 install:  install_qm install_qml install_target install_desktop install_icon  FORCE
 
-uninstall: uninstall_qml uninstall_target uninstall_desktop uninstall_icon   FORCE
+uninstall: uninstall_qm uninstall_qml uninstall_target uninstall_desktop uninstall_icon   FORCE
 
 FORCE:
 
