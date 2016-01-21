@@ -2,7 +2,4 @@ harbour-picross
 harbour-picross.o
 RPMS/
 qml/Levels.js.old
-harbour-picross
-harbour-picross.o
-qml/Levels.js.old
-RPMS
+*user*
