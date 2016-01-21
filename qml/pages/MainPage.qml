@@ -28,7 +28,7 @@ Page {
                                 id: popupZoomText
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 Label{
-                                        text: qstr("Zoom")
+                                        text: qsTr("Zoom")
                                         color: Theme.highlightColor
                                         font.pixelSize: Theme.fontSizeLarge
                                         anchors.horizontalCenter: parent.horizontalCenter
@@ -102,7 +102,7 @@ Page {
                                                    Source.acceptGuesses()
                                                    goDefault.start()
                                            }else{
-                                                   remorseMain.execute(qstr("Accepting guesses"), function(){
+                                                   remorseMain.execute(qsTr("Accepting guesses"), function(){
                                                            Source.acceptGuesses()
                                                            goDefault.start()
                                                    }, 3000)
@@ -118,7 +118,7 @@ Page {
                                                    Source.rejectGuesses()
                                                    goDefault.start()
                                            }else{
-                                                   remorseMain.execute(qstr("Rejecting guesses"), function(){
+                                                   remorseMain.execute(qsTr("Rejecting guesses"), function(){
                                                            Source.rejectGuesses()
                                                            goDefault.start()
                                                    }, 3000)
@@ -134,7 +134,7 @@ Page {
                                         anchors.centerIn: parent
                                         spacing: Theme.paddingSmall
                                         Label{
-                                                text: qstr("Accept\nguesses")
+                                                text: qsTr("Accept\nguesses")
                                                 color: leftMouseArea.pressed||acceptIcon.pressed?Theme.highlightColor:Theme.primaryColor
                                         }
                                         IconButton{
@@ -145,7 +145,7 @@ Page {
                                                                    Source.acceptGuesses()
                                                                    goDefault.start()
                                                            }else{
-                                                                   remorseMain.execute(qstr("Accepting guesses"), function(){
+                                                                   remorseMain.execute(qsTr("Accepting guesses"), function(){
                                                                            Source.acceptGuesses()
                                                                            goDefault.start()
                                                                    }, 3000)
@@ -159,14 +159,14 @@ Page {
                                                                    Source.rejectGuesses()
                                                                    goDefault.start()
                                                            }else{
-                                                                   remorseMain.execute(qstr("Rejecting guesses"), function(){
+                                                                   remorseMain.execute(qsTr("Rejecting guesses"), function(){
                                                                            Source.rejectGuesses()
                                                                            goDefault.start()
                                                                    }, 3000)
                                                            }
                                         }
                                         Label{
-                                                text: qstr("Reject\nguesses")
+                                                text: qsTr("Reject\nguesses")
                                                 color: rightMouseArea.pressed||rejectIcon.pressed?Theme.highlightColor:Theme.primaryColor
                                                 horizontalAlignment: Text.AlignLeft
                                         }
@@ -239,7 +239,7 @@ Page {
                                 }
                                 onClicked:{
                                     if(!resetPageHeader.running)
-                                            pageHeader.title=qstr("Dimension: ")+game.dimension+"x"+game.dimension
+                                            pageHeader.title=qsTr("Dimension: ")+game.dimension+"x"+game.dimension
                                 }
 
                                 Timer{
@@ -252,7 +252,7 @@ Page {
                         PageHeader {
                                 property string titleCpy: game.title
                                 id: pageHeader
-                                title: qstr("Picross")
+                                title: qsTr("Picross")
                                 onTitleCpyChanged:{
                                     pageHeader.title="Dimension: "+game.dimension+"x"+game.dimension
                                 }
@@ -294,7 +294,7 @@ Page {
                                 id: menuClear
                                 visible: game.dimension!==0 && !game.guessMode
                                 text: qsTr("Clear grid")
-                                onClicked: remorseMain.execute(qstr("Clearing the grid"), function(){Source.clear()}, 3000)
+                                onClicked: remorseMain.execute(qsTr("Clearing the grid"), function(){Source.clear()}, 3000)
                         }
                         MenuItem {
                                 id: menuNewGame
