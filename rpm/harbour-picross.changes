@@ -12,10 +12,11 @@
 - Long click on indicators to unfold
 - Dynamic indicators font size
 - Red coloring for impossible cases
-- Tablet mode
+- Tablet mode enabled
 - Click on title to show dimension
 - FIX: next level hidden in "Next level" page
 - FIX: time display (Thanks to Self-Perfection #3 on Github)
+- Levels added: 5 Hard, 2 Expert, 6 Insane
 
 * Sun Sep 6 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.5-0
 - Best time
