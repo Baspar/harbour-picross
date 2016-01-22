@@ -109,7 +109,6 @@ Item{
                                                                                 if(completed||toFill)
                                                                                         Source.completeColX(index, toFill)
                                                                         }
-//                                                                        onPressAndHold: if(game.zoom!==1)foldTopMode=!foldTopMode
                                                                         onPressAndHold: foldTopMode=!foldTopMode
                                                                 }
 
@@ -219,7 +218,6 @@ Item{
                                                                                 if(completed||toFill)
                                                                                         Source.completeColX(index, toFill)
                                                                         }
-//                                                                        onPressAndHold: if(game.zoom!==1)foldTopMode=!foldTopMode
                                                                         onPressAndHold: foldTopMode=!foldTopMode
                                                                 }
                                                                 y:outsideBorderSize
@@ -404,6 +402,33 @@ Item{
                         opacity:0.3
                 }
         }
+
+        // Slide catcher
+        Rectangle{
+            x: grid.x
+            y: grid.y
+            z: 2
+            height: grid.height
+            width: grid.width
+            color: 'black'
+            opacity: game.slideMode!==""?0.3:0
+            visible: game.slideMode!==""
+            Behavior on opacity {NumberAnimation{duration: 200}}
+
+            MouseArea{
+                anchors.fill:parent
+
+                property real realX: Math.floor((flick.contentX+mouseX)/(unitSize+insideBorderSize))
+                property real realY: Math.floor((flick.contentY+mouseY)/(unitSize+insideBorderSize))
+
+                property int cellNumber:realX+realY*game.dimension
+
+                onCellNumberChanged: if(game.slideMode!=="" && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension) Source.slideClick(game.mySolvingGrid, cellNumber, game.slideMode)
+
+                onReleased: game.slideMode=""
+            }
+        }
+
         // Grid
         Item{
                 id: grid
@@ -411,6 +436,7 @@ Item{
                 x:sizeIndicLeft
                 width: gridPartRectangle.width-sizeIndicLeft-outsideBorderSize
                 height: Math.min(game.dimension*unitSize+(game.dimension-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
+
                 SilicaFlickable {
                         clip:true
                         anchors.fill:parent

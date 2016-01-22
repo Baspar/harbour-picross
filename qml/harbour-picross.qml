@@ -117,6 +117,7 @@ ApplicationWindow{
             game.time=0
         }
         pause=false
+        slideMode=""
         game.zoom=1
     }
 

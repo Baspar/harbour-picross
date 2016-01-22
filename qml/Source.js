@@ -69,6 +69,11 @@ function doubleClick(grid, x){
     checkLineX(Math.floor(x/game.dimension))
     checkColX(x%game.dimension)
 }
+function slideClick(grid, x, mode){
+    grid.set(x, {"myEstate":mode})
+    checkLineX(Math.floor(x/game.dimension))
+    checkColX(x%game.dimension)
+}
 
 function genIndicLineXFilling(list, grid, x){
     list.clear()

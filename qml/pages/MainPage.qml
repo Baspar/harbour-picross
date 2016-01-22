@@ -20,7 +20,7 @@ Page {
         // PopUp Zoom
         Rectangle{
                 id: popupZoom
-                z:2
+                z:3
                 opacity: 0
                 color: Theme.rgba("black", 0.5)
                 anchors.fill: page
@@ -87,8 +87,8 @@ Page {
         // Everything else
         SilicaFlickable {
                 id: flickUp
+                    interactive: game.slideMode===""
                 anchors.fill: parent
-                interactive: game.slideMode===""
 
                 // Hidden controls for guess mode
                 SilicaFlickable{
