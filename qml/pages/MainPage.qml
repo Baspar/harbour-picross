@@ -249,12 +249,6 @@ Page {
                                     }else
                                         resetPageHeader.restart()
                                 }
-
-                                Timer{
-                                        id: resetPageHeader
-                                        interval: 2000
-                                        onTriggered: pageHeader.title=game.hintTitle===""?qsTr("Picross"):game.hintTitle
-                                }
                         }
 
                         PageHeader {
@@ -267,6 +261,11 @@ Page {
                                                 NumberAnimation { target: pageHeader; property: "opacity"; to: 1 }
                                             }
                                         }
+                                Timer{
+                                        id: resetPageHeader
+                                        interval: 2000
+                                        onTriggered: pageHeader.title=game.hintTitle===""?qsTr("Picross"):game.hintTitle
+                                }
                         }
                 }
 

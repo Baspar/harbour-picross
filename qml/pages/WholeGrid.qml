@@ -404,30 +404,22 @@ Item{
         }
 
         // Slide catcher
-        Rectangle{
-            x: grid.x
-            y: grid.y
-            z: 2
-            height: grid.height
-            width: grid.width
-            color: 'black'
-            opacity: game.slideMode!==""?0.3:0
-            visible: game.slideMode!==""
-            Behavior on opacity {NumberAnimation{duration: 200}}
+//        Rectangle{
+//            x: grid.x
+//            y: grid.y
+//            z: 2
+//            height: grid.height
+//            width: grid.width
+//            color: 'black'
+//            opacity: game.slideMode!==""?0.3:0
+//            visible: game.slideMode!==""
+//            Behavior on opacity {NumberAnimation{duration: 200}}
 
-            MouseArea{
-                anchors.fill:parent
+//            MouseArea{
+//                anchors.fill:parent
 
-                property real realX: Math.floor((flick.contentX+mouseX)/(unitSize+insideBorderSize))
-                property real realY: Math.floor((flick.contentY+mouseY)/(unitSize+insideBorderSize))
-
-                property int cellNumber:realX+realY*game.dimension
-
-                onCellNumberChanged: if(game.slideMode!=="" && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension) Source.slideClick(game.mySolvingGrid, cellNumber, game.slideMode)
-
-                onReleased: game.slideMode=""
-            }
-        }
+//            }
+//        }
 
         // Grid
         Item{
@@ -441,7 +433,7 @@ Item{
                         clip:true
                         anchors.fill:parent
                         pressDelay: 0
-                        interactive: game.slideMode===""
+//                        interactive: game.slideMode===""
                         id: flick
                         contentWidth: game.dimension*unitSize+(game.dimension-1)*insideBorderSize
                         contentHeight: column.height

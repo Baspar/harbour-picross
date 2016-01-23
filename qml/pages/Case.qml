@@ -6,15 +6,22 @@ import "../Source.js" as Source
 Rectangle {
     property string estate
     property int myID
-    property int k: 2
 
-    property HapticsEffect customBuzz: HapticsEffect {
+    property HapticsEffect longBuzz: HapticsEffect {
             attackTime: 50
             fadeTime: 50
             attackIntensity: 0.2
             fadeIntensity: 0.01
             intensity: 0.8
             duration: 100
+    }
+    property HapticsEffect shortBuzz: HapticsEffect {
+            attackTime: 25
+            fadeTime: 25
+            attackIntensity: 0.2
+            fadeIntensity: 0.01
+            intensity: 0.8
+            duration: 50
     }
 
     id: thisrect
@@ -58,9 +65,30 @@ Rectangle {
     MouseArea{
         anchors.fill: parent
 
+        property real realX: Math.floor((myID%game.dimension*(unitSize+insideBorderSize)+mouseX)/(unitSize+insideBorderSize))
+        property real realY: Math.floor((Math.floor(myID/game.dimension)*(unitSize+insideBorderSize)+mouseY)/(unitSize+insideBorderSize))
+        property int cellNumber:realX+realY*game.dimension
+
+
         onPressAndHold: {
-            game.slideMode=thisrect.estate
-            customBuzz.start()
+            if(!game.won)
+                    if(!game.guessMode || (thisrect.estate!=="hint" && thisrect.estate!=="full")){
+                            flick.interactive=false
+                            flickUp.interactive=false
+                            longBuzz.start()
+                    }
+        }
+
+        onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension){
+                                 if(game.mySolvingGrid.get(cellNumber)!==thisrect.estate){
+                                         shortBuzz.start()
+                                         Source.slideClick(game.mySolvingGrid, cellNumber, thisrect.estate)
+                                 }
+                             }
+
+        onReleased:{
+            flick.interactive=true
+            flickUp.interactive=true
         }
 
         onClicked: {

@@ -57,9 +57,6 @@ function click(grid, x){
 
     launchCheckWin()
 }
-function longClick(grid, x){
-    return
-}
 function doubleClick(grid, x){
     if(!game.guessMode)
         grid.set(x, {"myEstate":"hint"})
@@ -70,9 +67,20 @@ function doubleClick(grid, x){
     checkColX(x%game.dimension)
 }
 function slideClick(grid, x, mode){
-    grid.set(x, {"myEstate":mode})
+    var old=grid.get(x).myEstate
+    if(game.guessMode){
+        if(old!=="full" && old!=="hint")
+            grid.set(x, {"myEstate":mode})
+    } else {
+        if(old!=="full" && mode==="full")
+            game.nbSolvingFullCell++
+        if(old==="full" && mode!=="full")
+            game.nbSolvingFullCell--
+        grid.set(x, {"myEstate":mode})
+    }
     checkLineX(Math.floor(x/game.dimension))
     checkColX(x%game.dimension)
+    launchCheckWin()
 }
 
 function genIndicLineXFilling(list, grid, x){
