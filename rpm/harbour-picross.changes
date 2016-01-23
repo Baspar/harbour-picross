@@ -9,7 +9,9 @@
 # - Summary of changes
 
 * Thu Jan 21 2016 Bastien Laine <bastien.laine@insa-rouen.fr> 1.7-0
-- Translation
+- Translation support
+- French Translation
+- Slide mode: press and hold to multi-filling
 
 * Sun Sep 6 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.6-0
 - Long click on indicators to unfold
