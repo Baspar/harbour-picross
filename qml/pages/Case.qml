@@ -80,7 +80,7 @@ Rectangle {
         }
 
         onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension){
-                                 if(game.mySolvingGrid.get(cellNumber)!==thisrect.estate){
+                                 if(game.mySolvingGrid.get(cellNumber).myEstate!==thisrect.estate){
                                          shortBuzz.start()
                                          Source.slideClick(game.mySolvingGrid, cellNumber, thisrect.estate)
                                  }
