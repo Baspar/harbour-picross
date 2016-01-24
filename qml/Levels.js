@@ -2451,4 +2451,65 @@ function getTitle(diffSelected, levelSelected){
     return grid.title
 }
 function getHintTitle(diffSelected, levelSelected){
-    var grid=levels[diffSelected].list[levelSelected
+    var grid=levels[diffSelected].list[levelSelected]
+    return grid.hintTitle
+}
+function getDimension(diffSelected, levelSelected){
+    var grid=levels[diffSelected].list[levelSelected]
+    return grid.dimension
+}
+function getGrid(diffSelected, levelSelected){
+    var gridTmp = Qt.createQmlObject('import QtQuick 2.2; \
+                    ListModel {}', parent)
+    var grid=levels[diffSelected].list[levelSelected]
+    for(var i=0; i<grid.grid.length; i++){
+        gridTmp.append({"myEstate":grid.grid[i]===1?"full":"void"})
+    }
+    return gridTmp
+}
+
+function getNextDiff(){
+    for(var i=0; i<levels.length; i++)
+        for(var j=0; j<getNbLevel(i); j++)
+            if(!DB.isCompleted(i, j))
+                return i
+    return -1
+}
+function getNextLevel(){
+    for(var i=0; i<levels.length; i++)
+        for(var j=0; j<getNbLevel(i); j++)
+            if(!DB.isCompleted(i, j))
+                return j
+    return -1
+}
+
+
+function isLocked(diff){
+    return !(diff===0 || (DB.getNbCompletedLevel(diff-1)===getNbLevel(diff-1) && !isLocked(diff-1) ))
+}
+
+function getCurrentDiff(){
+    for(var i=0; i< levels.length; i++)
+        if(getNbLevel(i)!==DB.getNbCompletedLevel(i))
+            return i
+    return levels.length-1
+}
+function getNbLevel(diff){
+    var grid=levels[diff]
+    return grid.list.length
+}
+
+function initSolvedGrid(solvedGrid, diffSelected, levelSelected){
+    solvedGrid.clear()
+    var grid=levels[diffSelected].list[levelSelected]
+    game.dimension=grid.dimension
+    game.title=grid.title
+    game.hintTitle=grid.hintTitle
+    game.nbSolvedFullCell=0
+    for(var i=0; i<grid.grid.length; i++){
+        if(grid.grid[i]===1)
+            game.nbSolvedFullCell++
+        solvedGrid.append({"myEstate":grid.grid[i]===1?"full":"void"})
+    }
+}
+
