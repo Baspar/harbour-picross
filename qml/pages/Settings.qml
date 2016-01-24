@@ -6,6 +6,7 @@ Page{
     id: settingsPage
     RemorsePopup{ id: remorseSettings }
     Column{
+        spacing: Theme.paddingMedium
         width: parent.width
         PageHeader{
             title: qsTr("Settings")
