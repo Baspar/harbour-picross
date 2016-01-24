@@ -753,6 +753,62 @@
         <source>Insane</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Lion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>King of the jungle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beach</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Holidays location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Woman and mirror</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who&apos;s the fairest one of all?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gargamel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Smurf hunter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polar bear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Be quiet...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pilot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First flight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don Quixote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fighting windmill</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>

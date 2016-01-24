@@ -753,6 +753,62 @@
         <source>Insane</source>
         <translation>Impossible</translation>
     </message>
+    <message>
+        <source>Lion</source>
+        <translation>Lion</translation>
+    </message>
+    <message>
+        <source>King of the jungle</source>
+        <translation>Roi de la jungle</translation>
+    </message>
+    <message>
+        <source>Beach</source>
+        <translation>Plage</translation>
+    </message>
+    <message>
+        <source>Holidays location</source>
+        <translation>Lieu de vacances</translation>
+    </message>
+    <message>
+        <source>Woman and mirror</source>
+        <translation>Femme et son miroir</translation>
+    </message>
+    <message>
+        <source>Who&apos;s the fairest one of all?</source>
+        <translation>Dis-moi qui est la plus belle?</translation>
+    </message>
+    <message>
+        <source>Gargamel</source>
+        <translation>Gargamel</translation>
+    </message>
+    <message>
+        <source>Smurf hunter</source>
+        <translation>Chasseur de Schtroumpf</translation>
+    </message>
+    <message>
+        <source>Polar bear</source>
+        <translation>Ours polaire</translation>
+    </message>
+    <message>
+        <source>Be quiet...</source>
+        <translation>Il ne faut pas le reveiller</translation>
+    </message>
+    <message>
+        <source>Pilot</source>
+        <translation>Georges Guynemer</translation>
+    </message>
+    <message>
+        <source>First flight</source>
+        <translation>Premier vol</translation>
+    </message>
+    <message>
+        <source>Don Quixote</source>
+        <translation>Don Quichotte</translation>
+    </message>
+    <message>
+        <source>Fighting windmill</source>
+        <translation>Combattant de moulins</translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>
