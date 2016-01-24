@@ -3,3 +3,4 @@ harbour-picross.o
 RPMS/
 qml/Levels.js.old
 *user*
+*.qm
