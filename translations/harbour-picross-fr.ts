@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>Your first real level</source>
-        <translation>Votre premier vrai nivea</translation>
+        <translation>Votre premier vrai niveau</translation>
     </message>
     <message>
         <source>Bubble</source>
@@ -163,7 +163,7 @@
     </message>
     <message>
         <source>Humming-Bird</source>
-        <translation>Colibris</translation>
+        <translation>Colibri</translation>
     </message>
     <message>
         <source>Flower eater</source>
@@ -731,27 +731,27 @@
     </message>
     <message>
         <source>Tutorial</source>
-        <translation>Tutoriels</translation>
+        <translation>Tutoriel</translation>
     </message>
     <message>
         <source>Easy</source>
-        <translation>Faciles</translation>
+        <translation>Facile</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation>Moyens</translation>
+        <translation>Moyen</translation>
     </message>
     <message>
         <source>Hard</source>
-        <translation>Difficiles</translation>
+        <translation>Difficile</translation>
     </message>
     <message>
         <source>Expert</source>
-        <translation>Experts</translation>
+        <translation>Expert</translation>
     </message>
     <message>
         <source>Insane</source>
-        <translation>Impossibles</translation>
+        <translation>Impossible</translation>
     </message>
 </context>
 <context>
@@ -798,7 +798,7 @@ temporaires</translation>
     </message>
     <message>
         <source>Clearing the grid</source>
-        <translation>Effaçage de la grille en cours </translation>
+        <translation>Effaçage de la grille</translation>
     </message>
     <message>
         <source>New game</source>
@@ -888,7 +888,7 @@ temporaires</translation>
     </message>
     <message>
         <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Effacer TOUTES les données (Sauvegardes et progrès)</translation>
+        <translation>Effacer TOUTES les données</translation>
     </message>
     <message>
         <source>Clearing ALL Databases</source>
@@ -931,7 +931,8 @@ temporaires</translation>
     </message>
     <message>
         <source>Congratulations, you solve every level !</source>
-        <translation>Félicitations, vous avez complété tous les niveaux du jeu!</translation>
+        <translation>Félicitations!
+Vous avez résolu tout les niveau</translation>
     </message>
     <message>
         <source>Best time</source>
