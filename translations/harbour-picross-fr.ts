@@ -978,6 +978,10 @@ temporaires</translation>
         <source>Disabled</source>
         <translation>Désactivé</translation>
     </message>
+    <message>
+        <source>Zoom on indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WinPage</name>

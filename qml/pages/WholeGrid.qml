@@ -10,9 +10,9 @@ Item{
 
         property int sizeIndicLeft: maxSizeIndicLeft
         property int sizeIndicTop: foldTopMode?maxSizeIndicTop:Math.max(maxSizeIndicTop, (maxHeight+1)*insideBorderSize + (maxHeight+1)*Math.min(
-                                                                            0.9*(flick.contentWidth-(game.dimension-1)*insideBorderSize) / game.dimension
-                                                                            ,
-                                                                            maxSizeIndicTop/5))
+                                                                                0.9*(flick.contentWidth-(game.dimension-1)*insideBorderSize) / game.dimension
+                                                                                ,
+                                                                                maxSizeIndicTop/5))
         property int maxSizeIndicLeft: width/4
         property int maxSizeIndicTop: width/4
 
@@ -80,6 +80,18 @@ Item{
                         height: sizeIndicTop
                         x:sizeIndicLeft
                         y:0
+                        //Slider part
+                        Rectangle{
+                                id: sliderUp
+                                color: Theme.highlightColor
+                                opacity: !game.zoomIndic && game.zoom>1 ?0.2:0
+                                height: parent.height-2*outsideBorderSize
+                                width: indicUpFlick.contentWidth*indicUpFlick.contentWidth/flick.contentWidth
+                                x:flick.contentX*indicUpFlick.contentWidth/flick.contentWidth
+                                y:outsideBorderSize
+                                z:2
+                        }
+
                         //Horizontal part
                         SilicaFlickable{
                                 clip: true
@@ -87,8 +99,8 @@ Item{
                                 height: parent.height
                                 id: indicUpFlick
                                 contentHeight: height
-                                contentWidth: flick.contentWidth
-                                contentX: flick.contentX
+                                contentWidth: game.zoomIndic?flick.contentWidth:parent.width
+                                contentX: game.zoomIndic?flick.contentX:0
                                 VerticalScrollDecorator {}
                                 HorizontalScrollDecorator {}
                                 Row{
@@ -99,7 +111,7 @@ Item{
                                                         //Vertical part
                                                         Rectangle{
                                                                 id: indicRectangleUp
-                                                                width: unitSize
+                                                                width: game.zoomIndic?unitSize:unitSize/game.zoom
                                                                 height: indicUpFlick.height
                                                                 color: "transparent"
 
@@ -126,7 +138,7 @@ Item{
                                                                                         if(completed||toFill)
                                                                                                 Source.completeColX(index, toFill)
                                                                                 }
-//                                                                                onPressAndHold: if(game.zoom!==1)foldTopMode=!foldTopMode
+                                                                                //                                                                                onPressAndHold: if(game.zoom!==1)foldTopMode=!foldTopMode
                                                                                 onPressAndHold: foldTopMode=!foldTopMode
                                                                         }
 
@@ -258,15 +270,26 @@ Item{
                         height: Math.min(game.dimension*unitSize+(game.dimension-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
                         width: sizeIndicLeft
                         y:sizeIndicTop
+                        //Slider part
+                        Rectangle{
+                                id: sliderLeft
+                                color: Theme.highlightColor
+                                opacity: !game.zoomIndic && indicLeftFlick.contentHeight!==flick.contentHeight ?0.2:0
+                                height: indicLeftFlick.contentHeight*indicLeftFlick.contentHeight/flick.contentHeight
+                                width: parent.width-2*outsideBorderSize
+                                y:flick.contentY*indicLeftFlick.contentHeight/flick.contentHeight
+                                x: outsideBorderSize
+                                z:2
+                        }
                         //Vertical part
                         SilicaFlickable{
                                 clip:true
                                 width: parent.width
                                 height: parent.height
                                 id: indicLeftFlick
-                                contentHeight: flick.contentHeight
+                                contentHeight: game.zoomIndic?flick.contentHeight:parent.height
                                 contentWidth: width
-                                contentY: flick.contentY
+                                contentY: game.zoomIndic?flick.contentY:0
                                 VerticalScrollDecorator {}
                                 HorizontalScrollDecorator {}
                                 Column{
@@ -277,8 +300,7 @@ Item{
                                                         //Vertical part
                                                         Rectangle{
                                                                 id: indicRectangleLeft
-//                                                                height: (flick.contentHeight-(game.dimension-1)*insideBorderSize) / game.dimension
-                                                                height: unitSize
+                                                                height: game.zoomIndic?unitSize:(indicLeftFlick.height+insideBorderSize)/game.dimension-insideBorderSize
                                                                 width: indicLeftFlick.width
                                                                 color:"transparent"
 
@@ -415,12 +437,11 @@ Item{
                         clip:true
                         anchors.fill:parent
                         pressDelay: 0
-//                        interactive: game.slideMode===""
                         id: flick
                         contentWidth: game.dimension*unitSize+(game.dimension-1)*insideBorderSize
                         contentHeight: column.height
-                        contentX: indicUpFlick.contentX
-                        contentY: indicLeftFlick.contentY
+                        contentX: game.zoomIndic?indicUpFlick.contentX:0
+                        contentY: game.zoomIndic?indicLeftFlick.contentX:0
                         VerticalScrollDecorator {}
                         HorizontalScrollDecorator {}
 

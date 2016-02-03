@@ -31,7 +31,7 @@ function initialize() {
                     tx.executeSql('CREATE TABLE IF NOT EXISTS ttime(diff INT, level INT, time INT, PRIMARY KEY(diff, level))');
                     tx.executeSql('CREATE TABLE IF NOT EXISTS tsavedtime(diff INT, level INT, time INT, PRIMARY KEY(diff, level))');
                     tx.executeSql('CREATE TABLE IF NOT EXISTS tsettings(param TEXT, value INT, PRIMARY KEY(param))');
-                    tx.executeSql('INSERT OR IGNORE INTO tsettings(param , value) VALUES (\'autoLoadSave\', 1), (\'space\', 5), (\'vibrate\', 1) ');
+                    tx.executeSql('INSERT OR IGNORE INTO tsettings(param , value) VALUES (\'autoLoadSave\', 1), (\'space\', 5), (\'vibrate\', 1), (\'zoomindic\', 1)');
                 });
 }
 function initializeSaves() {

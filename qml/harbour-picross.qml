@@ -70,6 +70,7 @@ ApplicationWindow{
     property bool foldLeftMode: true
 
     property int vibrate
+    property bool zoomIndic
 
     property int dimension: 0
     property real zoom: 1
@@ -96,6 +97,7 @@ ApplicationWindow{
         //Parameters
         space = DB.getParameter("space")
         vibrate = DB.getParameter("vibrate")
+        zoomIndic = DB.getParameter("zoomindic")
 
         //Buzzer
         longBuzz  = Qt.createQmlObject("import QtFeedback 5.0; HapticsEffect {attackTime: 50; fadeTime: 50; attackIntensity: 0.2; fadeIntensity: 0.01; intensity: 0.8; duration: 100}", game)

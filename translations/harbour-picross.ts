@@ -976,6 +976,10 @@ guesses</source>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Zoom on indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WinPage</name>
