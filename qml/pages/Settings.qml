@@ -12,6 +12,18 @@ Page{
             title: qsTr("Settings")
         }
         TextSwitch{
+            checked: DB.getParameter("vibrate")!==0
+            text: qsTr("Vibrate when press-and-hold")
+            description: checked?qsTr("Enabled"):qsTr("Disabled")
+            onClicked:{
+                if(checked)
+                    DB.setParameter("vibrate", 1)
+                else
+                    DB.setParameter("vibrate", 0)
+                game.vibrate=(checked?1:0)
+            }
+        }
+        TextSwitch{
             checked: DB.getParameter("autoLoadSave")===1
             text: qsTr("Load saves by default")
             description: checked?qsTr("Saves will be loaded by default"):qsTr("Load them by a long press")

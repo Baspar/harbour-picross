@@ -964,6 +964,18 @@ guesses</source>
         <source>Resetting settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Vibrate when press-and-hold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WinPage</name>

@@ -8,10 +8,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jan 30 2016 Bastien Laine <bastien.laine@insa-rouen.fr> 1.7-1
+- Italian translation added (Thanks to Tichy)
+- Settings to disable vibration + visual feedback added for press-and-hold
+- French translation fix
+
 * Thu Jan 21 2016 Bastien Laine <bastien.laine@insa-rouen.fr> 1.7-0
 - Translation support
 - French Translation
 - Slide mode: press and hold to multi-filling
+- Levels added: 1 Easy, 2 Medium, 2 Hard, 2 Insane
 
 * Sun Sep 6 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.6-0
 - Long click on indicators to unfold

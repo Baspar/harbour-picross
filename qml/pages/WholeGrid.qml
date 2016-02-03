@@ -403,24 +403,6 @@ Item{
                 }
         }
 
-        // Slide catcher
-//        Rectangle{
-//            x: grid.x
-//            y: grid.y
-//            z: 2
-//            height: grid.height
-//            width: grid.width
-//            color: 'black'
-//            opacity: game.slideMode!==""?0.3:0
-//            visible: game.slideMode!==""
-//            Behavior on opacity {NumberAnimation{duration: 200}}
-
-//            MouseArea{
-//                anchors.fill:parent
-
-//            }
-//        }
-
         // Grid
         Item{
                 id: grid

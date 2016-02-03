@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<TS version="2.1" language="it_IT">
 <context>
     <name>CoverPage</name>
     <message>
@@ -12,82 +12,82 @@
     <name>LevelInfos</name>
     <message>
         <source>Level details</source>
-        <translation>Détails du niveau</translation>
+        <translation>Dettagli livello</translation>
     </message>
     <message>
         <source>Best time</source>
-        <translation>Meilleur temps</translation>
+        <translation>Miglior tempo</translation>
     </message>
 </context>
 <context>
     <name>Levels</name>
     <message>
         <source>Square</source>
-        <translation>Carré</translation>
+        <translation>Quadrato</translation>
     </message>
     <message>
         <source>Numbers = size of the groups</source>
-        <translation>Nombres = taille des groupes</translation>
+        <translation>Numeri = dimensione dei gruppi</translation>
     </message>
     <message>
         <source>Hole</source>
-        <translation>Trou</translation>
+        <translation>Buco</translation>
     </message>
     <message>
         <source>Groups are separated. But how far?</source>
-        <translation>Les groupes sont séparés. Mais de combien?</translation>
+        <translation>I gruppi sono separati. Ma da quanti spazi?</translation>
     </message>
     <message>
         <source>Little grid</source>
-        <translation>Petit quadrillage</translation>
+        <translation>Piccola rete</translation>
     </message>
     <message>
         <source>Sometimes, there is no choice...</source>
-        <translation>Parfois, il n&apos;y a pas le choix...</translation>
+        <translation>Talvolta, non c&apos;è scelta...</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation>Croix</translation>
+        <translation>Croce</translation>
     </message>
     <message>
         <source>Green = corresponds. Click on it</source>
-        <translation>Vert = Correspondance. Cliquez dessus</translation>
+        <translation>Verde = corrisponde. Cliccaci sopra</translation>
     </message>
     <message>
         <source>Pyramid</source>
-        <translation>Pyramide</translation>
+        <translation>Piramide</translation>
     </message>
     <message>
         <source>You&apos;re on your own now</source>
-        <translation>A vous de jouer maintenant</translation>
+        <translation>Ti lascio da solo, ora</translation>
     </message>
     <message>
         <source>Heart</source>
-        <translation>Coeur</translation>
+        <translation>Cuore</translation>
     </message>
     <message>
         <source>Your first real level</source>
-        <translation>Votre premier vrai niveau</translation>
+        <translation>Il tuo primo vero livello</translation>
     </message>
     <message>
         <source>Bubble</source>
-        <translation>Bulle</translation>
+        <translation>Bolla</translation>
     </message>
     <message>
         <source>What !!?</source>
-        <translation>Quoi !!?</translation>
+        <translation>Cosa !!?</translation>
     </message>
     <message>
         <source>Chick</source>
-        <translation>Poussin</translation>
+        <translation>Pulcino</translation>
     </message>
     <message>
         <source>Yellow animal</source>
-        <translation>Animal jaune</translation>
+        <translation>Animale giallo</translation>
     </message>
     <message>
         <source>Attraction</source>
-        <translation>Attraction</translation>
+        <translation>Attrazione</translation>
     </message>
     <message>
         <source>Creeper</source>
@@ -95,175 +95,175 @@
     </message>
     <message>
         <source>Ka-Boom!</source>
-        <translation>Boom!</translation>
+        <translation>Ka-Boom!</translation>
     </message>
     <message>
         <source>Rabbit</source>
-        <translation>Lapin</translation>
+        <translation>Coniglio</translation>
     </message>
     <message>
         <source>I&apos;m late, I&apos;m late...</source>
-        <translation>Je suis en retard, en retard...</translation>
+        <translation>Sono in ritardo, sono in ritardo...</translation>
     </message>
     <message>
         <source>Cup</source>
-        <translation>Tasse</translation>
+        <translation>Tazza</translation>
     </message>
     <message>
         <source>Tea time!</source>
-        <translation>C&apos;est l&apos;heure du thé</translation>
+        <translation>Ora del tè!</translation>
     </message>
     <message>
         <source>Small boat</source>
-        <translation>Petit bateau</translation>
+        <translation>Piccola barca</translation>
     </message>
     <message>
         <source>Let&apos;s sail</source>
-        <translation>Larguez les amarres</translation>
+        <translation>Navighiamo!</translation>
     </message>
     <message>
         <source>Apple</source>
-        <translation>Pomme</translation>
+        <translation>Mela</translation>
     </message>
     <message>
         <source>It&apos;s meant to fall</source>
-        <translation>Naturellement, ça tombe</translation>
+        <translation>Si suppone che cada</translation>
     </message>
     <message>
         <source>Cherry</source>
-        <translation>Cerise</translation>
+        <translation>Ciliegia</translation>
     </message>
     <message>
         <source>Small fruit</source>
-        <translation>Petit fruit</translation>
+        <translation>Piccolo frutto</translation>
     </message>
     <message>
         <source>Flat</source>
-        <translation>Appartement</translation>
+        <translation>Alloggio</translation>
     </message>
     <message>
         <source>It&apos;s high!</source>
-        <translation>Il ne faut pas avoir le vertige!</translation>
+        <translation>È alto!</translation>
     </message>
     <message>
         <source>Dancer</source>
-        <translation>Danseur</translation>
+        <translation>Danzatore</translation>
     </message>
     <message>
         <source>It swings!</source>
-        <translation>Ça swingue</translation>
+        <translation>Oscilla!</translation>
     </message>
     <message>
         <source>Crab</source>
-        <translation>Crabe</translation>
+        <translation>Granchio</translation>
     </message>
     <message>
         <source>He pinches</source>
-        <translation>Gare aux doigts</translation>
+        <translation>Pizzica</translation>
     </message>
     <message>
         <source>Humming-Bird</source>
-        <translation>Colibri</translation>
+        <translation>Colibrì</translation>
     </message>
     <message>
         <source>Flower eater</source>
-        <translation>Dévoreur floral </translation>
+        <translation>Mangia fiori</translation>
     </message>
     <message>
         <source>Monkey</source>
-        <translation>Singe</translation>
+        <translation>Scimmia</translation>
     </message>
     <message>
         <source>Our ancestor</source>
-        <translation>Notre ancêtre à tous</translation>
+        <translation>Nostro antenato</translation>
     </message>
     <message>
         <source>Snail</source>
-        <translation>Escargot</translation>
+        <translation>Chiocciola</translation>
     </message>
     <message>
         <source>Small helix</source>
-        <translation>Petite hélice</translation>
+        <translation>Piccola spirale</translation>
     </message>
     <message>
         <source>Goldfish</source>
-        <translation>Poisson rouge</translation>
+        <translation>Pesce rosso</translation>
     </message>
     <message>
         <source>A very bad memory...</source>
-        <translation>Retenez mieux que lui...</translation>
+        <translation>Una memoria pessima...</translation>
     </message>
     <message>
         <source>Kitten</source>
-        <translation>Chaton</translation>
+        <translation>Gattino</translation>
     </message>
     <message>
         <source>Little predator</source>
-        <translation>Mignon prédateur </translation>
+        <translation>Piccolo predatore</translation>
     </message>
     <message>
         <source>Owl</source>
-        <translation>Chouette</translation>
+        <translation>Gufo</translation>
     </message>
     <message>
         <source>Night animal</source>
-        <translation>Animal nocturne</translation>
+        <translation>Animale notturno</translation>
     </message>
     <message>
         <source>Helicopter</source>
-        <translation>Hélicoptère</translation>
+        <translation>Elicottero</translation>
     </message>
     <message>
         <source>Not so &quot;U&quot; for a UFO</source>
-        <translation>Objet Volant Identifié</translation>
+        <translation>Un U.F.O. non tanto &quot;U&quot;</translation>
     </message>
     <message>
         <source>Flask</source>
-        <translation>Fiole</translation>
+        <translation>Boccetta</translation>
     </message>
     <message>
         <source>Witch&apos;s util</source>
-        <translation>Verre de sorcière</translation>
+        <translation>Utile alla strega</translation>
     </message>
     <message>
         <source>Moose</source>
-        <translation>Élan</translation>
+        <translation>Alce</translation>
     </message>
     <message>
         <source>He loves the cold</source>
-        <translation>Il aime le froid</translation>
+        <translation>Ama il freddo</translation>
     </message>
     <message>
         <source>Sailboat</source>
-        <translation>Voilier</translation>
+        <translation>Barca a vela</translation>
     </message>
     <message>
         <source>You are a pirate~</source>
-        <translation>À l&apos;abordage!</translation>
+        <translation>Sei un pirata~</translation>
     </message>
     <message>
         <source>Duck</source>
-        <translation>Canard</translation>
+        <translation>Anatroccolo</translation>
     </message>
     <message>
         <source>Ugly, according to Andersen</source>
-        <translation>Vilain selon Andersen</translation>
+        <translation>Brutto, secondo Andersen</translation>
     </message>
     <message>
         <source>Seal</source>
-        <translation>Phoque</translation>
+        <translation>Foca</translation>
     </message>
     <message>
         <source>Often hunted for its fur</source>
-        <translation>Tué pour sa fourrure</translation>
+        <translation>Spesso cacciata per la pelliccia</translation>
     </message>
     <message>
         <source>Squirrel</source>
-        <translation>Écureuil</translation>
+        <translation>Scoiattolo</translation>
     </message>
     <message>
         <source>Hiding his nuts</source>
-        <translation>Cache-noisette</translation>
+        <translation>Nasconde le sue nocciole</translation>
     </message>
     <message>
         <source>Panda</source>
@@ -271,39 +271,39 @@
     </message>
     <message>
         <source>Stained</source>
-        <translation>Tâché</translation>
+        <translation>Pezzato</translation>
     </message>
     <message>
         <source>Tap</source>
-        <translation>Robinet</translation>
+        <translation>Rubinetto</translation>
     </message>
     <message>
         <source>In the middle of the night</source>
-        <translation>*tip* tip* *tip*</translation>
+        <translation>Nel pieno della notte</translation>
     </message>
     <message>
         <source>Mushroom</source>
-        <translation>Champignon</translation>
+        <translation>Fungo</translation>
     </message>
     <message>
         <source>Makes you stronger</source>
-        <translation>De quoi grandir</translation>
+        <translation>Ti rende più forte</translation>
     </message>
     <message>
         <source>Meowth</source>
-        <translation>Miaouss</translation>
+        <translation>Meowth</translation>
     </message>
     <message>
         <source>Gotta catch them all~</source>
-        <translation>Attrapez les tous~</translation>
+        <translation>Acchiappali tutti~</translation>
     </message>
     <message>
         <source>Elephants</source>
-        <translation>Élephants</translation>
+        <translation>Elefanti</translation>
     </message>
     <message>
         <source>Cute couple</source>
-        <translation>Ça trompe énormément</translation>
+        <translation>Graziosa coppia</translation>
     </message>
     <message>
         <source>Mario</source>
@@ -311,51 +311,51 @@
     </message>
     <message>
         <source>World most famous plumber</source>
-        <translation>Célèbre plombier</translation>
+        <translation>L&apos;idraulico più famoso</translation>
     </message>
     <message>
         <source>Father and son</source>
-        <translation>Père et fils</translation>
+        <translation>Padre e figlio</translation>
     </message>
     <message>
         <source>Flesh of his flesh</source>
-        <translation>La chair de sa chair</translation>
+        <translation>Carne della sua carne</translation>
     </message>
     <message>
         <source>Snake</source>
-        <translation>Serpent</translation>
+        <translation>Serpente</translation>
     </message>
     <message>
         <source>Devil&apos;s animal</source>
-        <translation>Animal maudit</translation>
+        <translation>L&apos;animale del Diavolo</translation>
     </message>
     <message>
         <source>Dog</source>
-        <translation>Chien</translation>
+        <translation>Cane</translation>
     </message>
     <message>
         <source>Woof!</source>
-        <translation>Ouaf!</translation>
+        <translation>Bau!</translation>
     </message>
     <message>
         <source>Umbrella</source>
-        <translation>Parapluie </translation>
+        <translation>Ombrello</translation>
     </message>
     <message>
         <source>The best shelter when needed</source>
-        <translation>Parfois, le meilleur abri</translation>
+        <translation>Il miglior riparo quando necessario</translation>
     </message>
     <message>
         <source>Penguin</source>
-        <translation>Pingouin</translation>
+        <translation>Pinguino</translation>
     </message>
     <message>
         <source>Classy BlackAndWhite</source>
-        <translation>Noir et blanc</translation>
+        <translation>Elegante Bianco e Nero</translation>
     </message>
     <message>
         <source>UFO</source>
-        <translation>OVNI</translation>
+        <translation>UFO</translation>
     </message>
     <message>
         <source>Space Invaders</source>
@@ -363,75 +363,75 @@
     </message>
     <message>
         <source>Spiny</source>
-        <translation>Carapace bleue</translation>
+        <translation>Spinoso</translation>
     </message>
     <message>
         <source>You&apos;re first? Fear him...</source>
-        <translation>Que les premiers la craignent</translation>
+        <translation>Sei primo? Temilo...</translation>
     </message>
     <message>
         <source>Puppy</source>
-        <translation>Chiot</translation>
+        <translation>Cagnolino</translation>
     </message>
     <message>
         <source>Smallest men&apos;s best friend</source>
-        <translation>Petit meilleur ami de l&apos;homme</translation>
+        <translation>Il più piccolo amico dell&apos;uomo</translation>
     </message>
     <message>
         <source>Bunny</source>
-        <translation>Lapin</translation>
+        <translation>Coniglietto</translation>
     </message>
     <message>
         <source>Return of the latecomer</source>
-        <translation>Retour du retardataire </translation>
+        <translation>Ritorno del ritardatario</translation>
     </message>
     <message>
         <source>Stroller</source>
-        <translation>Poussette</translation>
+        <translation>Passeggino</translation>
     </message>
     <message>
         <source>Legs of the youngest</source>
-        <translation>Les jambes du bambin</translation>
+        <translation>Gambe per il più giovane</translation>
     </message>
     <message>
         <source>The thinker</source>
-        <translation>Le penseur</translation>
+        <translation>Il pensatore</translation>
     </message>
     <message>
         <source>What to do...?</source>
-        <translation>Être ou ne pas être...</translation>
+        <translation>Cosa fare...?</translation>
     </message>
     <message>
         <source>Nuclear mushroom</source>
-        <translation>Champignon nucléaire</translation>
+        <translation>Fungo atomico</translation>
     </message>
     <message>
         <source>It&apos;s very radioactive!</source>
-        <translation>Hiroshima</translation>
+        <translation>È molto radioattivo!</translation>
     </message>
     <message>
         <source>Flower</source>
-        <translation>Fleur</translation>
+        <translation>Fiore</translation>
     </message>
     <message>
         <source>Smells good</source>
-        <translation>Dame du Printemps</translation>
+        <translation>Ha un buon profumo</translation>
     </message>
     <message>
         <source>Deer</source>
-        <translation>Cerf</translation>
+        <translation>Cervo</translation>
     </message>
     <message>
         <source>Majestic</source>
-        <translation>Majestueux</translation>
+        <translation>Maestoso</translation>
     </message>
     <message>
         <source>Cow</source>
-        <translation>Vache</translation>
+        <translation>Mucca</translation>
     </message>
     <message>
         <source>Moo</source>
-        <translation>Meuh</translation>
+        <translation>Muu</translation>
     </message>
     <message>
         <source>Yoshi</source>
@@ -439,51 +439,51 @@
     </message>
     <message>
         <source>Well-known little dragon</source>
-        <translation>Dragon acolyte </translation>
+        <translation>Draghetto famoso</translation>
     </message>
     <message>
         <source>Sheep</source>
-        <translation>Mouton</translation>
+        <translation>Pecora</translation>
     </message>
     <message>
         <source>One falls, others follow</source>
-        <translation>Une chaîne sans fin</translation>
+        <translation>Se una cade, le altre seguono</translation>
     </message>
     <message>
         <source>Bird</source>
-        <translation>Oiseau</translation>
+        <translation>Uccello</translation>
     </message>
     <message>
         <source>Flying animal</source>
-        <translation>Animal du ciel</translation>
+        <translation>Animale volante</translation>
     </message>
     <message>
         <source>Farm animal</source>
-        <translation>Animal de la ferme</translation>
+        <translation>Animale da fattoria</translation>
     </message>
     <message>
         <source>Crane and truck</source>
-        <translation>Engins de chantier</translation>
+        <translation>Gru e camion</translation>
     </message>
     <message>
         <source>Construction site</source>
-        <translation>Site de construction</translation>
+        <translation>Cantiere</translation>
     </message>
     <message>
         <source>Boy</source>
-        <translation>Garçon</translation>
+        <translation>Ragazzo</translation>
     </message>
     <message>
         <source>Sup&apos; bro</source>
-        <translation>Quoi de neuf?</translation>
+        <translation>Bella, fratello!</translation>
     </message>
     <message>
         <source>Camera</source>
-        <translation>Appareil photo</translation>
+        <translation>Macchina fotografica</translation>
     </message>
     <message>
         <source>Cheese!</source>
-        <translation>Ouistiti!</translation>
+        <translation>Cheese!</translation>
     </message>
     <message>
         <source>Koala</source>
@@ -491,31 +491,31 @@
     </message>
     <message>
         <source>Not so fast...</source>
-        <translation>Doucement, doucement...</translation>
+        <translation>Non molto veloce</translation>
     </message>
     <message>
         <source>Peanuts</source>
-        <translation>Snoopy</translation>
+        <translation>Peanuts</translation>
     </message>
     <message>
         <source>Classy dog</source>
-        <translation>Chien pensif </translation>
+        <translation>Cane di classe</translation>
     </message>
     <message>
         <source>Parrot</source>
-        <translation>Perroquet </translation>
+        <translation>Pappagallo</translation>
     </message>
     <message>
         <source>A true singer</source>
-        <translation>Chanteur de renom</translation>
+        <translation>Un vero cantante</translation>
     </message>
     <message>
         <source>Barrow</source>
-        <translation>Brouette</translation>
+        <translation>Carriola</translation>
     </message>
     <message>
         <source>Easy carry</source>
-        <translation>Soulage le dos</translation>
+        <translation>Comodo trasporto</translation>
     </message>
     <message>
         <source>Ninja</source>
@@ -523,15 +523,15 @@
     </message>
     <message>
         <source>You can&apos;t see him</source>
-        <translation>Tu me vois plus</translation>
+        <translation>Non puoi vederlo</translation>
     </message>
     <message>
         <source>Rain</source>
-        <translation>Pluie</translation>
+        <translation>Pioggia</translation>
     </message>
     <message>
         <source>Not a day to be out</source>
-        <translation>Un temps de chien</translation>
+        <translation>Il giorno sbagliato per stare fuori</translation>
     </message>
     <message>
         <source>Monster Truck</source>
@@ -539,43 +539,43 @@
     </message>
     <message>
         <source>Don&apos;t be on its way!</source>
-        <translation>Faites place!</translation>
+        <translation>Non sbarrargli la strada!</translation>
     </message>
     <message>
         <source>Kitty</source>
-        <translation>Chaton</translation>
+        <translation>Gattino</translation>
     </message>
     <message>
         <source>King of the Net</source>
-        <translation>Roi du web</translation>
+        <translation>Re della Rete</translation>
     </message>
     <message>
         <source>Scorpion</source>
-        <translation>Scorpion</translation>
+        <translation>Scorpione</translation>
     </message>
     <message>
         <source>Beware, he can sting!</source>
-        <translation>Attention a la piqure </translation>
+        <translation>Attenti, può pungere!</translation>
     </message>
     <message>
         <source>Thumbs up</source>
-        <translation>Pouce!</translation>
+        <translation>Pollici su</translation>
     </message>
     <message>
         <source>Good game!</source>
-        <translation>On fait une pause?</translation>
+        <translation>Bella giocata!</translation>
     </message>
     <message>
         <source>Runner</source>
-        <translation>Coureur</translation>
+        <translation>Corridore</translation>
     </message>
     <message>
         <source>Run Forrest, run!</source>
-        <translation>Cours Forrest, cours!</translation>
+        <translation>Corri Forrest, corri!</translation>
     </message>
     <message>
         <source>Dinning table</source>
-        <translation>Repas</translation>
+        <translation>Tavola da pranzo</translation>
     </message>
     <message>
         <source>Bon appetit!</source>
@@ -583,47 +583,47 @@
     </message>
     <message>
         <source>Shocked rabbit</source>
-        <translation>Lapin apeuré</translation>
+        <translation>Coniglio scioccato</translation>
     </message>
     <message>
         <source>He has seen things...</source>
-        <translation>Il a vu des choses...</translation>
+        <translation>Ha visto cose...</translation>
     </message>
     <message>
         <source>Octopus</source>
-        <translation>Pieuvre</translation>
+        <translation>Polpo</translation>
     </message>
     <message>
         <source>Hey there</source>
-        <translation>Bonjour tout le monde</translation>
+        <translation>Heilà</translation>
     </message>
     <message>
         <source>Racoon</source>
-        <translation>Raton laveur</translation>
+        <translation>Procione</translation>
     </message>
     <message>
         <source>I&apos;ve got a zombie city</source>
-        <translation>Animal propre</translation>
+        <translation>Ho una città zombie</translation>
     </message>
     <message>
         <source>Motorcycle</source>
-        <translation>Moto</translation>
+        <translation>Motocicletta</translation>
     </message>
     <message>
         <source>Vroom vroom</source>
-        <translation>Vroum, vroum</translation>
+        <translation>Vroom vroom</translation>
     </message>
     <message>
         <source>Rudolph</source>
-        <translation>Rudolphe</translation>
+        <translation>Rudolph</translation>
     </message>
     <message>
         <source>Do not follow him...</source>
-        <translation>Exemple à ne pas suivre</translation>
+        <translation>Non seguirlo...</translation>
     </message>
     <message>
         <source>Mask-arade</source>
-        <translation>Masqu-arade</translation>
+        <translation>Mascherata</translation>
     </message>
     <message>
         <source>Incognito</source>
@@ -635,55 +635,55 @@
     </message>
     <message>
         <source>Flying American</source>
-        <translation>Oiseau Américain</translation>
+        <translation>Americano Volante</translation>
     </message>
     <message>
         <source>Wolf</source>
-        <translation>Loup</translation>
+        <translation>Lupo</translation>
     </message>
     <message>
         <source>Shouting to the moon</source>
-        <translation>Il crie à la lune</translation>
+        <translation>Uluando alla luna</translation>
     </message>
     <message>
         <source>Rose</source>
-        <translation>Rose</translation>
+        <translation>Rosa</translation>
     </message>
     <message>
         <source>Prickly beauty</source>
-        <translation>Beauté épineuse </translation>
+        <translation>Bellezza pungente</translation>
     </message>
     <message>
         <source>Peach</source>
-        <translation>Pêche</translation>
+        <translation>Peach</translation>
     </message>
     <message>
         <source>... On another castle</source>
-        <translation>... Est dans un autre chateau</translation>
+        <translation>... In un altro castello</translation>
     </message>
     <message>
         <source>Rasputine</source>
-        <translation>Raspoutine</translation>
+        <translation>Rasputin</translation>
     </message>
     <message>
         <source>Lover of the russian queen~</source>
-        <translation>Lover of the russian queen~</translation>
+        <translation>Amante della regina russa~</translation>
     </message>
     <message>
         <source>Kiss</source>
-        <translation>Baiser</translation>
+        <translation>Bacio</translation>
     </message>
     <message>
         <source>Fake in every movie</source>
-        <translation>Faux au cinéma</translation>
+        <translation>Falso in ogni film</translation>
     </message>
     <message>
         <source>Horseman</source>
-        <translation>Jockey</translation>
+        <translation>Fantino</translation>
     </message>
     <message>
         <source>Go Jolly Jumper!</source>
-        <translation>Hue Jolly Jumper!</translation>
+        <translation>Vai Jolly Jumper!</translation>
     </message>
     <message>
         <source>Archimedes</source>
@@ -691,11 +691,11 @@
     </message>
     <message>
         <source>Splash!</source>
-        <translation>Plouf</translation>
+        <translation>Splash!</translation>
     </message>
     <message>
         <source>A dark and stormy night</source>
-        <translation>Quelle vie de chien</translation>
+        <translation>Una notte buia e tempestosa</translation>
     </message>
     <message>
         <source>Lucy</source>
@@ -707,15 +707,15 @@
     </message>
     <message>
         <source>Partridge</source>
-        <translation>Perdrix</translation>
+        <translation>Pernice</translation>
     </message>
     <message>
         <source>Looking for shine</source>
-        <translation>À la recherche du brillant</translation>
+        <translation>In cerca di lustro</translation>
     </message>
     <message>
         <source>Windy day</source>
-        <translation>Jour venteux</translation>
+        <translation>Giorno ventoso</translation>
     </message>
     <message>
         <source>Poupoupidou~</source>
@@ -723,15 +723,15 @@
     </message>
     <message>
         <source>Bee</source>
-        <translation>Abeille</translation>
+        <translation>Ape</translation>
     </message>
     <message>
         <source>Honey plant</source>
-        <translation>Ouvrière du miel</translation>
+        <translation>Pianta del miele</translation>
     </message>
     <message>
         <source>Tutorial</source>
-        <translation>Tutoriel</translation>
+        <translation>Esercitazione</translation>
     </message>
     <message>
         <source>Easy</source>
@@ -739,7 +739,7 @@
     </message>
     <message>
         <source>Medium</source>
-        <translation>Moyen</translation>
+        <translation>Medio</translation>
     </message>
     <message>
         <source>Hard</source>
@@ -747,94 +747,94 @@
     </message>
     <message>
         <source>Expert</source>
-        <translation>Expert</translation>
+        <translation>Esperto</translation>
     </message>
     <message>
         <source>Insane</source>
-        <translation>Impossible</translation>
+        <translation>Folle</translation>
     </message>
     <message>
         <source>Lion</source>
-        <translation>Lion</translation>
+        <translation>Leone</translation>
     </message>
     <message>
         <source>King of the jungle</source>
-        <translation>Roi de la jungle</translation>
+        <translation>Re della giungla</translation>
     </message>
     <message>
         <source>Beach</source>
-        <translation>Plage</translation>
+        <translation>Spiaggia</translation>
     </message>
     <message>
         <source>Holidays location</source>
-        <translation>Lieu de vacances</translation>
+        <translation>Luogo di vacanze</translation>
     </message>
     <message>
         <source>Woman and mirror</source>
-        <translation>Femme et son miroir</translation>
+        <translation>Donna e specchio</translation>
     </message>
     <message>
         <source>Who&apos;s the fairest one of all?</source>
-        <translation>Dis-moi qui est la plus belle?</translation>
+        <translation>Chi è la più bella del reame?</translation>
     </message>
     <message>
         <source>Gargamel</source>
-        <translation>Gargamel</translation>
+        <translation>Gargamella</translation>
     </message>
     <message>
         <source>Smurf hunter</source>
-        <translation>Chasseur de Schtroumpf</translation>
+        <translation>Cacciatore di Puffi</translation>
     </message>
     <message>
         <source>Polar bear</source>
-        <translation>Ours polaire</translation>
+        <translation>Orso polare</translation>
     </message>
     <message>
         <source>Be quiet...</source>
-        <translation>Il ne faut pas le réveiller</translation>
+        <translation>Fa piano...</translation>
     </message>
     <message>
         <source>Pilot</source>
-        <translation>Georges Guynemer</translation>
+        <translation>Pilota</translation>
     </message>
     <message>
         <source>First flight</source>
-        <translation>Premier vol</translation>
+        <translation>Primo volo</translation>
     </message>
     <message>
         <source>Don Quixote</source>
-        <translation>Don Quichotte</translation>
+        <translation>Don Quixote</translation>
     </message>
     <message>
         <source>Fighting windmill</source>
-        <translation>Combattant de moulins</translation>
+        <translation>Combattendo multini a vento</translation>
     </message>
 </context>
 <context>
     <name>MainPage</name>
     <message>
         <source>Zoom</source>
-        <translation>Zoom</translation>
+        <translation>Ingrandimento</translation>
     </message>
     <message>
         <source>Accepting guesses</source>
-        <translation>Ajout temporaires</translation>
+        <translation>Accetto i suggerimenti</translation>
     </message>
     <message>
         <source>Rejecting guesses</source>
-        <translation>Retrait temporaires</translation>
+        <translation>Rifiuto i suggerimenti</translation>
     </message>
     <message>
         <source>Accept
 guesses</source>
-        <translation>Ajout
-temporaires</translation>
+        <translation>Accetta
+suggerimenti</translation>
     </message>
     <message>
         <source>Reject
 guesses</source>
-        <translation>Retrait
-temporaires</translation>
+        <translation>Rifiuta
+Suggerimenti</translation>
     </message>
     <message>
         <source>Picross</source>
@@ -842,169 +842,168 @@ temporaires</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <source>Guess mode</source>
-        <translation>Mode temporaires</translation>
+        <translation>Modo suggerimenti</translation>
     </message>
     <message>
         <source>Clear grid</source>
-        <translation>Effacer grille</translation>
+        <translation>Svuota griglia</translation>
     </message>
     <message>
         <source>Clearing the grid</source>
-        <translation>Effaçage de la grille</translation>
+        <translation>Svuoto la griglia</translation>
     </message>
     <message>
         <source>New game</source>
-        <translation>Nouvelle partie</translation>
+        <translation>Nuova partita</translation>
     </message>
     <message>
         <source>Welcome to Picross</source>
-        <translation>Bienvenue dans Picross</translation>
+        <translation>Benvenuto a Picross</translation>
     </message>
     <message>
         <source>Please choose a level from the pulley menu</source>
-        <translation>Veuillez choisir un niveau dans menu déroulant</translation>
+        <translation>Prego scegli un livello dal menu a scorrimento</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation>Dimensions</translation>
+        <translation>Dimensione</translation>
     </message>
 </context>
 <context>
     <name>NewGame</name>
     <message>
         <source>Cheat...</source>
-        <translation>Tricheur...</translation>
+        <translation>Cheat...</translation>
     </message>
     <message>
         <source>New game</source>
-        <translation>Nouvelle partie</translation>
+        <translation>Nuova partita</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Verrouillé</translation>
+        <translation>Bloccato</translation>
     </message>
     <message>
         <source>Complete all previous levels to unlock this difficulty</source>
-        <translation>Complétez tout les niveaux précédents pour débloquer cette difficulté  </translation>
+        <translation>Finisci i livelli precedenti per sbloccare questa difficoltà</translation>
     </message>
     <message>
         <source>Play from scratch</source>
-        <translation>Nouvelle partie</translation>
+        <translation>Riparti da nuovo</translation>
     </message>
     <message>
         <source>Restore save</source>
-        <translation>Charger sauvegarde</translation>
+        <translation>Ripristina salvataggio</translation>
     </message>
     <message>
         <source>Erase save</source>
-        <translation>Supprimer sauvegarde </translation>
+        <translation>Cancella salvataggio</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Détails</translation>
+        <translation>Dettagli</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <source>Load saves by default</source>
-        <translation>Charger les sauvegardes par défaut</translation>
+        <translation>Carica salvataggi sempre</translation>
     </message>
     <message>
         <source>Saves will be loaded by default</source>
-        <translation>Les sauvegardes seront chargées par un simple clic</translation>
+        <translation>I salvataggi verranno caricati automaticamente</translation>
     </message>
     <message>
         <source>Load them by a long press</source>
-        <translation>Les sauvegardes doivent être chargées par un appui long</translation>
+        <translation>Caricali con una lunga pressione</translation>
     </message>
     <message>
         <source>Swipe throught difficulty</source>
-        <translation>Glisser parmi les difficultés</translation>
+        <translation>Scorri attrafverso le difficoltà</translation>
     </message>
     <message>
         <source>Swipe is enabled</source>
-        <translation>Le glissement est activé</translation>
+        <translation>Scorrimento abilitato</translation>
     </message>
     <message>
         <source>Swipe disable. Click on a difficulty name to load it</source>
-        <translation>Le glissement est désactivé</translation>
+        <translation>Scorrimento disabilitato. Clicca su un livello di difficoltà per caricarlo</translation>
     </message>
     <message>
         <source>Space between separators</source>
-        <translation>Nombre de cases entre les séparateurs</translation>
+        <translation>Spazio fra i separatori</translation>
     </message>
     <message>
         <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Effacer TOUTES les données</translation>
+        <translation>Cancella TUTTE le basi dati (salvataggi &amp; progresso)</translation>
     </message>
     <message>
         <source>Clearing ALL Databases</source>
-        <translation>Effacement de TOUTES les données</translation>
+        <translation>Cancella TUTTE le basi dati</translation>
     </message>
     <message>
         <source>Clear only saves database</source>
-        <translation>Effacer les sauvegardes</translation>
+        <translation>Cancella solo la base dati dei salvataggi</translation>
     </message>
     <message>
         <source>Clearing only saves database</source>
-        <translation>Effacement des sauvegardes</translation>
+        <translation>Cancello solo la base dati dei salvataggi</translation>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation>Remise à zéro des paramètres</translation>
+        <translation>Azzera impostazioni</translation>
     </message>
     <message>
         <source>Resetting settings</source>
-        <translation>Remise à zéro des paramètres</translation>
+        <translation>Azzero le impostazioni</translation>
     </message>
     <message>
         <source>Vibrate when press-and-hold</source>
-        <translation>Vibreur en cas d&apos;appui long</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Activé</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Désactivé</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WinPage</name>
     <message>
         <source>Level completed!</source>
-        <translation>Niveau résolu!</translation>
+        <translation>Livello completato!</translation>
     </message>
     <message>
         <source>Next level</source>
-        <translation>Prochain niveau</translation>
+        <translation>Prossimo livello</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Retour</translation>
+        <translation>Indietro</translation>
     </message>
     <message>
         <source>Solution</source>
-        <translation>Solution</translation>
+        <translation>Soluzione</translation>
     </message>
     <message>
         <source>Congratulations, you solve every level !</source>
-        <translation>Félicitations!
-Vous avez résolu tout les niveau</translation>
+        <translation>Congratulazioni, hai risolto tutti i livelli !</translation>
     </message>
     <message>
         <source>Best time</source>
-        <translation>Meilleur temps</translation>
+        <translation>Miglior tempo</translation>
     </message>
 </context>
 </TS>

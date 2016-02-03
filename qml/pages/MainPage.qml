@@ -56,6 +56,32 @@ Page {
                 Behavior on opacity{NumberAnimation{duration: 200}}
         }
 
+        // PopUp Flash
+        Rectangle {
+                id: flash
+                anchors.fill:parent
+                opacity:0
+                color: "white"
+                signal flash()
+                onFlash: anim.running=true
+
+                SequentialAnimation {
+                        id: anim
+                        NumberAnimation {
+                                target: flash
+                                property: "opacity"
+                                to: 0.5
+                                duration: 0
+                        }
+                        NumberAnimation {
+                                target: flash
+                                property: "opacity"
+                                to: 0
+                                duration: 500
+                        }
+                }
+        }
+
         // Set pinch area
         PinchArea {
                 id: pinchArea

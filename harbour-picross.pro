@@ -64,7 +64,8 @@ OTHER_FILES += \
     scripts/genPicross.sh \
     harbour-picross.png \
     translations/harbour-picross.ts \
-    translations/harbour-picross-fr.ts
+    translations/harbour-picross-fr.ts \
+    translations/harbour-picross-it.ts
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -72,4 +73,5 @@ CONFIG += \
     sailfishapp_i18n
 
 TRANSLATIONS += \
-    translations/harbour-picross-fr.ts
+    translations/harbour-picross-fr.ts \
+    translations/harbour-picross-it.ts

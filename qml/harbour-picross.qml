@@ -53,6 +53,9 @@ ApplicationWindow{
     signal checkWin
     signal win
 
+    property QtObject longBuzz
+    property QtObject shortBuzz
+
     property int level: -1
     property int diff: -1
 
@@ -65,6 +68,8 @@ ApplicationWindow{
 
     property bool foldTopMode: true
     property bool foldLeftMode: true
+
+    property int vibrate
 
     property int dimension: 0
     property real zoom: 1
@@ -87,7 +92,14 @@ ApplicationWindow{
 
     Component.onCompleted: {
         DB.initialize()
+
+        //Parameters
         space = DB.getParameter("space")
+        vibrate = DB.getParameter("vibrate")
+
+        //Buzzer
+        longBuzz  = Qt.createQmlObject("import QtFeedback 5.0; HapticsEffect {attackTime: 50; fadeTime: 50; attackIntensity: 0.2; fadeIntensity: 0.01; intensity: 0.8; duration: 100}", game)
+        shortBuzz = Qt.createQmlObject("import QtFeedback 5.0; HapticsEffect {attackTime: 25; fadeTime: 25; attackIntensity: 0.2; fadeIntensity: 0.01; intensity: 0.8; duration: 50}", game)
     }
     Component.onDestruction: {
         Source.save()

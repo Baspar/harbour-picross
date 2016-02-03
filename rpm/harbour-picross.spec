@@ -14,7 +14,7 @@ Name:       harbour-picross
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Picross
 Version:    1.7
-Release:    0
+Release:    1
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
