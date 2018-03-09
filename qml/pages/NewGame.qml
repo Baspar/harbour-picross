@@ -137,7 +137,7 @@ Dialog{
                         id: levelList
                         Component.onCompleted: {
                             if(!Levels.isLocked(myDiff))
-                                Levels.arrayToList(index, levelList)
+                                Levels.arrayToList(myDiff, levelList)
                             else
                                 levelList.clear()
                         }
