@@ -83,9 +83,9 @@ Dialog{
         interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
         id: mySlideShowView
         clip: true
-        width: dialog.width
+        width: parent.width
         anchors.top: decoratorTop.bottom
-        anchors.bottom: dialog.bottom
+        anchors.bottom: parent.bottom
         model: ListModel{
             id: difficultyList
             Component.onCompleted: Levels.getDifficultiesAndLevels(difficultyList)
@@ -94,7 +94,7 @@ Dialog{
             property int myDiff: index
             width: parent.width
             height: parent.height
-            color: Qt.rgba(0, 0, 0, 0.1)
+            color: "transparent"
             Column{
                 anchors.topMargin: Theme.paddingSmall
                 anchors.fill: parent
@@ -128,7 +128,7 @@ Dialog{
                     clip: true
                     VerticalScrollDecorator{}
                     id: levelView
-                    height: parent.height - separatorRect.height - diffHeader.height - 2*Theme.paddingMedium
+                    height: parent.height - separatorRect.height - diffHeader.height - Theme.paddingMedium
                     width: parent.width
 
                     ViewPlaceholder{
