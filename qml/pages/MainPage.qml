@@ -332,7 +332,8 @@ Page {
 
                 // Grid part
                 Column{
-                        y: pageHeader.height
+                        anchors.top: rectPageHeader.bottom
+                        anchors.bottom: parent.bottom
                         width: parent.width
 
                         // Hint
@@ -344,8 +345,7 @@ Page {
 
                         // Whole grid
                         WholeGrid{
-                                width: page.width
-                                height: page.height-pageHeader.height
+                                width: parent.width
                         }
                 }
         }
