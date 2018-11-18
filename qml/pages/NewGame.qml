@@ -152,6 +152,7 @@ Dialog{
                         property int myLevel: index
                         id: listItem
                         menu: contextMenu
+                        contentHeight: levelTitle.height + levelDescription.height + Theme.paddingSmall
                         Rectangle{
                             anchors.fill: parent
                             visible: (listItem.highlighted || (myLevel==levelSelected && myDiff==diffSelected))
@@ -163,8 +164,8 @@ Dialog{
                         Image {
                             id: levelCheckbox
                             source: "image://theme/icon-m-tabs"
-                            width: 2*Theme.paddingLarge
-                            height: 2*Theme.paddingLarge
+                            width: 2*Theme.fontSizeExtraSmall
+                            height: 2*Theme.fontSizeExtraSmall
                             x: Theme.paddingMedium
                             anchors.verticalCenter: parent.verticalCenter
                         }
@@ -174,9 +175,9 @@ Dialog{
                             id: levelCheckboxTick
                             visible: DB.isCompleted(myDiff, myLevel)
                             source: "image://theme/icon-m-dismiss"
-                            width: Theme.paddingLarge*1.6
-                            height: Theme.paddingLarge*1.6
-                            x: Theme.paddingMedium + 0.2 * Theme.paddingLarge
+                            width: Theme.fontSizeExtraSmall*1.6
+                            height: Theme.fontSizeExtraSmall*1.6
+                            x: Theme.paddingMedium + 0.2*Theme.fontSizeExtraSmall
                             anchors.verticalCenter: parent.verticalCenter
                         }
 
@@ -187,6 +188,7 @@ Dialog{
                             font.pixelSize: Theme.fontSizeMedium
                             anchors.left: levelCheckbox.right
                             anchors.leftMargin: Theme.paddingMedium
+                            anchors.topMargin: Theme.paddingSmall
                             anchors.right: parent.right
                         }
                         // Second row, e.g. "Numbers = size of the groups"
