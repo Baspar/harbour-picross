@@ -8,11 +8,18 @@ Item{
         MouseArea{
             anchors.fill: parent
             onClicked: {
-                if(game.zoom===1)
+                if(game.zoom===1) {
 //                    game.zoom=((page.height-pageHeader.height-maxSizeIndicTop-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
-//                            /
+//                                                                                 /
 //                            ((page.width-maxSizeIndicLeft-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
-                        game.zoom=3
+                        //game.zoom=3
+                    if(game.dimension < 6)
+                        zoom = 2
+                    else if(game.dimension < 16)
+                        zoom = 3
+                    else
+                        zoom = 4
+                }
                 else{
                     game.zoom=1
                     foldTopMode=true
