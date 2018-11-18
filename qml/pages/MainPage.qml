@@ -6,12 +6,27 @@ import "../DB.js" as DB
 Page {
         RemorsePopup{ id: remorseMain }
 
+        onStatusChanged: {
+            // Prepare the next level
+            if(status == PageStatus.Active) {
+                pageStack.pop(Qt.resolvedUrl("pages/WinPage.qml"))
+            }
+        }
+
         property int insideBorderSize: 5
         property int outsideBorderSize: 10
-
+        property variant difficulties: [
+            qsTr("Tutorial"),
+            qsTr("Easy"),
+            qsTr("Medium"),
+            qsTr("Hard"),
+            qsTr("Expert"),
+            qsTr("Insane")
+        ]
         property string hintTitleCp: game.hintTitle
         onHintTitleCpChanged: {
                 pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+                pageHeader.description=qsTr("Good luck!")
                 resetPageHeader.start()
         }
 
@@ -271,6 +286,7 @@ Page {
                                 onClicked:{
                                     if(!resetPageHeader.running){
                                         pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+                                        pageHeader.description="Elapsed time: "+time===0?"xx:xx:xx":game.time>=60*60*23?"24:00:00+":new Date(null, null, null, null, null, time).toLocaleTimeString(Qt.locale(), "HH:mm:ss");
                                         resetPageHeader.start()
                                     }else
                                         resetPageHeader.restart()
@@ -280,7 +296,15 @@ Page {
                         PageHeader {
                                 id: pageHeader
                                 title: qsTr("Picross")
+                                description: " "
                                 Behavior on title{
+                                            SequentialAnimation {
+                                                NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }
+                                                PropertyAction {}
+                                                NumberAnimation { target: pageHeader; property: "opacity"; to: 1 }
+                                            }
+                                        }
+                                Behavior on description{
                                             SequentialAnimation {
                                                 NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }
                                                 PropertyAction {}
@@ -290,7 +314,10 @@ Page {
                                 Timer{
                                         id: resetPageHeader
                                         interval: 2000
-                                        onTriggered: pageHeader.title=game.hintTitle===""?qsTr("Picross"):game.hintTitle
+                                        onTriggered: {
+                                            pageHeader.title = qsTr("Picross") + (game.hintTitle==="" ? "" : ": "+difficulties[game.diff]+" "+qsTr("Level")+" "+(game.level+1))
+                                            pageHeader.description = (game.hintTitle==="" ? " " : game.hintTitle)
+                                        }
                                 }
                         }
                 }
@@ -322,7 +349,7 @@ Page {
                         }
                         MenuItem {
                                 id: menuNewGame
-                                text: qsTr("New game")
+                                text: qsTr("Level select")
                                 onClicked: {
                                         game.pause=true
                                         pageStack.push(Qt.resolvedUrl("NewGame.qml"))
