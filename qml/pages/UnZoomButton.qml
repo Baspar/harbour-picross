@@ -35,72 +35,11 @@ Item{
         border.width: 5
         border.color: Theme.rgba(Theme.highlightColor, 0.3)
 
-        property int unitW : width/12
-        property int unitH : height/12
-        Rectangle{
-            x: 5+2*unzoomButton.unitW
-            y: 5+2*unzoomButton.unitH
-            width: 3*unzoomButton.unitW
-            height: unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
+        Image {
+            source: "image://theme/icon-m-search"
+            width: 4 * parent.width / 5
+            height: 4 * parent.height / 5
+            anchors.centerIn: parent
         }
-        Rectangle{
-            x: 5+2*unzoomButton.unitW
-            y: 5+3*unzoomButton.unitH
-            width: unzoomButton.unitW
-            height: 2*unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-        Rectangle{
-            x: 5+2*unzoomButton.unitW
-            y: 5+7*unzoomButton.unitH
-            width: unzoomButton.unitW
-            height: 2*unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-        Rectangle{
-            x: 5+2*unzoomButton.unitW
-            y: 5+9*unzoomButton.unitH
-            width: 3*unzoomButton.unitW
-            height: unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-        Rectangle{
-            x: 5+7*unzoomButton.unitW
-            y: 5+2*unzoomButton.unitH
-            width: 3*unzoomButton.unitW
-            height: 1*unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-        Rectangle{
-            x: 5+9*unzoomButton.unitW
-            y: 5+3*unzoomButton.unitH
-            width: unzoomButton.unitW
-            height: 2*unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-        Rectangle{
-            x: 5+9*unzoomButton.unitW
-            y: 5+7*unzoomButton.unitH
-            width: unzoomButton.unitW
-            height: 2*unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-        Rectangle{
-            x: 5+7*unzoomButton.unitW
-            y: 5+9*unzoomButton.unitH
-            width: 3*unzoomButton.unitW
-            height: unzoomButton.unitH
-            color: Theme.highlightColor
-            opacity:0.3
-        }
-
     }
 }
