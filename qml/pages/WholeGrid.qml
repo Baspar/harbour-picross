@@ -47,15 +47,7 @@ Item{
                         x:gridPartRectangle.width-10
                         width:10
                         height: Math.min(gridPartRectangle.height-outsideBorderSize, indicUp.height+flick.contentHeight)
-                        color: Theme.highlightColor
-                        opacity:0.3
-                }
-                // Decoration bottom of the grid
-                Rectangle{
-                        y: Math.min(gridPartRectangle.height-outsideBorderSize, sizeIndicTop+game.dimension*unitSize+(game.dimension-1)*insideBorderSize)
-                        width: gridPartRectangle.width
-                        height: outsideBorderSize
-                        color: Theme.highlightColor
+                        color: "red"
                         opacity:0.3
                 }
         }
@@ -65,6 +57,7 @@ Item{
 
         // Top indicator
         Item{
+                id: topIndicator
                 Rectangle{
                         id: topLineIndicUp
                         x:sizeIndicLeft
@@ -452,5 +445,22 @@ Item{
                                 Grille{}
                         }
                 }
+        }
+        Rectangle {
+            id: bottomRect
+            anchors.top: grid.bottom
+            width: parent.width
+            height: 10
+            color: Theme.highlightColor
+            opacity:0.3
+        }
+        Rectangle {
+            id: rightRect
+            anchors.bottom: bottomRect.top
+            anchors.top: gridPartRectangle.top
+            anchors.right: bottomRect.right
+            width: 10
+            color: Theme.highlightColor
+            opacity:0.3
         }
 }
