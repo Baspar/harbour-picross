@@ -12,9 +12,15 @@ Rectangle {
         id: thisrect
         width: unitSize
         height: width
-
-        opacity: game.guessMode && thisrect.estate==="full"?0.25:1
-        color: thisrect.estate==="full"||thisrect.estate=="guess_full"?Theme.rgba(Theme.highlightColor, 0.6):Theme.rgba("black", 0.1)
+        color: "transparent"
+        Rectangle {
+            anchors.fill: parent
+            opacity: game.guessMode && thisrect.estate==="full"?0.25:1
+            color: thisrect.estate==="full"||thisrect.estate=="guess_full"?Theme.rgba(Theme.highlightColor, 0.6):Qt.rgba(0, 0, 0, 0.1)
+            radius: width * 0.1
+            Behavior on color {ColorAnimation{duration: 100}}
+            Behavior on opacity {NumberAnimation{duration: 100}}
+        }
 
         Canvas{
                 property bool appActive: game.applicationActive
@@ -28,24 +34,24 @@ Rectangle {
                 onPaint:{
                         var ctx = getContext("2d")
                         ctx.strokeStyle = Theme.highlightColor
-                        ctx.lineWidth = 2
+                        ctx.lineWidth = width * 0.05
+                        ctx.lineCap = "round"
 
                         ctx.beginPath()
-                        ctx.moveTo(0.1*width,0.1*height)
-                        ctx.lineTo(0.9*width, 0.9*height)
+                        ctx.moveTo(0.2*width,0.2*height)
+                        ctx.lineTo(0.8*width, 0.8*height)
                         ctx.stroke()
                         ctx.closePath()
 
                         ctx.beginPath()
-                        ctx.moveTo(0.1*width, 0.9*height)
-                        ctx.lineTo(0.9*width, 0.1*height)
+                        ctx.moveTo(0.2*width, 0.8*height)
+                        ctx.lineTo(0.8*width, 0.2*height)
                         ctx.stroke()
                         ctx.closePath()
                 }
         }
 
-        Behavior on color {ColorAnimation{duration: 100}}
-        Behavior on opacity {NumberAnimation{duration: 100}}
+
 
         MouseArea{
                 anchors.fill: parent
