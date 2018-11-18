@@ -152,28 +152,58 @@ Dialog{
                         property int myLevel: index
                         id: listItem
                         menu: contextMenu
+                        Rectangle{
+                            anchors.fill: parent
+                            visible: (listItem.highlighted || (myLevel==levelSelected && myDiff==diffSelected))
+                            color: Theme.highlightBackgroundColor
+                            opacity: Theme.highlightBackgroundOpacity
+                        }
+
+                        // Draw empty level completex checkbox
+                        Image {
+                            id: levelCheckbox
+                            source: "image://theme/icon-m-tabs"
+                            width: 2*Theme.paddingLarge
+                            height: 2*Theme.paddingLarge
+                            x: Theme.paddingMedium
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+
+                        // If the level is completed, draw the tick in the box
+                        Image {
+                            id: levelCheckboxTick
+                            visible: DB.isCompleted(myDiff, myLevel)
+                            source: "image://theme/icon-m-dismiss"
+                            width: Theme.paddingLarge*1.6
+                            height: Theme.paddingLarge*1.6
+                            x: Theme.paddingMedium + 0.2 * Theme.paddingLarge
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+
                         // First row, e.g. "[3x3] Box"
                         Label{
                             id: levelTitle
-                            text:  (myLevel+1)+". "+(DB.isCompleted(myDiff, myLevel)?title:"?????")+ " - ["+dimension+"x"+dimension+"]"
-                            x: Theme.paddingMedium
-                            color: (listItem.highlighted|| (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
-                                                                     : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
+                            text: (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
+                            font.pixelSize: Theme.fontSizeMedium
+                            anchors.left: levelCheckbox.right
+                            anchors.leftMargin: Theme.paddingMedium
+                            anchors.right: parent.right
                         }
                         // Second row, e.g. "Numbers = size of the groups"
                         Label{
+                            id: levelDescription
                             anchors.top: levelTitle.bottom
-                            x: Theme.paddingLarge
-                            anchors.topMargin: Theme.paddingSmall
+                            anchors.left: levelCheckbox.right
+                            anchors.leftMargin: Theme.paddingMedium
+                            anchors.right: parent.right
                             text: hintTitle
                             font.pixelSize: Theme.fontSizeSmall
-                            color: Theme.secondaryColor
                         }
                         onClicked:{
                             if(cheatMode){
                                 DB.setIsCompleted(myDiff, myLevel, 'true')
-                                levelTitle.text= (myLevel+1)+". "+(DB.isCompleted(myDiff, myLevel)?title:"?????")+ " - ["+dimension+"x"+dimension+"]"
-                                levelTitle.color= (listItem.highlighted|| (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
+                                levelTitle.text= (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
+                                levelTitle.color= (listItem.highlighted || (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
                                                                      : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
                             }else{
                                 if(diffSelected !== myDiff || levelSelected !== myLevel){
