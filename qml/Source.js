@@ -370,8 +370,8 @@ function checkLineX(x){
     if(!completed){
         genIndicLineXFilling(progress, game.mySolvingGrid, x)
         toFill=(progress.count===indics.count)
-        for(var i=0; i<progress.count; i++)
-            toFill=toFill&&(progress.get(i).size===indics.get(i).size)
+        for(var j=0; j<progress.count; j++)
+            toFill=toFill&&(progress.get(j).size===indics.get(j).size)
     }
 
     //Check if Line is full => error

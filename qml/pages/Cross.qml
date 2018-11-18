@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 Item{
     id: cross
-    opacity: (thisrect.estate=="hint")?0.6:0
+    opacity: (thisrect.estate==="hint")?0.6:0
     Behavior on opacity {NumberAnimation{duration: 100}}
     Rectangle{
         color: Theme.highlightColor
