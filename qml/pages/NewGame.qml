@@ -11,12 +11,14 @@ Dialog{
     property bool cheatMode: false
 
     id: dialog
-    canAccept: diffSelected!=-1
+    canAccept: diffSelected != -1 && levelSelected != -1
 
     // Title: New game
     DialogHeader{
         id: pageTitle
-        title: cheatMode?qsTr("Cheat..."):qsTr("New game")
+        title: cheatMode?qsTr("Cheat..."):qsTr("Level select")
+        acceptText: qsTr("Play");
+        cancelText: qsTr("Back");
         MouseArea{
             anchors.fill: parent
 //            onPressAndHold: cheatMode = !cheatMode
@@ -53,7 +55,10 @@ Dialog{
                 }
                 MouseArea{
                     anchors.fill: parent
-                    onClicked:mySlideShowView.currentIndex=index
+                    onClicked: {
+                        mySlideShowView.currentIndex = index
+                        levelSelected = -1
+                    }
                     onPressed: parent.color = Theme.highlightColor
                     onReleased: parent.color = Theme.highlightDimmerColor
                 }
@@ -212,6 +217,7 @@ Dialog{
                                     diffSelected=myDiff
                                     levelSelected=myLevel
                                     save=DB.getParameter("autoLoadSave")===0?"":DB.getSave(myDiff, myLevel)
+                                    prepareLevelTimer.start()
                                 } else {
                                     diffSelected=-1
                                     levelSelected=-1
@@ -270,15 +276,25 @@ Dialog{
             mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
     }
 
-    onAccepted: {
-        Source.save()
+    Timer{
+            id: prepareLevelTimer
+            interval: 0
+            onTriggered: prepareLevel()
+    }
+
+    function prepareLevel() {
         game.diff=diffSelected
         game.level=levelSelected
         game.save=save
         Levels.initSolvedGrid(game.solvedGrid, diffSelected, levelSelected)
-
         game.gridUpdated()
     }
+
+    onAccepted: {
+        prepareLevel()
+        Source.save()
+    }
+
     onRejected: {
         game.pause=false
     }
