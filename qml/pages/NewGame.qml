@@ -31,7 +31,7 @@ Dialog{
         anchors.horizontalCenter: dialog.horizontalCenter
         SilicaListView{
             id: silicaDiffList
-            height: 40
+            height: Theme.fontSizeHuge
             orientation: ListView.Horizontal
             width: parent.width
             model:ListModel{
@@ -40,7 +40,7 @@ Dialog{
             }
             // Difficulty item (bounding box)
             delegate : Rectangle{
-                color: "transparent"
+                color: Theme.highlightDimmerColor
                 height: parent.height
                 width: decoratorTop.width/diffList.count
                 // Difficulty text
@@ -48,16 +48,18 @@ Dialog{
                     anchors.centerIn: parent
                     color: (Levels.isLocked(index))?"grey":"white"
                     text:name
-                    font.pixelSize: 20
+                    font.pixelSize: Theme.fontSizeTiny
+                    font.bold: true
                 }
                 MouseArea{
                     anchors.fill: parent
                     onClicked:mySlideShowView.currentIndex=index
+                    onPressed: parent.color = Theme.highlightColor
+                    onReleased: parent.color = Theme.highlightDimmerColor
                 }
             }
         }
         Item{
-            y:40
             width: parent.width
             // Difficulty highlight rectangle...
             Rectangle{
