@@ -153,7 +153,7 @@ Item{
                                                                                         model: loadedIndic
                                                                                         Item{
                                                                                                 width: indicRectangleUp.width
-                                                                                                height: myLabelIndicUp.height
+                                                                                                height: myLabelIndicUp.height * 0.85
                                                                                                 Label{
                                                                                                         anchors.centerIn: parent
                                                                                                         id: myLabelIndicUp
@@ -337,7 +337,7 @@ Item{
                                                                                         model: loadedIndic
                                                                                         Item{
                                                                                                 height: indicRectangleLeft.height
-                                                                                                width: myLabelIndicLeft.width
+                                                                                                width: myLabelIndicLeft.width + myLabelIndicLeft.height/5
                                                                                                 Label{
                                                                                                         anchors.centerIn: parent
                                                                                                         id: myLabelIndicLeft
