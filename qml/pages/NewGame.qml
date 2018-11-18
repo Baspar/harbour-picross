@@ -38,10 +38,12 @@ Dialog{
                 id: diffList
                 Component.onCompleted: Levels.getDifficultiesAndLevels(diffList)
             }
+            // Difficulty item (bounding box)
             delegate : Rectangle{
                 color: "transparent"
                 height: parent.height
                 width: decoratorTop.width/diffList.count
+                // Difficulty text
                 Label{
                     anchors.centerIn: parent
                     color: (Levels.isLocked(index))?"grey":"white"
@@ -57,6 +59,7 @@ Dialog{
         Item{
             y:40
             width: parent.width
+            // Difficulty highlight rectangle...
             Rectangle{
                 x: parent.width/diffList.count*mySlideShowView.currentIndex-silicaDiffList.contentY
                 height: Theme.paddingSmall
@@ -64,6 +67,7 @@ Dialog{
                 width: parent.width/diffList.count
                 Behavior on x {NumberAnimation{duration: 100}}
             }
+            /// ...and its background
             Rectangle{
                 width: parent.width
                 height: Theme.paddingSmall
@@ -146,6 +150,7 @@ Dialog{
                         property int myLevel: index
                         id: listItem
                         menu: contextMenu
+                        // First row, e.g. "[3x3] Box"
                         Label{
                             id: levelTitle
                             text:  (myLevel+1)+". "+(DB.isCompleted(myDiff, myLevel)?title:"?????")+ " - ["+dimension+"x"+dimension+"]"
@@ -153,6 +158,7 @@ Dialog{
                             color: (listItem.highlighted|| (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
                                                                      : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
                         }
+                        // Second row, e.g. "Numbers = size of the groups"
                         Label{
                             anchors.top: levelTitle.bottom
                             x: Theme.paddingLarge
@@ -179,6 +185,7 @@ Dialog{
                             }
                         }
 
+                        // Context menu
                         Component {
                             id: contextMenu
                             ContextMenu {
