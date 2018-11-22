@@ -21,7 +21,7 @@ Dialog{
         cancelText: qsTr("Back");
         MouseArea{
             anchors.fill: parent
-//            onPressAndHold: cheatMode = !cheatMode
+            //onPressAndHold: cheatMode = !cheatMode
         }
     }
 
@@ -210,8 +210,9 @@ Dialog{
                             if(cheatMode){
                                 DB.setIsCompleted(myDiff, myLevel, 'true')
                                 levelTitle.text= (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
-                                levelTitle.color= (listItem.highlighted || (myLevel==levelSelected && myDiff==diffSelected)) ? Theme.highlightColor
-                                                                     : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
+                                levelTitle.color= listItem.highlighted || (myLevel == levelSelected && myDiff == diffSelected)
+                                        ? Theme.highlightColor
+                                        : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
                             }else{
                                 if(diffSelected !== myDiff || levelSelected !== myLevel){
                                     diffSelected=myDiff
@@ -277,9 +278,9 @@ Dialog{
     }
 
     Timer{
-            id: prepareLevelTimer
-            interval: 0
-            onTriggered: prepareLevel()
+        id: prepareLevelTimer
+        interval: 0
+        onTriggered: prepareLevel()
     }
 
     function prepareLevel() {
@@ -288,11 +289,14 @@ Dialog{
         game.save=save
         Levels.initSolvedGrid(game.solvedGrid, diffSelected, levelSelected)
         game.gridUpdated()
+        game.pause = true
+
     }
 
     onAccepted: {
         prepareLevel()
         Source.save()
+        game.pause = false
     }
 
     onRejected: {
