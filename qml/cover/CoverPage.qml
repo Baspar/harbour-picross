@@ -33,11 +33,6 @@ import Sailfish.Silica 1.0
 import "../pages"
 
 CoverBackground {
-    Label{
-        visible: game.dimension !== 0
-        anchors.horizontalCenter: parent.horizontalCenter
-        text: new Date(null, null, null, null, null, game.time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
-    }
     Rectangle {
 
         transform: [Rotation {angle: 33}, Scale { xScale: 2; yScale: 2}, Translate {x: width/3; y: width/5}]
@@ -93,17 +88,30 @@ CoverBackground {
             }
         }
     }
-
     Label {
-        id: label
+        id: levelInfo
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: Theme.fontSizeSmall
+        enabled: game.dimension > 0 && game.time > 0
+        visible: enabled
+        text: "Level " + (game.diff+1) + "-" + (game.level+1)
+    }
+    Label {
+        id: levelTime
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: levelInfo.bottom
+        enabled: game.dimension > 0 && game.time > 0
+        visible: enabled
+        text: new Date(null, null, null, null, null, game.time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
+    }
+    Label {
+        id: label1
         anchors.centerIn: parent
+        font.pixelSize: Theme.fontSizeLarge
         text: qsTr("Picross")
     }
-
-
     CoverActionList {
         id: coverAction
-
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
             onTriggered: {
@@ -115,7 +123,6 @@ CoverBackground {
             }
         }
     }
-
 }
 
 
