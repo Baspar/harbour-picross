@@ -25,8 +25,6 @@ DISTFILES += \
     qml/pages/MainPage.qml \
     qml/Source.js \
     qml/Levels.js \
-    qml/pages/WinPage.qml \
-    qml/pages/LevelInfos.qml \
     qml/DB.js \
     qml/pages/Settings.qml \
     qml/pages/Rules.qml \
@@ -38,9 +36,7 @@ DISTFILES += \
     harbour-picross.desktop \
     scripts/genPicross.sh \
     harbour-picross.png \
-    translations/harbour-picross.ts \
-    translations/harbour-picross-fr.ts \
-    translations/harbour-picross-it.ts
+    qml/pages/ScorePage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

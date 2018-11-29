@@ -9,7 +9,7 @@ Page {
     property int nextDiff: Levels.getNextDiff()
     property int nextLevel: Levels.getNextLevel()
 
-    property ListModel modelcpy : ListModel{}
+    property ListModel gGridModel : ListModel{}
     property int gDimension
     property string gTitle
     property int gLevel
@@ -17,20 +17,34 @@ Page {
     property int bTime
     property int gTime
 
+    // High score page or level complete page?
+    property bool highScorePage: false
+
     Component.onCompleted:{
-        // Prepare win screen
-        gDimension = game.dimension
-        gTitle     = game.title
-        gLevel     = game.level+1
-        gDiff      = game.diff+1
-        gTime      = game.time
-        bTime      = DB.getTime(game.diff, game.level)
-        for(var i=0; i < game.solvedGrid.count; i++)
-            modelcpy.append(game.solvedGrid.get(i))
+
+        // Prepare high score screen
+        if(highScorePage) {
+            // gDiff from calling page
+            // gLevel from calling page
+            gDimension = Levels.getDimension(gDiff, gLevel)
+            gTitle = Levels.getTitle(gDiff, gLevel)
+            bTime = DB.getTime(gDiff, gDiff)
+            gGridModel = Levels.getGrid(gDiff, gLevel)
+        }
+        // Prepare winning screen
+        else {
+            gLevel     = game.level
+            gDiff      = game.diff
+            gDimension = game.dimension
+            gTitle     = game.title
+            gTime      = game.time
+            bTime      = DB.getTime(game.diff, game.level)
+            gGridModel = Levels.getGrid(gDiff, gLevel)
+        }
     }
     onStatusChanged: {
         // Prepare the next level
-        if(status == PageStatus.Active) {
+        if(!highScorePage && status == PageStatus.Active) {
             // Prepare the next level
             game.diff=nextDiff
             game.level=nextLevel
@@ -46,7 +60,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 id: nextLevelMenuItem
-                enabled: nextDiff != -1 && nextLevel != -1
+                enabled: !highScorePage && nextDiff != -1 && nextLevel != -1
                 visible: enabled
                 text: qsTr("Next level")
                 onClicked: {
@@ -58,13 +72,13 @@ Page {
 
         PageHeader {
             id: pageHeader
-            title: qsTr("Level completed!")
+            title: highScorePage ? qsTr("Level details") : qsTr("Level completed!")
         }
         Label {
             id: solution
             anchors.top: pageHeader.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Level")+" "+gDiff+"-"+gLevel
+            text: qsTr("Level")+" "+(gDiff+1)+"-"+(gLevel+1)
             font.pixelSize: Theme.fontSizeMedium
         }
         Rectangle{
@@ -87,7 +101,7 @@ Page {
                 spacing: Theme.paddingLarge / gDimension
                 property int rectSize: (myFinalGrid.width-(gDimension-1)*myFinalGrid.spacing)/gDimension
                 Repeater{
-                    model: modelcpy
+                    model: gGridModel
                     Rectangle{
                         width: myFinalGrid.rectSize
                         height: myFinalGrid.rectSize
@@ -109,6 +123,8 @@ Page {
         }
         Label{
             id: yourTimeLabel1
+            enabled: !highScorePage
+            visible: enabled
             anchors.top: titleLabel.bottom
             anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
@@ -117,7 +133,9 @@ Page {
         }
         Label{
             id: yourTimeLabel2
-            anchors.top: yourTimeLabel1.bottom
+            enabled: !highScorePage
+            visible: enabled
+            anchors.top: highScorePage ? titleLabel.bottom : yourTimeLabel1.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             text: gTime===0?"--:--:--":gTime>=60*60*24?"24:00:00+":new Date(null, null, null, null, null, gTime).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
         }
@@ -138,7 +156,8 @@ Page {
         Label{
             id: congratsLabel1
             anchors.top: bestTimeLabel2.bottom
-            visible: nextLevel === -1 && nextDiff === -1
+            enabled: !highScorePage && nextLevel === -1 && nextDiff === -1
+            visible: enabled
             anchors.topMargin: Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.highlightColor
@@ -148,7 +167,8 @@ Page {
         Label{
             id: congratsLabel2
             anchors.top: congratsLabel1.bottom
-            visible: nextLevel === -1 && nextDiff === -1
+            enabled: !highScorePage && nextLevel === -1 && nextDiff === -1
+            visible: enabled
             anchors.horizontalCenter: parent.horizontalCenter
             color: Theme.highlightColor
             text: qsTr("You solved every level!")

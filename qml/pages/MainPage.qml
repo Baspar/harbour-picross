@@ -9,7 +9,7 @@ Page {
         onStatusChanged: {
             // Prepare the next level
             if(status == PageStatus.Active) {
-                pageStack.pop(Qt.resolvedUrl("pages/WinPage.qml"))
+                pageStack.pop(Qt.resolvedUrl("pages/ScorePage.qml"))
             }
         }
 

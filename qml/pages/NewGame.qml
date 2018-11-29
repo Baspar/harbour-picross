@@ -258,7 +258,7 @@ Dialog{
                                     visible: DB.isCompleted(myDiff, myLevel)
                                     text: qsTr("Details")
                                     onClicked: {
-                                        pageStack.push(Qt.resolvedUrl("LevelInfos.qml"), {"diffSelected":myDiff, "levelSelected":myLevel})
+                                        pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {"gDiff": myDiff, "gLevel": myLevel, "highScorePage": true})
                                     }
                                 }
                             }

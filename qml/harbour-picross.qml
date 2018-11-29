@@ -146,6 +146,6 @@ ApplicationWindow{
         DB.eraseSave(diff, level)
         if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > game.time)
             DB.setTime(diff, level, game.time)
-        pageStack.replace(Qt.resolvedUrl("pages/WinPage.qml"))
+        pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
     }
 }
