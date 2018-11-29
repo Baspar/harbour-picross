@@ -9,17 +9,6 @@
     </message>
 </context>
 <context>
-    <name>LevelInfos</name>
-    <message>
-        <source>Level details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Best time</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Levels</name>
     <message>
         <source>Square</source>
@@ -809,9 +798,73 @@
         <source>Fighting windmill</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Mouse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very cute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Viking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Old norseman</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Honey maker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shoemaker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Worker at the last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Eagle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sacred feather source</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>
+    <message>
+        <source>Tutorial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Easy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insane</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dimension</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Zoom</source>
         <translation type="unfinished"></translation>
@@ -855,7 +908,19 @@ guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New game</source>
+        <source>Good luck!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulations!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -863,24 +928,16 @@ guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please choose a level from the pulley menu</source>
+        <source>You solved every level!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dimension</source>
+        <source>Please choose a level from the pulley menu</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>NewGame</name>
-    <message>
-        <source>Cheat...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New game</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Locked</source>
         <translation type="unfinished"></translation>
@@ -903,6 +960,49 @@ guesses</source>
     </message>
     <message>
         <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cheat...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScorePage</name>
+    <message>
+        <source>Next level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level completed!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Best time</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -978,33 +1078,6 @@ guesses</source>
     </message>
     <message>
         <source>Zoom on indicators</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>WinPage</name>
-    <message>
-        <source>Level completed!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next level</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Solution</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Congratulations, you solve every level !</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Best time</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

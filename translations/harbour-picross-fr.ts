@@ -9,17 +9,6 @@
     </message>
 </context>
 <context>
-    <name>LevelInfos</name>
-    <message>
-        <source>Level details</source>
-        <translation>Détails du niveau</translation>
-    </message>
-    <message>
-        <source>Best time</source>
-        <translation>Meilleur temps</translation>
-    </message>
-</context>
-<context>
     <name>Levels</name>
     <message>
         <source>Square</source>
@@ -809,9 +798,73 @@
         <source>Fighting windmill</source>
         <translation>Combattant de moulins</translation>
     </message>
+    <message>
+        <source>Mouse</source>
+        <translation>Souris</translation>
+    </message>
+    <message>
+        <source>Very cute</source>
+        <translation>Très mignon</translation>
+    </message>
+    <message>
+        <source>Viking</source>
+        <translation>Viking</translation>
+    </message>
+    <message>
+        <source>Old norseman</source>
+        <translation>Vieil homme de norvège</translation>
+    </message>
+    <message>
+        <source>Honey maker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shoemaker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Worker at the last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Eagle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sacred feather source</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>
+    <message>
+        <source>Tutorial</source>
+        <translation>Tutoriel</translation>
+    </message>
+    <message>
+        <source>Easy</source>
+        <translation>Facile</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Moyen</translation>
+    </message>
+    <message>
+        <source>Hard</source>
+        <translation>Difficile</translation>
+    </message>
+    <message>
+        <source>Expert</source>
+        <translation>Expert</translation>
+    </message>
+    <message>
+        <source>Insane</source>
+        <translation>Impossible</translation>
+    </message>
+    <message>
+        <source>Dimension</source>
+        <translation>Dimensions</translation>
+    </message>
     <message>
         <source>Zoom</source>
         <translation>Zoom</translation>
@@ -857,39 +910,43 @@ temporaires</translation>
         <translation>Effaçage de la grille</translation>
     </message>
     <message>
-        <source>New game</source>
-        <translation>Nouvelle partie</translation>
+        <source>Good luck!</source>
+        <translation>Bonne chance!</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Niveau</translation>
+    </message>
+    <message>
+        <source>Level select</source>
+        <translation>Sélection du niveau</translation>
+    </message>
+    <message>
+        <source>Congratulations!</source>
+        <translation>Félicitations!</translation>
     </message>
     <message>
         <source>Welcome to Picross</source>
         <translation>Bienvenue dans Picross</translation>
     </message>
     <message>
-        <source>Please choose a level from the pulley menu</source>
-        <translation>Veuillez choisir un niveau dans menu déroulant</translation>
+        <source>You solved every level!</source>
+        <translation>Vous avez résolu tout les niveau!</translation>
     </message>
     <message>
-        <source>Dimension</source>
-        <translation>Dimensions</translation>
+        <source>Please choose a level from the pulley menu</source>
+        <translation>Veuillez choisir un niveau dans menu déroulant</translation>
     </message>
 </context>
 <context>
     <name>NewGame</name>
-    <message>
-        <source>Cheat...</source>
-        <translation>Tricheur...</translation>
-    </message>
-    <message>
-        <source>New game</source>
-        <translation>Nouvelle partie</translation>
-    </message>
     <message>
         <source>Locked</source>
         <translation>Verrouillé</translation>
     </message>
     <message>
         <source>Complete all previous levels to unlock this difficulty</source>
-        <translation>Complétez tout les niveaux précédents pour débloquer cette difficulté  </translation>
+        <translation>Complétez tout les niveaux précédents pour débloquer cette difficulté</translation>
     </message>
     <message>
         <source>Play from scratch</source>
@@ -901,11 +958,54 @@ temporaires</translation>
     </message>
     <message>
         <source>Erase save</source>
-        <translation>Supprimer sauvegarde </translation>
+        <translation>Supprimer sauvegarde</translation>
     </message>
     <message>
         <source>Details</source>
         <translation>Détails</translation>
+    </message>
+    <message>
+        <source>Cheat...</source>
+        <translation>Tricheur...</translation>
+    </message>
+    <message>
+        <source>Level select</source>
+        <translation>Sélection du niveau</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation>Partie</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Retour</translation>
+    </message>
+</context>
+<context>
+    <name>ScorePage</name>
+    <message>
+        <source>Next level</source>
+        <translation>Prochain niveau</translation>
+    </message>
+    <message>
+        <source>Level details</source>
+        <translation>Détails du niveau</translation>
+    </message>
+    <message>
+        <source>Level completed!</source>
+        <translation>Niveau résolu!</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Niveau</translation>
+    </message>
+    <message>
+        <source>Your time</source>
+        <translation>Votre temps</translation>
+    </message>
+    <message>
+        <source>Best time</source>
+        <translation>Meilleur temps</translation>
     </message>
 </context>
 <context>
@@ -980,35 +1080,7 @@ temporaires</translation>
     </message>
     <message>
         <source>Zoom on indicators</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>WinPage</name>
-    <message>
-        <source>Level completed!</source>
-        <translation>Niveau résolu!</translation>
-    </message>
-    <message>
-        <source>Next level</source>
-        <translation>Prochain niveau</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation>Retour</translation>
-    </message>
-    <message>
-        <source>Solution</source>
-        <translation>Solution</translation>
-    </message>
-    <message>
-        <source>Congratulations, you solve every level !</source>
-        <translation>Félicitations!
-Vous avez résolu tout les niveau</translation>
-    </message>
-    <message>
-        <source>Best time</source>
-        <translation>Meilleur temps</translation>
+        <translation>Zoomer les allusions</translation>
     </message>
 </context>
 </TS>
