@@ -45,22 +45,33 @@ Page {
     onStatusChanged: {
         // Prepare the next level
         if(!highScorePage && status == PageStatus.Active) {
+
             // Prepare the next level
-            game.diff=nextDiff
-            game.level=nextLevel
-            game.save=DB.getSave(game.diff, game.level)
-            Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
-            game.gridUpdated()
+            if(!game.allLevelsCompleted) {
+                game.diff=nextDiff
+                game.level=nextLevel
+                game.save=DB.getSave(game.diff, game.level)
+                Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
+                game.gridUpdated()
+                if(nextDiff == -1 && nextLevel == -1)
+                    game.dimension = 0
+            }
+
+            // Clear loaded level
+            else {
+                game.clearData()
+            }
         }
     }
 
     SilicaFlickable {
         anchors.fill: parent
+        contentHeight: bestTimeLabel2.y + bestTimeLabel2.height + Theme.paddingLarge
 
         PullDownMenu {
             MenuItem {
                 id: nextLevelMenuItem
-                enabled: !highScorePage && nextDiff != -1 && nextLevel != -1
+                enabled: !highScorePage && (nextDiff != -1 && nextLevel != -1 || game.allLevelsCompleted)
                 visible: enabled
                 text: qsTr("Next level")
                 onClicked: {
@@ -152,27 +163,6 @@ Page {
             anchors.top: bestTimeLabel1.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             text: bTime===0?"--:--:--":bTime>=60*60*24?"24:00:00+":new Date(null, null, null, null, null, bTime).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
-        }
-        Label{
-            id: congratsLabel1
-            anchors.top: bestTimeLabel2.bottom
-            enabled: !highScorePage && nextLevel === -1 && nextDiff === -1
-            visible: enabled
-            anchors.topMargin: Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
-            color: Theme.highlightColor
-            text: qsTr("Congratulations!")
-            font.pixelSize: Theme.fontSizeLarge * 1.1
-        }
-        Label{
-            id: congratsLabel2
-            anchors.top: congratsLabel1.bottom
-            enabled: !highScorePage && nextLevel === -1 && nextDiff === -1
-            visible: enabled
-            anchors.horizontalCenter: parent.horizontalCenter
-            color: Theme.highlightColor
-            text: qsTr("You solved every level!")
-            font.pixelSize: Theme.fontSizeLarge * 1.1
         }
     }
 }

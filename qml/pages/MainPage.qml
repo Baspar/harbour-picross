@@ -364,11 +364,11 @@ Page {
                         width: parent.width
 
                         // Hint
-                        ViewPlaceholder {
-                                enabled: (game.dimension===0)
-                                text: qsTr("Welcome to Picross")
-                                hintText: qsTr("Please choose a level from the pulley menu")
-                        }
+            ViewPlaceholder {
+                enabled: (game.dimension===0)
+                text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
+                hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
+            }
 
                         // Whole grid
                         WholeGrid{
