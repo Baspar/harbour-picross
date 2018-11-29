@@ -94,6 +94,19 @@ ApplicationWindow{
     property int maxHeight:0
     property int maxWidth:0
 
+    function clearData() {
+        level = -1
+        diff = -1
+        time = 0
+        dimension = 0
+        hintTitle = ""
+        title = ""
+        mySolvingGrid.clear()
+        solvedGrid.clear()
+        indicUp.clear()
+        indicLeft.clear()
+    }
+
     Component.onCompleted: {
         DB.initialize()
 
