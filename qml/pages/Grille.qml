@@ -22,8 +22,6 @@ Rectangle {
             }
         }
     }
-/*
-    // These separators don't seem to have any effect..?
 
     // Horizontal separators
     Repeater{
@@ -48,5 +46,4 @@ Rectangle {
             color: Theme.rgba(Theme.highlightColor, 0.1)
         }
     }
-    */
 }
