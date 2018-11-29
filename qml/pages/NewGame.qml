@@ -209,6 +209,7 @@ Dialog{
                         onClicked:{
                             if(cheatMode){
                                 DB.setIsCompleted(myDiff, myLevel, 'true')
+                                levelCheckboxTick.visible = true
                                 levelTitle.text= (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
                                 levelTitle.color= listItem.highlighted || (myLevel == levelSelected && myDiff == diffSelected)
                                         ? Theme.highlightColor
