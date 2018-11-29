@@ -44,4 +44,5 @@ CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \
     translations/harbour-picross-fr.ts \
-    translations/harbour-picross-it.ts
+    translations/harbour-picross-it.ts \
+    translations/harbour-picross-fi.ts
