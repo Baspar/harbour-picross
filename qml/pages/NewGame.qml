@@ -115,7 +115,7 @@ Dialog{
                         }
                         MouseArea{
                             anchors.fill: parent
-                            onPressAndHold: cheatMode = !cheatMode
+                            //onPressAndHold: cheatMode = !cheatMode
                         }
                     }
                 }
