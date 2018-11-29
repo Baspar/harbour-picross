@@ -7,6 +7,16 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Thu Nov 29 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.0-1
+- Fix: level selection empty
+- QML-only application, fix QML warnings
+- Finnish translation
+- Fixed level selection layout
+- Redesign many UI elements
+- Many parts rewritten or revised
+- Retouched zoom levels
+- Option for automatic grid size
+- Update icons
 
 * Sat Jan 30 2016 Bastien Laine <bastien.laine@insa-rouen.fr> 1.7-1
 - Italian translation added (Thanks to Tichy)
@@ -36,7 +46,7 @@
 - FIX: Wrong coloring for headers (Bug #2 on GitHub)
 - Levels added: 1 Easy, 1 Medium, 2 Expert, 1 Hard, 6 Insane
 
-* Mon Aug 19 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.4-0
+* Fri Aug 19 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.4-0
 - FIX: arrows and cross visible after app minimized
 - Real-time "cheat"
 - Some design modifications
