@@ -81,7 +81,9 @@ Page{
                 onClicked:{
                     remorseSettings.execute(qsTr("Clearing ALL Databases"), function(){
                         DB.destroyData()
-                        DB.initialize()})
+                        DB.initialize()
+                        game.allLevelsCompleted = false
+                    })
                 }
             }
             Button{
