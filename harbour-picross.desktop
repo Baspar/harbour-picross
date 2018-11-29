@@ -2,7 +2,7 @@
 Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-picross
-Exec=harbour-picross
+Exec=sailfish-qml harbour-picross
 Name=Picross
 # translation example:
 # your app name in German locale (de)
