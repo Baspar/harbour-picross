@@ -132,6 +132,18 @@ function isCompleted(diff, level) {
     return ret;
 }
 
+function numCompletedLevels() {
+    var db = getDatabase();
+    var ret = 0;
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('SELECT COUNT(*) AS numCompleted FROM tcompleted WHERE (isCompleted=\'true\');');
+        if (rs.rows.length > 0) {
+            ret = rs.rows.item(0).numCompleted;
+        }
+    })
+    return ret;
+}
+
 function eraseSave(diff, level){
     var db = getDatabase();
     var ret = true;

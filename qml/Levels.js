@@ -2624,19 +2624,22 @@ function getGrid(diffSelected, levelSelected){
 
 function getNextDiff(){
     for(var i=0; i<levels.length; i++)
-    for(var j=0; j<getNbLevel(i); j++)
-    if(!DB.isCompleted(i, j))
-        return i
+        for(var j=0; j<getNbLevel(i); j++)
+        if(!DB.isCompleted(i, j))
+            return i
     return -1
 }
 function getNextLevel(){
     for(var i=0; i<levels.length; i++)
-    for(var j=0; j<getNbLevel(i); j++)
-    if(!DB.isCompleted(i, j))
-        return j
+        for(var j=0; j<getNbLevel(i); j++)
+        if(!DB.isCompleted(i, j))
+            return j
     return -1
 }
 
+function getNumLevels() {
+    return tutorial.length + easy.length + medium.length + hard.length + expert.length + insane.length
+}
 
 function isLocked(diff){
     return !(diff===0 || (DB.getNbCompletedLevel(diff-1)===getNbLevel(diff-1) && !isLocked(diff-1) ))
