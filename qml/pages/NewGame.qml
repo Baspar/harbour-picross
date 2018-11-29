@@ -19,10 +19,6 @@ Dialog{
         title: cheatMode?qsTr("Cheat..."):qsTr("Level select")
         acceptText: qsTr("Play");
         cancelText: qsTr("Back");
-        MouseArea{
-            anchors.fill: parent
-            //onPressAndHold: cheatMode = !cheatMode
-        }
     }
 
     // Difficulty list
@@ -116,6 +112,10 @@ Dialog{
                         Component.onCompleted: {
                             if(Levels.isLocked(myDiff))
                                 text = name+" [?/?]"
+                        }
+                        MouseArea{
+                            anchors.fill: parent
+                            onPressAndHold: cheatMode = !cheatMode
                         }
                     }
                 }
