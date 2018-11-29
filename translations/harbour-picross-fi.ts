@@ -1022,7 +1022,7 @@
     <message>
         <location filename="../qml/Levels.js" line="2173"/>
         <source>Tutorial</source>
-        <translation>Aloittelija</translation>
+        <translation>Aloitus</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2176"/>
@@ -1042,12 +1042,12 @@
     <message>
         <location filename="../qml/Levels.js" line="2185"/>
         <source>Expert</source>
-        <translation>Haastava</translation>
+        <translation>Vaikea</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2188"/>
         <source>Insane</source>
-        <translation>Kahjo</translation>
+        <translation>Mahdoton</translation>
     </message>
 </context>
 <context>
@@ -1055,7 +1055,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="19"/>
         <source>Tutorial</source>
-        <translation>Perusteet</translation>
+        <translation>Aloitus</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="20"/>
@@ -1075,12 +1075,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="23"/>
         <source>Expert</source>
-        <translation>Vaativa</translation>
+        <translation>Vaikea</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Insane</source>
-        <translation>Kahjo</translation>
+        <translation>Mahdoton</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="28"/>
@@ -1237,32 +1237,32 @@ arvaukset</translation>
 <context>
     <name>ScorePage</name>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="76"/>
+        <location filename="../qml/pages/ScorePage.qml" line="78"/>
         <source>Next level</source>
         <translation>Seuraava taso</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="86"/>
+        <location filename="../qml/pages/ScorePage.qml" line="88"/>
         <source>Level details</source>
         <translation>Tason tiedot</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="86"/>
+        <location filename="../qml/pages/ScorePage.qml" line="88"/>
         <source>Level completed!</source>
         <translation>Taso ratkaistu!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="92"/>
+        <location filename="../qml/pages/ScorePage.qml" line="94"/>
         <source>Level</source>
         <translation>Taso</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="143"/>
+        <location filename="../qml/pages/ScorePage.qml" line="145"/>
         <source>Your time</source>
         <translation>Sinun aikasi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="159"/>
+        <location filename="../qml/pages/ScorePage.qml" line="161"/>
         <source>Best time</source>
         <translation>Paras aika</translation>
     </message>
@@ -1270,94 +1270,94 @@ arvaukset</translation>
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="15"/>
+        <location filename="../qml/pages/Settings.qml" line="18"/>
         <source>Settings</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="19"/>
+        <location filename="../qml/pages/Settings.qml" line="22"/>
         <source>Vibrate when press-and-hold</source>
         <translation>Värinä pitkään painettaessa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="20"/>
-        <location filename="../qml/pages/Settings.qml" line="32"/>
+        <location filename="../qml/pages/Settings.qml" line="23"/>
+        <location filename="../qml/pages/Settings.qml" line="35"/>
         <source>Enabled</source>
         <translation>Käytössä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="20"/>
-        <location filename="../qml/pages/Settings.qml" line="32"/>
+        <location filename="../qml/pages/Settings.qml" line="23"/>
+        <location filename="../qml/pages/Settings.qml" line="35"/>
         <source>Disabled</source>
         <translation>Ei käytössä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="31"/>
+        <location filename="../qml/pages/Settings.qml" line="34"/>
         <source>Zoom on indicators</source>
         <translation>Zoomaa pelivihjeet</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="43"/>
+        <location filename="../qml/pages/Settings.qml" line="46"/>
         <source>Load saves by default</source>
         <translation>Jatka keskeneräistä peliä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="44"/>
+        <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Saves will be loaded by default</source>
         <translation>Kentän pelaaminen jatkaa siitä, mihin viimeksi jäit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="44"/>
+        <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Load them by a long press</source>
         <translation>Jatka keskeneräistä peliä painamalla kenttävalikossa pitkään</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="54"/>
+        <location filename="../qml/pages/Settings.qml" line="57"/>
         <source>Swipe throught difficulty</source>
         <translation>Vaihda vaikeusaste pyyhkäisemällä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="55"/>
+        <location filename="../qml/pages/Settings.qml" line="58"/>
         <source>Swipe is enabled</source>
         <translation>Pyyhkäisy käytössä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="55"/>
+        <location filename="../qml/pages/Settings.qml" line="58"/>
         <source>Swipe disable. Click on a difficulty name to load it</source>
         <translation>Sipaisu ei ole käytössä. Valitse vaikeusaste klikkaamalla sitä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="66"/>
+        <location filename="../qml/pages/Settings.qml" line="69"/>
         <source>Space between separators</source>
         <translation>Apuruudukon koko</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="79"/>
+        <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Clear ALL databases (saves &amp; progress)</source>
         <translation>Nollaa kaikki kentät</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="82"/>
+        <location filename="../qml/pages/Settings.qml" line="85"/>
         <source>Clearing ALL Databases</source>
         <translation>Nollataan Picoss</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="91"/>
+        <location filename="../qml/pages/Settings.qml" line="94"/>
         <source>Clear only saves database</source>
         <translation>Nollaa keskeneräiset kentät</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="93"/>
+        <location filename="../qml/pages/Settings.qml" line="96"/>
         <source>Clearing only saves database</source>
         <translation>Poistetaan keskeneräiset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="100"/>
+        <location filename="../qml/pages/Settings.qml" line="104"/>
         <source>Reset settings</source>
         <translation>Palauta oletukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="102"/>
+        <location filename="../qml/pages/Settings.qml" line="106"/>
         <source>Resetting settings</source>
         <translation>Palautetaan oletukset</translation>
     </message>
