@@ -65,6 +65,8 @@ Page {
     }
 
     SilicaFlickable {
+        id: scoreFlickable
+        VerticalScrollDecorator { flickable: scoreFlickable }
         anchors.fill: parent
         contentHeight: bestTimeLabel2.y + bestTimeLabel2.height + Theme.paddingLarge
 

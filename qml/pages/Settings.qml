@@ -6,7 +6,10 @@ Page{
     id: settingsPage
     RemorsePopup{ id: remorseSettings }
     SilicaFlickable{
+        id: settingsFlickable
+        VerticalScrollDecorator { flickable: settingsFlickable }
         anchors.fill:parent
+        contentHeight: buttonResetSettings.y + buttonResetSettings.height + Theme.paddingLarge
         Column{
             id:settingsCol
             spacing: Theme.paddingMedium
@@ -96,6 +99,7 @@ Page{
                 }
             }
             Button{
+                id: buttonResetSettings
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Reset settings")
                 onClicked:{
