@@ -64,11 +64,11 @@ Page{
                     id: slider
                     width: parent.width
                     label: qsTr("Space between separators")
-                    minimumValue: 0
+                    minimumValue: -1
                     maximumValue: 10
                     stepSize: 1
                     value: DB.getParameter("space")
-                    valueText: value
+                    valueText: value > -1 ? value : "Auto"
                     onValueChanged: {
                         game.space = slider.value
                         DB.setParameter("space", slider.value)
