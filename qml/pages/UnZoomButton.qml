@@ -9,10 +9,10 @@ Item{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1) {
-//                    game.zoom=((page.height-pageHeader.height-maxSizeIndicTop-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
-//                                                                                 /
-//                            ((page.width-maxSizeIndicLeft-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
-                        //game.zoom=3
+                    //                    game.zoom=((page.height-pageHeader.height-maxSizeIndicTop-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
+                    //                                                                                 /
+                    //                            ((page.width-maxSizeIndicLeft-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
+                    //game.zoom=3
                     if(game.dimension < 6)
                         zoom = 2
                     else if(game.dimension < 16)
