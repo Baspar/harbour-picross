@@ -32,6 +32,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "pages"
 import "Source.js" as Source
+import "Levels.js" as Levels
 import "DB.js" as DB
 
 
@@ -52,6 +53,8 @@ ApplicationWindow{
     signal gridUpdated
     signal checkWin
     signal win
+
+    property bool allLevelsCompleted: false
 
     property QtObject longBuzz
     property QtObject shortBuzz
@@ -98,6 +101,9 @@ ApplicationWindow{
         space = DB.getParameter("space")
         vibrate = DB.getParameter("vibrate")
         zoomIndic = DB.getParameter("zoomindic")
+
+        // Are all levels completed?
+        allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
 
         //Buzzer
         longBuzz  = Qt.createQmlObject("import QtFeedback 5.0; HapticsEffect {attackTime: 50; fadeTime: 50; attackIntensity: 0.2; fadeIntensity: 0.01; intensity: 0.8; duration: 100}", game)
@@ -147,5 +153,6 @@ ApplicationWindow{
         if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > game.time)
             DB.setTime(diff, level, game.time)
         pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
+        allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
     }
 }
