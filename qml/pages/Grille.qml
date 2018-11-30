@@ -34,6 +34,9 @@ Rectangle {
                 gridSize = 0
             }
         }
+        else {
+            gridSize = game.space
+        }
         return gridSize
     }
 
